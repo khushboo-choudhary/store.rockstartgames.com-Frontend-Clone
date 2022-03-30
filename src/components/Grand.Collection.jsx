@@ -8,19 +8,15 @@ const Grand = () => {
     const [colle,setColle] = useState();
 
     useEffect(() => {
-      axios.get(`https://reqres.in/api/unknown`).then((res) => {
+      axios.get(`https://obscure-citadel-15133.herokuapp.com/games/grand`).then((res) => {
           setGames(res.data);
           console.log("game",res.data);
-      })
-    },[])
-    useEffect(() => {
-        axios.get(`https://reqres.in/api/unknown`).then((res) => {
+        })
+        axios.get(`https://obscure-citadel-15133.herokuapp.com/coll/grand/apparel`).then((res) => {
             setApparel(res.data);
             console.log("apparel",res.data);
         })
-    },[])
-    useEffect(() => {
-        axios.get(`https://reqres.in/api/unknown`).then((res) => {
+        axios.get(`https://obscure-citadel-15133.herokuapp.com/coll/grand/gear`).then((res) => {
             setColle(res.data);
             console.log("gear",res.data);
         })
