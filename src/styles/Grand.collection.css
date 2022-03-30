@@ -2,6 +2,9 @@
     background: #161616;
     color: white;
 }
+#main_grand>div{
+ margin-top: 50px;
+}
 #shark_cards{
     display: grid;
     width: 90%;

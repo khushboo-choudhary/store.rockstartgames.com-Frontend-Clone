@@ -1,17 +1,43 @@
-import React from 'react'
+import axios from 'axios';
+import React, { useEffect, useState } from 'react'
 import '../styles/Grand.collection.css';
 
 const Grand = () => {
+    const [games,setGames] = useState();
+    const [apparel,setApparel] = useState();
+    const [colle,setColle] = useState();
+
+    useEffect(() => {
+      axios.get(`https://reqres.in/api/unknown`).then((res) => {
+          setGames(res.data);
+          console.log("game",res.data);
+      })
+    },[])
+    useEffect(() => {
+        axios.get(`https://reqres.in/api/unknown`).then((res) => {
+            setApparel(res.data);
+            console.log("apparel",res.data);
+        })
+    },[])
+    useEffect(() => {
+        axios.get(`https://reqres.in/api/unknown`).then((res) => {
+            setColle(res.data);
+            console.log("gear",res.data);
+        })
+    },[])
   return (
-    <>
+    <div id='main_grand'>
+
      <div>
          Collections
          <h2>Grand Theft Auto</h2>
      </div>
+
      <div>
         <h1>Games</h1>
         <div>{}</div>
      </div>
+
      <div>
          <h1>Buy Shark Cash Cards for PC</h1>
          <p>Cash is king in this town. Solve your money problem and help get what you want across Los Santos and Blaine County with the occasional purchase of cash packs for Grand Theft Auto Online.</p>
@@ -48,9 +74,18 @@ const Grand = () => {
              </div>
          </div>
      </div>
-     <div></div>
-     <div></div>
-    </>
+
+     <div>
+         <h1>Apparel</h1>
+         <div>{}</div>
+     </div>
+
+     <div>
+         <h1>Collectibles</h1>
+         <div>{}</div>
+     </div>
+
+    </div>
   )
 }
 
