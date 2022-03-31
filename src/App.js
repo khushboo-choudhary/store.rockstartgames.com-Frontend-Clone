@@ -1,10 +1,19 @@
+import Navbar from './components/Navbar' 
+import Svg from './components/Svg' 
+import Footer from './components/Footer' 
+
 function App() {
   return (
+    <>
     <div className='App'>
-    <h1 className='ml-4 text-3xl font-bold underline animate-bounce hover:bg-red-500'>
-      Hello world! Thanks for Using TailwindConfigure Package
-    </h1>
+
+  
+    <Navbar/>
+    <Svg/>
+    <Footer/>
     </div>
+    
+    </>
   );
 }
 
