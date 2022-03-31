@@ -1,8 +1,12 @@
-*{
+/* *{
+    background: #161616;
+    color: white;
+} */
+#main_grand{
     background: #161616;
     color: white;
 }
-#main_grand>div{
+/* #main_grand>div{
  margin-top: 50px;
 }
 #shark_cards{
@@ -27,4 +31,4 @@
 }
 #shark_cards>div>p:nth-child(3){
     font-weight: bold;
-}
+} */
