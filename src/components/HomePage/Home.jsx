@@ -1,3 +1,4 @@
+import { HomeHeader } from "./HomeHeader"
 
 
 export const Home = ()=>{
@@ -5,7 +6,7 @@ export const Home = ()=>{
 
     return (
         <>
-           <h1>Hi, Welcome To Home Page</h1> 
+           <HomeHeader/>
         </>
     )
 }
