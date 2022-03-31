@@ -1,0 +1,30 @@
+*{
+    background: #161616;
+    color: white;
+}
+#main_grand>div{
+ margin-top: 50px;
+}
+#shark_cards{
+    display: grid;
+    width: 90%;
+    margin: auto;
+    grid-template-columns:20% 20% 20% 20% 20%;
+}
+#shark_cards>div{
+    border-radius: 10px;
+    background: black;
+    color: white;
+    margin: 10px;
+    padding: 0 0 20px 0;
+}
+#shark_cards>div>p{
+    margin:4px 0 4px 6%;
+    background: black;
+}
+#shark_cards>div>p:nth-child(2){
+    color: grey;
+}
+#shark_cards>div>p:nth-child(3){
+    font-weight: bold;
+}
