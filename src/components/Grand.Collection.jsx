@@ -1,24 +1,26 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react'
+import { Link } from 'react-router-dom';
 import '../styles/Grand.collection.css';
 
+
 const Grand = () => {
-    const [games,setGames] = useState();
-    const [apparel,setApparel] = useState();
-    const [colle,setColle] = useState();
+    const [games,setGames] = useState([]);
+    const [apparel,setApparel] = useState([]);
+    const [colle,setColle] = useState([]);
 
     useEffect(() => {
       axios.get(`https://obscure-citadel-15133.herokuapp.com/games/grand`).then((res) => {
-          setGames(res.data);
-          console.log("game",res.data);
+          setGames(res.data.games);
+          console.log("game",res.data.games);
         })
         axios.get(`https://obscure-citadel-15133.herokuapp.com/coll/grand/apparel`).then((res) => {
-            setApparel(res.data);
-            console.log("apparel",res.data);
+            setApparel(res.data.collection);
+            console.log("apparel",res.data.collection);
         })
         axios.get(`https://obscure-citadel-15133.herokuapp.com/coll/grand/gear`).then((res) => {
-            setColle(res.data);
-            console.log("gear",res.data);
+            setColle(res.data.collection);
+            console.log("gear",res.data.collection);
         })
     },[])
   return (
@@ -31,7 +33,11 @@ const Grand = () => {
 
      <div>
         <h1>Games</h1>
-        <div>{}</div>
+        <div>{games.map((el) => {
+            return <div>
+                {el.price}
+            </div>
+        })}</div>
      </div>
 
      <div>
