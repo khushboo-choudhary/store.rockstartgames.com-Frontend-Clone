@@ -31,7 +31,7 @@ const Red = () => {
          <h2>Red Dead Redemption</h2>
      </div>
 
-     {/* <div>
+     <div>
         <h1>Games</h1>
         <div className='flex p-2'>{gamesred.map((el) => {
             return <div className='rounded-xl mx-2 bg-black' key={el._id}>
@@ -42,7 +42,7 @@ const Red = () => {
               </Link>
             </div>
         })}</div>
-     </div> */}
+     </div>
 
      <div>
          <h1>Buy Gold Bars for PC</h1>

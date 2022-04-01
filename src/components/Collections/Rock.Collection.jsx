@@ -31,7 +31,7 @@ const Rock = () => {
          <h2>Rockstar Games</h2>
      </div>
 
-     {/* <div>
+     <div>
         <h1>Games</h1>
         <div className='flex p-2'>{gamesrock.map((el) => {
             return <div className='rounded-xl mx-2 bg-black' key={el._id}>
@@ -42,7 +42,7 @@ const Rock = () => {
               </Link>
             </div>
         })}</div>
-     </div> */}
+     </div>
 
      <div>
          <h1>Apparel</h1>
