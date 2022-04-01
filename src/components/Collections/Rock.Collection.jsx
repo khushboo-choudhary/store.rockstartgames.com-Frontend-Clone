@@ -2,7 +2,7 @@ import axios from 'axios';
 import React, { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom';
 import '../../styles/Grand.collection.css';
-
+import gameslogo from '../../img/gameslogo.png';
 
 const Rock = () => {
     const [gamesrock,setGamesrock] = useState([]);
@@ -26,19 +26,20 @@ const Rock = () => {
   return (
     <div id='main_grand'>
 
-     <div>
+     <div id="first_div">
          Collections
          <h2>Rockstar Games</h2>
      </div>
 
      <div>
         <h1>Games</h1>
-        <div className='flex p-2'>{gamesrock.map((el) => {
-            return <div className='rounded-xl mx-2 bg-black' key={el._id}>
+        <div >{gamesrock.map((el) => {
+            return <div key={el._id}>
               <Link to={`/gamesDetails/${el._id}`}>
-               <img className='rounded-t-xl' src={el.heroimg} alt="" />
+               <img id="hero" className='rounded-t-xl' src={el.heroimg} alt="" />
                <p className='text-gray-400 ml-2 py-2'>{el.name}</p>
                <p className='font-bold ml-2 py-1'>€{el.price}</p>
+               <img src={gameslogo} alt="img" />
               </Link>
             </div>
         })}</div>
@@ -46,8 +47,8 @@ const Rock = () => {
 
      <div>
          <h1>Apparel</h1>
-         <div className=' flex rounded-xl mx-2'>{apparelrock.map((el) => {
-             return <div key={el._id} className='rounded-xl mx-2 bg-black' >
+         <div >{apparelrock.map((el) => {
+             return <div key={el._id}  >
                  <Link to={`/apparelDetail/${el._id}`}>
                   <img className='rounded-t-xl' src={el.image} alt="" />
                    <p className='text-gray-400 ml-2 py-2'>{el.name}</p>
@@ -59,8 +60,8 @@ const Rock = () => {
 
      <div>
          <h1>Gear</h1>
-         <div className='flex p-2'>{collerock.map((el) => {
-             return <div className='rounded-xl mx-2 bg-black' key={el._id}>
+         <div >{collerock.map((el) => {
+             return <div  key={el._id}>
                  <Link to={`/gearDetail/${el._id}`}>
                    <img className='rounded-t-xl' src={el.image} alt="" />
                    <p className='text-gray-400 ml-2 py-2'>{el.name}</p>
