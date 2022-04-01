@@ -5,18 +5,24 @@ import CardMedia from "@mui/material/CardMedia";
 import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
 
-const MyCard = () => {
+const MyCard = ({ img, title, price}) => {
   return (
-    <Card sx={{ maxWidth: 345 }} style={{margin:"10px", backgroundColor: "#000000", color:"white"}}>
-      <CardMedia
-        component="img"
-        alt="green iguana"
-        height="140"
-        image="https://images.ctfassets.net/wn7ipiv9ue5v/267fSFBO6jT8CDRmMgFZFL/2a89bd1b21f133e29d95e993b9131080/RDR2_Vinyl_HouseBuildingEP_Group_01_V02.jpg"
-      />
+    <Card
+      sx={{ maxWidth: 345 }}
+      style={{
+        margin: "10px",
+        backgroundColor: "#000000",
+        color: "white",
+        height: "93%",
+      }}
+    >
+      <CardMedia component="img" alt="green iguana" height="140" image={img} />
       <CardContent>
-        <Typography variant="body2" >
-          Lizards are a widespread group 
+        <Typography variant="body2" style={{ marginBottom: "10px" }}>
+          {title}
+        </Typography>
+        <Typography variant="body1" style={{ fontWeight: "bold" }}>
+          {price}
         </Typography>
       </CardContent>
     </Card>

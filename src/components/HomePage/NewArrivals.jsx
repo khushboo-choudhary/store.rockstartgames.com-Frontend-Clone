@@ -2,6 +2,8 @@ import styled from "styled-components"
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 import { MyCard } from "../MiniCompo/Card";
+import { useEffect, useState } from "react";
+import axios from "axios";
 
 const NewArrivalDiv = styled.div`
     width: 85%;
@@ -12,6 +14,18 @@ const NewArrivalDiv = styled.div`
 `
 
 const NewArrivals = () => {
+
+    const [products, setProducts] = useState([]);
+
+    useEffect(()=>{
+        axios.get("https://obscure-citadel-15133.herokuapp.com/coll/red/gear").then((res)=>{
+            // console.log(res.data.collection)
+            setProducts(res.data.collection);
+        }).catch((err)=>{
+            console.log(err.message)
+        });
+    }, [])
+
   return (
     <div>
       <NewArrivalDiv>
@@ -67,11 +81,16 @@ const NewArrivals = () => {
           slidesToSlide={1}
           swipeable
         >
-          <MyCard />
-          <MyCard />
-          <MyCard />
-          <MyCard />
-          <MyCard />
+          {products.map((product) => {
+            return (
+              <MyCard
+                key={product._id}
+                img={product.image}
+                title={product.name}
+                price={"€"+product.price}
+              />
+            );
+          })}
         </Carousel>
       </NewArrivalDiv>
     </div>
