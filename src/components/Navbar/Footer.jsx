@@ -23,7 +23,14 @@ return(
         </div>
         <div className="text-sm">Rockstar Games, Inc. | Rockstar Games and R* are marks and logos of Take-Two Interactive. All rights reserved. All trademark referenced herein are properties of their respective owners. The Rockstar Store is operated by Xsolla.</div>
     </div>
-    <div className="mx-3"></div>
+    <div className="mx-3">
+        <select name="" id="" className="bg-black text-white p-2 focus:bg-black hover:bg-gray-500">
+            <option value="">English</option>
+            <option value="">Spanish</option>
+            <option value="">French</option>
+        </select>
+        
+    </div>
     <div className="mx-3">
         <img src="https://images.ctfassets.net/wn7ipiv9ue5v/5x1AyDHBq8H6HMhWlSYNlB/1bfb8c7aeb294e722a49328052caa3c5/Frame__1_.svg?w=160&h=&fm=webp&q=" alt="" className="" />
     </div>

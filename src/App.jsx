@@ -1,6 +1,5 @@
-import Navbar from './components/Navbar' 
-import Svg from './components/Svg' 
-import Footer from './components/Footer' 
+import Navbar from './components/Navbar/Navbar' 
+import Footer from './components/Navbar/Footer' 
 import AllRoutes from './Route/Routes';
 import "./App.css"
 
@@ -10,7 +9,6 @@ function App() {
     <div className='App'>
     <Navbar/>
     <AllRoutes/>
-    <Svg/>
     <Footer/>
     </div>
     
