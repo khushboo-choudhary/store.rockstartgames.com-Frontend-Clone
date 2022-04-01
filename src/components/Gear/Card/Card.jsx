@@ -40,7 +40,7 @@ function AllCard() {
         <div id="apparel-heading-part">
           <p class="apparel-heading-rohit">Apparel</p>
           <p id="see-all-btn">
-            <button> SEE ALL </button>
+            <Link to={`/seeall/apparel`}><button> SEE ALL </button></Link>
           </p>
         </div>
         <div id="all-card-container">
@@ -103,7 +103,7 @@ function AllCard() {
         <div id="apparel-heading-part">
           <p class="apparel-heading-rohit">Posters</p>
           <p id="see-all-btn">
-            <button> SEE ALL </button>
+            <Link to={`/seeall/posters`}><button> SEE ALL </button></Link>
           </p>
         </div>
         <div id="all-card-container">
@@ -136,7 +136,7 @@ function AllCard() {
         <div id="apparel-heading-part">
           <p class="apparel-heading-rohit">Collectibles</p>
           <p id="see-all-btn">
-            <button> SEE ALL </button>
+          <Link to={`/seeall/collectibles`}><button> SEE ALL </button></Link>
           </p>
         </div>
         <div id="all-card-container">

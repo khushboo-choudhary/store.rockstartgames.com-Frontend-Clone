@@ -14,13 +14,13 @@ const ProductDetails = () => {
       .get(`https://obscure-citadel-15133.herokuapp.com/coll/${id}`)
       .then((res) => {
         setproduct(res.data);
-        console.log("coll data",res.data);
+       
       });
     axios
       .get("https://obscure-citadel-15133.herokuapp.com/coll")
       .then((res) => {
         setapparelData(res.data.collection);
-        console.log("related data",res.data);
+       
       });
   }, []);
 

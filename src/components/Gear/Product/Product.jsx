@@ -13,7 +13,6 @@ const Product = () => {
       .get(`https://obscure-citadel-15133.herokuapp.com/gear/${id}`)
       .then((res) => {
         setproduct(res.data);
-        console.log("gear data", res.data);
       });
     axios
       .get("https://obscure-citadel-15133.herokuapp.com/gear/apparel")
@@ -81,7 +80,7 @@ const Product = () => {
         <div id="all-card-container">
           {apparelData.map((curElem) => {
             return (
-              <div>
+              <div key={curElem._id}>
                 <div id="apparel-items-content">
                   <div id="apparel-item-card">
                     <div id="apparel-item-img-part">

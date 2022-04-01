@@ -10,6 +10,7 @@ const SeeAllCollect = () => {
       .get("https://obscure-citadel-15133.herokuapp.com/gear/collectibles/?size=18")
       .then((res) => {
         setapparelData(res.data.gear);
+        console.log(res.data.gear);
       });
   }, []);
 

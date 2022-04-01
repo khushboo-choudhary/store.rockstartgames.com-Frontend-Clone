@@ -5,7 +5,6 @@ const Hero = () => {
   return (
     <>
       <div id="header-part">
-        <p>Header</p>
       </div>
 
       <div id="hero-part">

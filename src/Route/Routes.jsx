@@ -10,6 +10,9 @@ import Rock from '../components/Collections/Rock.Collection'
 import AllCard from '../components/Gear/Card/Card'
 import Product from '../components/Gear/Product/Product'
 import ProductDetails from '../components/Collections/ProductDetails'
+import SeeAllApparel from '../components/Gear/SeeAll/SeeAll.apparel'
+import SeeAllPoster from '../components/Gear/SeeAll/SeeAll.posters'
+import SeeAllCollect from '../components/Gear/SeeAll/SeeAll.collect'
 
 
 const AllRoutes = () => {
@@ -25,6 +28,9 @@ const AllRoutes = () => {
         <Route path='/games/reddead' element={<RedDead/>}/>
         <Route path='/gear' element={<AllCard/>}/>
         <Route path='/gear/:id' element={<Product/>} />
+        <Route path='/seeall/apparel' element={<SeeAllApparel/>}/>
+        <Route path='/seeall/posters' element={<SeeAllPoster/>}/>
+        <Route path='/seeall/collectibles' element={<SeeAllCollect/>}/>
         
     </Routes>
   )

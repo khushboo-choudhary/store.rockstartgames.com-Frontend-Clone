@@ -92,6 +92,7 @@ body {
   /* border: 1px solid white; */
   display: flex;
   justify-content: space-between;
+  
 }
 
 #see-all-btn button {
@@ -99,10 +100,12 @@ body {
   height: 2.5em;
   background-color: #161616;
   border: 0;
-  color: white;
-  font-size: 1.2em;
+  color: #c2c2c2;
+  font-size: 14px;
 }
-
+#see-all-btn button:hover{
+  color: white;
+}
 #apparel-items-part #apparel-items-content {
   margin: 0 auto 0 auto;
   width: 85%;
