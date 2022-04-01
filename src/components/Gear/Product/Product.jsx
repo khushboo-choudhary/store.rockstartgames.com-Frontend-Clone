@@ -4,7 +4,7 @@ import axios from "axios";
 import "./Product.css";
 
 const Product = () => {
-  const { id } = useParams();
+  const {id} = useParams();
   const [product, setproduct] = useState([]);
   const [apparelData, setapparelData] = useState([]);
 
