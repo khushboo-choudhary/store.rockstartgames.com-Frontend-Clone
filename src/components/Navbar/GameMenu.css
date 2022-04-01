@@ -20,6 +20,16 @@ ul#menu{
   color:#eee;
   box-shadow:0 -1px rgba(0,0,0,.5) inset;
 }
+ul#menumob{
+  position:fixed;
+  top:62px;
+  /* width:100px; */
+  height:25em;
+  margin-bottom:10px;
+  padding:0 10px;
+  color:#eee;
+  box-shadow:0 -1px rgba(0,0,0,.5) inset;
+}
 ul#menucol{
   position:fixed;
   top:80px;
