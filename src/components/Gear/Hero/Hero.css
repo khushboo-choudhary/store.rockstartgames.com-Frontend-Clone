@@ -107,7 +107,6 @@ body {
   margin: 0 auto 0 auto;
   width: 85%;
   color: white;
-  text-decoration: underline;
   /* border: 1px solid white; */
 }
 
@@ -137,14 +136,24 @@ body {
   /* border: 1px solid white; */
   width: 100%;
   background-color: black;
+  height: 5.5em;
+}
+#apparel-item-price-part {
+  width: 100%;
+  background-color: black;
+  height: 3em;
   border-bottom-left-radius: 10px;
   border-bottom-right-radius: 10px;
-  height: 5em;
 }
-
-#apparel-item-title-part p {
+#apparel-item-price-part p {
   font-size: 1em;
   padding: 5px 10px 0 10px;
+  font-weight: 500;
+}
+#apparel-item-title-part p {
+  font-size: 1.1em;
+  padding: 5px 10px 0 10px;
+  font-weight: 500;
 }
 
 #apparel-items-part #all-card-container {
