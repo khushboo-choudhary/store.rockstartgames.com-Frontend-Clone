@@ -1,0 +1,30 @@
+*{
+    background: #161616;
+    color: white;
+}
+#mainGold>div{
+ margin-top: 50px;
+}
+#goldBars{
+    display: grid;
+    width: 90%;
+    margin: auto;
+    grid-template-columns:20% 20% 20% 20% 20%;
+}
+#goldBars>div{
+    border-radius: 10px;
+    background: black;
+    color: white;
+    margin: 10px;
+    padding: 0 0 20px 0;
+}
+#goldBars>div>p{
+    margin:4px 0 4px 6%;
+    background: black;
+}
+#goldBars>div>p:nth-child(2){
+    color: grey;
+}
+#goldBars>div>p:nth-child(3){
+    font-weight: bold;
+}
