@@ -12,15 +12,12 @@ const Red = () => {
     useEffect(() => {
       axios.get(`https://obscure-citadel-15133.herokuapp.com/games/red`).then((res) => {
         setGamesred(res.data.games);
-          console.log("game",res.data.games);
         })
         axios.get(`https://obscure-citadel-15133.herokuapp.com/coll/red/apparel`).then((res) => {
             setApparelred(res.data.collection);
-            console.log("apparel",res.data.collection);
         })
         axios.get(`https://obscure-citadel-15133.herokuapp.com/coll/red/gear`).then((res) => {
             setCollered(res.data.collection);
-            console.log("gear",res.data.collection);
         })
     },[])
   return (

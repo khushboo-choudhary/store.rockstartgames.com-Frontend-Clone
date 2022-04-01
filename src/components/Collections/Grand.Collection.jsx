@@ -13,15 +13,12 @@ const Grand = () => {
     useEffect(() => {
       axios.get(`https://obscure-citadel-15133.herokuapp.com/games/grand`).then((res) => {
           setGames(res.data.games);
-          console.log("game",res.data.games);
         })
         axios.get(`https://obscure-citadel-15133.herokuapp.com/coll/grand/apparel`).then((res) => {
             setApparel(res.data.collection);
-            console.log("apparel",res.data.collection);
         })
         axios.get(`https://obscure-citadel-15133.herokuapp.com/coll/grand/gear`).then((res) => {
             setColle(res.data.collection);
-            console.log("gear",res.data.collection);
         })
     },[])
   return (
