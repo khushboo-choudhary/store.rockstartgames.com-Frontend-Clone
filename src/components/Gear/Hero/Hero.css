@@ -1,0 +1,190 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Roboto", sans-serif;
+}
+
+body {
+  background-color: #161616;
+}
+
+/* Header Styling */
+
+#header-part {
+  width: 100%;
+  /* border: 1px solid white; */
+  border-bottom: 1px solid grey;
+  height: 8vh;
+  background: black;
+}
+
+#header-part p {
+  text-align: center;
+  font-size: 3rem;
+  color: white;
+}
+
+/* Hero Part Styling */
+
+#hero-part {
+  width: 100%;
+  /* border: 1px solid white; */
+  height: 36vh;
+  background: black;
+  display: flex;
+  justify-content: flex-end;
+  gap: 6em;
+  margin-bottom: 7em;
+}
+
+#hero-part #left-hero-part {
+  width: 30%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  color: white;
+  gap: 1em;
+}
+
+#hero-part #left-hero-part #gear-title {
+  width: 100%;
+  height: 10%;
+  /* border: 1px solid white; */
+  font-size: 1.5em;
+}
+
+#hero-part #left-hero-part #site-title {
+  width: 100%;
+  height: 20%;
+  /* border: 1px solid white; */
+  margin-bottom: 5vh;
+  font-size: 2em;
+  font-weight: 600;
+}
+
+#hero-part #right-hero-part {
+  width: 60%;
+  height: 100%;
+  /* border: 1px solid white; */
+}
+
+#hero-part #right-hero-part img {
+  width: 100%;
+  height: 100%;
+}
+
+#apparel-items-part {
+  width: 100%;
+  /* border: 1px solid white; */
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  gap: 2em;
+  color: white;
+  margin-bottom: 5em;
+}
+
+#apparel-items-part #apparel-heading-part {
+  margin: 0 auto 0 auto;
+  width: 85%;
+  /* border: 1px solid white; */
+  display: flex;
+  justify-content: space-between;
+}
+
+#see-all-btn button {
+  width: 5em;
+  height: 2.5em;
+  background-color: #161616;
+  border: 0;
+  color: white;
+  font-size: 1.2em;
+}
+
+#apparel-items-part #apparel-items-content {
+  margin: 0 auto 0 auto;
+  width: 85%;
+  color: white;
+  text-decoration: underline;
+  /* border: 1px solid white; */
+}
+
+.apparel-heading-rohit {
+  font-size: 2.5em;
+  font-weight: 600;
+}
+
+#apparel-items-part #apparel-item-card {
+  /* border: 1px solid white; */
+  width: 100%;
+}
+
+#apparel-item-img-part {
+  /* border: 1px solid white; */
+  width: 100%;
+  background-color: black;
+}
+
+#apparel-item-img-part img {
+  width: 100%;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+
+#apparel-item-title-part {
+  /* border: 1px solid white; */
+  width: 100%;
+  background-color: black;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  height: 5em;
+}
+
+#apparel-item-title-part p {
+  font-size: 1em;
+  padding: 5px 10px 0 10px;
+}
+
+#apparel-items-part #all-card-container {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  margin: auto;
+  width: 90%;
+}
+
+@media only screen and (min-width: 1100px) and (max-width: 1300px) {
+  #apparel-items-part #all-card-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    margin: auto;
+    width: 90%;
+  }
+}
+
+@media only screen and (min-width: 800px) and (max-width: 1100px) {
+  #apparel-items-part #all-card-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    margin: auto;
+    width: 90%;
+  }
+}
+
+@media only screen and (min-width: 500px) and (max-width: 800px) {
+  #apparel-items-part #all-card-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    margin: auto;
+    width: 90%;
+  }
+}
+@media only screen and (min-width: 300px) and (max-width: 500px) {
+  #apparel-items-part #all-card-container {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    margin: auto;
+    width: 90%;
+  }
+}
