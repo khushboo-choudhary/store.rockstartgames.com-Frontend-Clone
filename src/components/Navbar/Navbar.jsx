@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 //import Navbar from './components/Navbar'
 import GameMenu from "./GameMenu";
+import GameMobileMenu from "./GameMobileMenu";
 import MenuListComposition from './UserMenuMui'
 import UserMenu from "./UserMenu";
 import SearchIcon from '@mui/icons-material/Search';
@@ -161,7 +162,7 @@ const Navbar = (props) => {
         <GameMenu></GameMenu>
       </div>
       <div class={`relative ${GameMobileMenuToggle}`}>
-        <GameMenu></GameMenu>
+        <GameMobileMenu></GameMobileMenu>
       </div>
       <div class={`relative ${CollectionMenuToggle}`}>
         <CollectionMenu></CollectionMenu>
