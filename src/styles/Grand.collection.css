@@ -24,7 +24,7 @@
     width: 85%;
     margin: auto;
     grid-template-columns: 250px 250px 250px 250px 250px;
-    gap: 10px;
+    gap: 15px;
 }
 #main_grand>div>h1{
  padding: 0 0 20px 8%; 
