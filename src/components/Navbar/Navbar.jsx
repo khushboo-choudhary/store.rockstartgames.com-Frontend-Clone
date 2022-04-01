@@ -18,11 +18,12 @@ const Navbar = (props) => {
 
   useEffect(() => {
     if (loginuser !== "none") {
-      console.log("User Login Successfully");
+      // console.log("User Login Successfully");
       setAccountDropDown("block");
-    } else {
-      console.log("User Not Login");
-    }
+    } 
+    // else {
+    //   // console.log("User Not Login");
+    // }
   }, []);
 
   console.log(loginuser, "Loginuser is this");
@@ -56,6 +57,10 @@ const Navbar = (props) => {
     } else setUserToggle("hidden");
   };
 
+  const onClickSearchBar = ()=>{
+    
+  }
+
   return (
     <>
       <div className="flex sticky top-0 right-0 left-0 z-40 items-center my-0 w-full text-white bg-black md:justify-between">
@@ -75,7 +80,10 @@ const Navbar = (props) => {
                       />
             </div>
             <div className='flex justify-between item-centerw-8 md:hidden'>
-                  <SearchIcon className="w-8"/>
+                  
+                  <button onClick={() => onClickSearchBar()}>
+                  <SearchIcon/>
+                  </button>
                   <ShoppingCartIcon className="w-8"/>
             </div>
       </div>
