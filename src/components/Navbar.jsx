@@ -6,7 +6,7 @@ const Navbar = (props)=>{
 
 return(
 <>
-<div className="flex justify-between items-center text-white bg-black">
+<div className="flex justify-between items-center text-white bg-black" style={{borderBottom:"0.1px solid #f1f1f139"}}>
 
     <div className="hidden md:flex justify-between items-center p-4 mx-24">
         <img className="w-12 h-12" src="https://images.ctfassets.net/wn7ipiv9ue5v/4ajpWv2L0zlK6pObfLPOcL/d6d3875cb5a5bfc074c6a92cf6dce0c2/rockstar_logo.png?w=104&h=&fm=webp&q=" alt=""  />
