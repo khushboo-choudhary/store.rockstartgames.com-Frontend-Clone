@@ -85,7 +85,7 @@ const Grand = () => {
          <h1>Apparel</h1>
          <div >{apparel.map((el) => {
              return <div key={el._id} className='rounded-xl mx-2 bg-black' >
-                 <Link to={`/apparelDetail/${el._id}`}>
+                 <Link to={`/collection/${el._id}`}>
                   <img className='rounded-t-xl' src={el.image} alt="" />
                    <p className='text-gray-400 ml-2 py-2'>{el.name}</p>
                    <p className='font-bold ml-2 py-1'>€{el.price}</p>
@@ -98,7 +98,7 @@ const Grand = () => {
          <h1>Collectibles</h1>
          <div>{colle.map((el) => {
              return <div className='rounded-xl mx-2 bg-black' key={el._id}>
-                 <Link to={`/gearDetail/${el._id}`}>
+                 <Link to={`/collection/${el._id}`}>
                    <img className='rounded-t-xl' src={el.image} alt="" />
                    <p className='text-gray-400 ml-2 py-2'>{el.name}</p>
                    <p className='font-bold ml-2 py-1'>€{el.price}</p>

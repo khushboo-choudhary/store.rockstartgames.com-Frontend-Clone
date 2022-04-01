@@ -78,7 +78,7 @@ const Red = () => {
          <h1>Apparel</h1>
          <div>{apparelred.map((el) => {
              return <div key={el._id} >
-                 <Link to={`/apparelDetail/${el._id}`}>
+                 <Link to={`/collection/${el._id}`}>
                   <img className='rounded-t-xl' src={el.image} alt="" />
                    <p className='text-gray-400 ml-2 py-2'>{el.name}</p>
                    <p className='font-bold ml-2 py-1'>€{el.price}</p>
@@ -91,7 +91,7 @@ const Red = () => {
          <h1>Red Dead Redemption Essentials Collection</h1>
          <div>{collered.map((el) => {
              return <div  key={el._id}>
-                 <Link to={`/gearDetail/${el._id}`}>
+                 <Link to={`/collection/${el._id}`}>
                    <img className='rounded-t-xl' src={el.image} alt="" />
                    <p className='text-gray-400 ml-2 py-2'>{el.name}</p>
                    <p className='font-bold ml-2 py-1'>€{el.price}</p>

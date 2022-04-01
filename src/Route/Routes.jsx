@@ -9,6 +9,7 @@ import Red from '../components/Collections/Red.Collection'
 import Rock from '../components/Collections/Rock.Collection'
 import AllCard from '../components/Gear/Card/Card'
 import Product from '../components/Gear/Product/Product'
+import ProductDetails from '../components/Collections/ProductDetails'
 
 
 const AllRoutes = () => {
@@ -18,6 +19,7 @@ const AllRoutes = () => {
         <Route path='/grand-theft-auto-collection' element={<Grand/>}/>
         <Route path='/red-dead-redemption-collection' element={<Red/>}/>
         <Route path='/rockstar-collection' element={<Rock/>}/>
+        <Route path='/collection/:id' element={<ProductDetails/>} />
         <Route path='/games/goldbar' element={<GoldBar/>}/>
         <Route path='/games/sharkcards' element={<SharkCards/>}/>
         <Route path='/games/reddead' element={<RedDead/>}/>

@@ -56,6 +56,9 @@ function AllCard() {
                       <div id="apparel-item-title-part">
                         <p>{curElem.name}</p>
                       </div>
+                      <div id="apparel-item-title-part">
+                        <p>€{curElem.price}</p>
+                      </div>
                     </div>
                   </div>
                 </Link>
@@ -82,6 +85,9 @@ function AllCard() {
                       </div>
                       <div id="apparel-item-title-part">
                         <p>{curElem.name}</p>
+                      </div>
+                      <div id="apparel-item-title-part">
+                        <p>€{curElem.price}</p>
                       </div>
                     </div>
                   </div>
@@ -113,6 +119,9 @@ function AllCard() {
                       <div id="apparel-item-title-part">
                         <p>{curElem.name}</p>
                       </div>
+                      <div id="apparel-item-title-part">
+                        <p>€{curElem.price}</p>
+                      </div>
                     </div>
                   </div>
                 </Link>
@@ -142,6 +151,9 @@ function AllCard() {
                       </div>
                       <div id="apparel-item-title-part">
                         <p>{curElem.name}</p>
+                      </div>
+                      <div id="apparel-item-title-part">
+                        <p>€{curElem.price}</p>
                       </div>
                     </div>
                   </div>
