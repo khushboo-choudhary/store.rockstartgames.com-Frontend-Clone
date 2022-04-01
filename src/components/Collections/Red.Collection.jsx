@@ -2,7 +2,7 @@ import axios from 'axios';
 import React, { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom';
 import '../../styles/Grand.collection.css';
-
+import gameslogo from '../../img/gameslogo.png';
 
 const Red = () => {
     const [gamesred,setGamesred] = useState([]);
@@ -12,33 +12,31 @@ const Red = () => {
     useEffect(() => {
       axios.get(`https://obscure-citadel-15133.herokuapp.com/games/red`).then((res) => {
         setGamesred(res.data.games);
-          console.log("game",res.data.games);
         })
         axios.get(`https://obscure-citadel-15133.herokuapp.com/coll/red/apparel`).then((res) => {
             setApparelred(res.data.collection);
-            console.log("apparel",res.data.collection);
         })
         axios.get(`https://obscure-citadel-15133.herokuapp.com/coll/red/gear`).then((res) => {
             setCollered(res.data.collection);
-            console.log("gear",res.data.collection);
         })
     },[])
   return (
     <div id='main_grand'>
 
-     <div>
+     <div id="first_div">
          Collections
          <h2>Red Dead Redemption</h2>
      </div>
 
      <div>
         <h1>Games</h1>
-        <div className='flex p-2'>{gamesred.map((el) => {
-            return <div className='rounded-xl mx-2 bg-black' key={el._id}>
+        <div >{gamesred.map((el) => {
+            return <div key={el._id}>
               <Link to={`/gamesDetails/${el._id}`}>
-               <img className='rounded-t-xl' src={el.heroimg} alt="" />
+               <img id="hero"  className='rounded-t-xl' src={el.heroimg} alt="" />
                <p className='text-gray-400 ml-2 py-2'>{el.name}</p>
                <p className='font-bold ml-2 py-1'>€{el.price}</p>
+               <img src={gameslogo} alt="img" />
               </Link>
             </div>
         })}</div>
@@ -47,7 +45,7 @@ const Red = () => {
      <div>
          <h1>Buy Gold Bars for PC</h1>
          <p>With Gold Bars you can quickly unlock all manner of goods in Red Dead Online; from custom modifications to your weapons to horse kits to unique items for your camp.</p>
-         <div className=' flex rounded-xl mx-2'>
+         <div>
              <div className='rounded-xl pb-8 mx-2 bg-black'>
                  <div><img className='rounded-t-xl' src='https://images.ctfassets.net/wn7ipiv9ue5v/1WHByNDahkDtZiL76oGCHu/9a11218bebd14cf8a3709fe16a015177/goldBar_350.jpg?w=1920&h=&fm=webp&q=' alt="img"></img></div>
                  <p className='text-gray-400 ml-2 py-2'>350 Gold Bars</p>
@@ -78,9 +76,9 @@ const Red = () => {
 
      <div>
          <h1>Apparel</h1>
-         <div className=' flex rounded-xl mx-2'>{apparelred.map((el) => {
-             return <div key={el._id} className='rounded-xl mx-2 bg-black' >
-                 <Link to={`/apparelDetail/${el._id}`}>
+         <div>{apparelred.map((el) => {
+             return <div key={el._id} >
+                 <Link to={`/collection/${el._id}`}>
                   <img className='rounded-t-xl' src={el.image} alt="" />
                    <p className='text-gray-400 ml-2 py-2'>{el.name}</p>
                    <p className='font-bold ml-2 py-1'>€{el.price}</p>
@@ -91,9 +89,9 @@ const Red = () => {
 
      <div>
          <h1>Red Dead Redemption Essentials Collection</h1>
-         <div className='flex p-2'>{collered.map((el) => {
-             return <div className='rounded-xl mx-2 bg-black' key={el._id}>
-                 <Link to={`/gearDetail/${el._id}`}>
+         <div>{collered.map((el) => {
+             return <div  key={el._id}>
+                 <Link to={`/collection/${el._id}`}>
                    <img className='rounded-t-xl' src={el.image} alt="" />
                    <p className='text-gray-400 ml-2 py-2'>{el.name}</p>
                    <p className='font-bold ml-2 py-1'>€{el.price}</p>

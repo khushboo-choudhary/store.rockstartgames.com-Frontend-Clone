@@ -7,18 +7,30 @@ import SharkCards from '../components/Games/SharkCards.Games'
 import RedDead from '../components/Games/Red.Games'
 import Red from '../components/Collections/Red.Collection'
 import Rock from '../components/Collections/Rock.Collection'
+import AllCard from '../components/Gear/Card/Card'
+import Product from '../components/Gear/Product/Product'
+import ProductDetails from '../components/Collections/ProductDetails'
+import SeeAllApparel from '../components/Gear/SeeAll/SeeAll.apparel'
+import SeeAllPoster from '../components/Gear/SeeAll/SeeAll.posters'
+import SeeAllCollect from '../components/Gear/SeeAll/SeeAll.collect'
 
 
 const AllRoutes = () => {
   return (
     <Routes>
         <Route path='/' element={<Home/>}/>
-        <Route path='/collections/grand' element={<Grand/>}/>
-        <Route path='/collections/red' element={<Red/>}/>
-        <Route path='/collections/rock' element={<Rock/>}/>
+        <Route path='/grand-theft-auto-collection' element={<Grand/>}/>
+        <Route path='/red-dead-redemption-collection' element={<Red/>}/>
+        <Route path='/rockstar-collection' element={<Rock/>}/>
+        <Route path='/collection/:id' element={<ProductDetails/>} />
         <Route path='/games/goldbar' element={<GoldBar/>}/>
         <Route path='/games/sharkcards' element={<SharkCards/>}/>
         <Route path='/games/reddead' element={<RedDead/>}/>
+        <Route path='/gear' element={<AllCard/>}/>
+        <Route path='/gear/:id' element={<Product/>} />
+        <Route path='/seeall/apparel' element={<SeeAllApparel/>}/>
+        <Route path='/seeall/posters' element={<SeeAllPoster/>}/>
+        <Route path='/seeall/collectibles' element={<SeeAllCollect/>}/>
         
     </Routes>
   )

@@ -1,9 +1,7 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom';
-import '../../styles/Grand.collection.css';
-import gameslogo from '../../img/gameslogo.png';
-
+import '../styles/Grand.collection.css';
 
 
 const Grand = () => {
@@ -14,32 +12,33 @@ const Grand = () => {
     useEffect(() => {
       axios.get(`https://obscure-citadel-15133.herokuapp.com/games/grand`).then((res) => {
           setGames(res.data.games);
+          console.log("game",res.data.games);
         })
         axios.get(`https://obscure-citadel-15133.herokuapp.com/coll/grand/apparel`).then((res) => {
             setApparel(res.data.collection);
+            console.log("apparel",res.data.collection);
         })
         axios.get(`https://obscure-citadel-15133.herokuapp.com/coll/grand/gear`).then((res) => {
             setColle(res.data.collection);
+            console.log("gear",res.data.collection);
         })
     },[])
   return (
     <div id='main_grand'>
 
-     <div id="first_div">
+     <div>
          Collections
          <h2>Grand Theft Auto</h2>
      </div>
 
-
      <div>
         <h1>Games</h1>
-        <div>{games.map((el) => {
-            return <div key={el._id}>
+        <div className='flex p-2'>{games.map((el) => {
+            return <div className='rounded-xl mx-2 bg-black' key={el._id}>
               <Link to={`/gamesDetails/${el._id}`}>
-               <img id="hero"  className='rounded-t-xl' src={el.heroimg} alt="" />
+               <img className='rounded-t-xl' src={el.heroimg} alt="" />
                <p className='text-gray-400 ml-2 py-2'>{el.name}</p>
                <p className='font-bold ml-2 py-1'>€{el.price}</p>
-               <img src={gameslogo} alt="img" />
               </Link>
             </div>
         })}</div>
@@ -48,7 +47,7 @@ const Grand = () => {
      <div>
          <h1>Buy Shark Cash Cards for PC</h1>
          <p>Cash is king in this town. Solve your money problem and help get what you want across Los Santos and Blaine County with the occasional purchase of cash packs for Grand Theft Auto Online.</p>
-         <div>
+         <div className=' flex rounded-xl mx-2'>
              <div className='rounded-xl pb-8 mx-2 bg-black'>
                  <div><img className='rounded-t-xl' src='https://images.ctfassets.net/wn7ipiv9ue5v/5YBFqRLDDxpq8BSwf98PdY/cc63f92ddbfe241c897b70003b4ffa74/megalodonCard.jpg?w=1920&h=&fm=webp&q=' alt="img"></img></div>
                  <p className='text-gray-400 ml-2 py-2'>Megalodon Shark Cash Card</p>
@@ -84,9 +83,9 @@ const Grand = () => {
 
      <div>
          <h1>Apparel</h1>
-         <div >{apparel.map((el) => {
+         <div className=' flex rounded-xl mx-2'>{apparel.map((el) => {
              return <div key={el._id} className='rounded-xl mx-2 bg-black' >
-                 <Link to={`/collection/${el._id}`}>
+                 <Link to={`/apparelDetail/${el._id}`}>
                   <img className='rounded-t-xl' src={el.image} alt="" />
                    <p className='text-gray-400 ml-2 py-2'>{el.name}</p>
                    <p className='font-bold ml-2 py-1'>€{el.price}</p>
@@ -97,9 +96,9 @@ const Grand = () => {
 
      <div>
          <h1>Collectibles</h1>
-         <div>{colle.map((el) => {
+         <div className='flex p-2'>{colle.map((el) => {
              return <div className='rounded-xl mx-2 bg-black' key={el._id}>
-                 <Link to={`/collection/${el._id}`}>
+                 <Link to={`/gearDetail/${el._id}`}>
                    <img className='rounded-t-xl' src={el.image} alt="" />
                    <p className='text-gray-400 ml-2 py-2'>{el.name}</p>
                    <p className='font-bold ml-2 py-1'>€{el.price}</p>
