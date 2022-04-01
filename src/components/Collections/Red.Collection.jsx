@@ -1,25 +1,25 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom';
-import '../styles/Grand.collection.css';
+import '../../styles/Grand.collection.css';
 
 
-const Grand = () => {
-    const [games,setGames] = useState([]);
-    const [apparel,setApparel] = useState([]);
-    const [colle,setColle] = useState([]);
+const Red = () => {
+    const [gamesred,setGamesred] = useState([]);
+    const [apparelred,setApparelred] = useState([]);
+    const [collered,setCollered] = useState([]);
 
     useEffect(() => {
-      axios.get(`https://obscure-citadel-15133.herokuapp.com/games/grand`).then((res) => {
-          setGames(res.data.games);
+      axios.get(`https://obscure-citadel-15133.herokuapp.com/games/red`).then((res) => {
+        setGamesred(res.data.games);
           console.log("game",res.data.games);
         })
-        axios.get(`https://obscure-citadel-15133.herokuapp.com/coll/grand/apparel`).then((res) => {
-            setApparel(res.data.collection);
+        axios.get(`https://obscure-citadel-15133.herokuapp.com/coll/red/apparel`).then((res) => {
+            setApparelred(res.data.collection);
             console.log("apparel",res.data.collection);
         })
-        axios.get(`https://obscure-citadel-15133.herokuapp.com/coll/grand/gear`).then((res) => {
-            setColle(res.data.collection);
+        axios.get(`https://obscure-citadel-15133.herokuapp.com/coll/red/gear`).then((res) => {
+            setCollered(res.data.collection);
             console.log("gear",res.data.collection);
         })
     },[])
@@ -31,9 +31,9 @@ const Grand = () => {
          <h2>Grand Theft Auto</h2>
      </div>
 
-     <div>
+     {/* <div>
         <h1>Games</h1>
-        <div className='flex p-2'>{games.map((el) => {
+        <div className='flex p-2'>{gamesred.map((el) => {
             return <div className='rounded-xl mx-2 bg-black' key={el._id}>
               <Link to={`/gamesDetails/${el._id}`}>
                <img className='rounded-t-xl' src={el.heroimg} alt="" />
@@ -42,7 +42,7 @@ const Grand = () => {
               </Link>
             </div>
         })}</div>
-     </div>
+     </div> */}
 
      <div>
          <h1>Buy Shark Cash Cards for PC</h1>
@@ -83,7 +83,7 @@ const Grand = () => {
 
      <div>
          <h1>Apparel</h1>
-         <div className=' flex rounded-xl mx-2'>{apparel.map((el) => {
+         <div className=' flex rounded-xl mx-2'>{apparelred.map((el) => {
              return <div key={el._id} className='rounded-xl mx-2 bg-black' >
                  <Link to={`/apparelDetail/${el._id}`}>
                   <img className='rounded-t-xl' src={el.image} alt="" />
@@ -96,7 +96,7 @@ const Grand = () => {
 
      <div>
          <h1>Collectibles</h1>
-         <div className='flex p-2'>{colle.map((el) => {
+         <div className='flex p-2'>{collered.map((el) => {
              return <div className='rounded-xl mx-2 bg-black' key={el._id}>
                  <Link to={`/gearDetail/${el._id}`}>
                    <img className='rounded-t-xl' src={el.image} alt="" />
@@ -111,4 +111,4 @@ const Grand = () => {
   )
 }
 
-export default Grand
+export default Red
