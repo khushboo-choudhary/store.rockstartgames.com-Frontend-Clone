@@ -12,36 +12,36 @@ const SharkCards = () => {
             <div>
                 <h1>Buy Shark Cash Cards for PC</h1>
                 <p>Cash is king in this town. Solve your money problem and help get what you want across Los Santos and Blaine County with the occasional purchase of cash packs for Grand Theft Auto Online.</p>
-                <div id='shark_cards'>
-                    <div>
-                        <div><img src='https://images.ctfassets.net/wn7ipiv9ue5v/5YBFqRLDDxpq8BSwf98PdY/cc63f92ddbfe241c897b70003b4ffa74/megalodonCard.jpg?w=1920&h=&fm=webp&q=' alt="img"></img></div>
-                        <p>Megalodon Shark Cash Card</p>
-                        <p>€74.99</p>
+                <div className=' flex rounded-xl mx-2'>
+                    <div className='rounded-xl pb-8 mx-2 bg-black'>
+                        <div><img className='rounded-t-xl' src='https://images.ctfassets.net/wn7ipiv9ue5v/5YBFqRLDDxpq8BSwf98PdY/cc63f92ddbfe241c897b70003b4ffa74/megalodonCard.jpg?w=1920&h=&fm=webp&q=' alt="img"></img></div>
+                        <p className='text-gray-400 ml-2 py-2'>Megalodon Shark Cash Card</p>
+                        <p className='font-bold ml-2 py-1'>₹3,919.00</p>
                     </div>
-                    <div>
-                        <div><img src='https://images.ctfassets.net/wn7ipiv9ue5v/3Ra7QWTG6RAVOTKmISfUh1/c58f3602fdc30e245178185f8b72db23/whaleCard.jpg?w=1920&h=&fm=webp&q=' alt="img"></img></div>
-                        <p>Whale Shark Cash Card</p>
-                        <p>€37.99</p>
+                    <div className='rounded-xl pb-8 mx-2 bg-black'>
+                        <div><img className='rounded-t-xl' src='https://images.ctfassets.net/wn7ipiv9ue5v/3Ra7QWTG6RAVOTKmISfUh1/c58f3602fdc30e245178185f8b72db23/whaleCard.jpg?w=1920&h=&fm=webp&q=' alt="img"></img></div>
+                        <p className='text-gray-400 ml-2 py-2'>Whale Shark Cash Card</p>
+                        <p className='font-bold ml-2 py-1'>₹1,959.00</p>
                     </div>
-                    <div>
-                        <div><img src='https://images.ctfassets.net/wn7ipiv9ue5v/2E36gdKHDOIRmxX6H1y2h2/6941cea2e876c0466e79a16eccab0351/greatWhiteCard.jpg?w=1920&h=&fm=webp&q=' alt="img"></img></div>
-                        <p>Great White Shark Cash Card</p>
-                        <p>€14.99</p>
+                    <div className='rounded-xl pb-8 mx-2 bg-black'>
+                        <div><img className='rounded-t-xl' src='https://images.ctfassets.net/wn7ipiv9ue5v/2E36gdKHDOIRmxX6H1y2h2/6941cea2e876c0466e79a16eccab0351/greatWhiteCard.jpg?w=1920&h=&fm=webp&q=' alt="img"></img></div>
+                        <p className='text-gray-400 ml-2 py-2'>Great White Shark Cash Card</p>
+                        <p className='font-bold ml-2 py-1'>₹779.00</p>
                     </div>
-                    <div>
-                        <div><img src='https://images.ctfassets.net/wn7ipiv9ue5v/19JeVwVNCkh2oexDPwodNe/7d99319963faa9cd1b238041a790ce2f/bullCard.jpg?w=1920&h=&fm=webp&q=' alt="img"></img></div>
-                        <p>Bull Shark Cash Card</p>
-                        <p>€6.99</p>
+                    <div className='rounded-xl pb-8 mx-2 bg-black'>
+                        <div><img className='rounded-t-xl' src='https://images.ctfassets.net/wn7ipiv9ue5v/19JeVwVNCkh2oexDPwodNe/7d99319963faa9cd1b238041a790ce2f/bullCard.jpg?w=1920&h=&fm=webp&q=' alt="img"></img></div>
+                        <p className='text-gray-400 ml-2 py-2'>Bull Shark Cash Card</p>
+                        <p className='font-bold ml-2 py-1'>₹391.00</p>
                     </div>
-                    <div>
-                        <div><img src='https://images.ctfassets.net/wn7ipiv9ue5v/68sXKV8nsnRL0tJjCZK5dw/14f8be36ce510d5782896d9d6193d486/tigerCard.jpg?w=1920&h=&fm=webp&q=' alt="img"></img></div>
-                        <p>Tiger Shark Cash Card</p>
-                        <p>€3.99</p>
+                    <div className='rounded-xl pb-8 mx-2 bg-black'>
+                        <div><img className='rounded-t-xl' src='https://images.ctfassets.net/wn7ipiv9ue5v/68sXKV8nsnRL0tJjCZK5dw/14f8be36ce510d5782896d9d6193d486/tigerCard.jpg?w=1920&h=&fm=webp&q=' alt="img"></img></div>
+                        <p className='text-gray-400 ml-2 py-2'>Tiger Shark Cash Card</p>
+                        <p className='font-bold ml-2 py-1'>₹195.00</p>
                     </div>
-                    <div>
-                        <div><img src='https://images.ctfassets.net/wn7ipiv9ue5v/5guhsRTsaMTFt4Fb77YpcQ/257f41c6732f27688bae13db6865cfa5/redCard.jpg?w=1920&h=&fm=webp&q=' alt="img"></img></div>
-                        <p>Red Shark Cash Card</p>
-                        <p>€2.49</p>
+                    <div className='rounded-xl pb-8 mx-2 bg-black'>
+                        <div><img className='rounded-t-xl' src='https://images.ctfassets.net/wn7ipiv9ue5v/5guhsRTsaMTFt4Fb77YpcQ/257f41c6732f27688bae13db6865cfa5/redCard.jpg?w=1920&h=&fm=webp&q=' alt="img"></img></div>
+                        <p className='text-gray-400 ml-2 py-2'>Red Shark Cash Card</p>
+                        <p className='font-bold ml-2 py-1'>₹117.00</p>
                     </div>
                 </div>
             </div>

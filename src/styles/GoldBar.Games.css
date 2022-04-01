@@ -1,8 +1,8 @@
 /* *{
     background: #161616;
     color: white;
-} */
-#mainGold>div{
+}
+#mainCards>div{
  margin-top: 50px;
 }
 #goldBars{
@@ -27,4 +27,4 @@
 }
 #goldBars>div>p:nth-child(3){
     font-weight: bold;
-}
+} */
