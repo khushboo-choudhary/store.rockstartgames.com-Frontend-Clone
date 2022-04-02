@@ -25,8 +25,17 @@ const Navbar = (props) => {
 
   useEffect(() => {
       setAccountDropDown("block");
-     const {nickName,profileImage}=JSON.parse(localStorage.getItem("userData"))
-     console.log(nickName,"NickName is there")
+
+    const {nickName,profileImage}=JSON.parse(localStorage.getItem("userData")) || localStorage.setItem("userData",JSON.stringify({"profileImage":"https://a.rsg.sc/n/shreyas1000","nickName":"none"}));
+    // const nickName = "fsdfsd"
+    // profileImage = ""
+    // }catch{
+    // const nickName="";
+    // const profileImage = "https://images.ctfassets.net/wn7ipiv9ue5v/4ajpWv2L0zlK6pObfLPOcL/d6d3875cb5a5bfc074c6a92cf6dce0c2/rockstar_logo.png?w=104&h=&fm=webp&q=";
+    // }
+
+    //  const {nickName,profileImage}=JSON.parse(localStorage.getItem("userData"))
+    //  console.log(nickName,"NickName is there")
      if(nickName!=="none") {setLoginOrNot({signIn:"block",signOut:"hidden"})}
     //  console.log(loginOrNot.)
     setLoginData({nickName,profileImage})
