@@ -16,9 +16,7 @@ const SeeAllCollect = () => {
 
   return (
     <>
-      <div id="header-part">
      
-      </div>
       {/* All Products */}
       <div id="apparel-items-part"  style={{ "margin-top": "5em" }}>
         <div id="apparel-heading-part">

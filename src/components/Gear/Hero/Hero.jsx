@@ -4,9 +4,6 @@ import "./Hero.css";
 const Hero = () => {
   return (
     <>
-      <div id="header-part">
-      </div>
-
       <div id="hero-part">
         <div id="left-hero-part">
           <div id="gear-title">

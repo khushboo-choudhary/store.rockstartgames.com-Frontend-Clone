@@ -23,8 +23,6 @@ const Product = () => {
 
   return (
     <>
-      <div id="header-part"></div>
-
       <div id="product-part">
         <div id="product-left-part">
           <div id="main-img-part">
@@ -65,8 +63,12 @@ const Product = () => {
             <span>XXXL</span>
           </div>
           <div id="buy-add-btn">
-            <div id="buy-btn">Buy Now</div>
-            <div id="add-btn">Add to cart</div>
+            <div id="buy-btn">
+              <button>Buy Now</button>
+            </div>
+            <div id="add-btn">
+              <button>Add to cart</button>
+            </div>
           </div>
         </div>
       </div>
@@ -75,7 +77,6 @@ const Product = () => {
       <div id="apparel-items-part">
         <div id="apparel-heading-part">
           <p class="apparel-heading-rohit">Realted Products</p>
-          <p>SEE ALL</p>
         </div>
         <div id="all-card-container">
           {apparelData.map((curElem) => {
@@ -86,11 +87,13 @@ const Product = () => {
                     <div id="apparel-item-img-part">
                       <img src={curElem.image} alt="" />
                     </div>
-                    <div id="apparel-item-title-part">
-                      <p>{curElem.name}</p>
-                    </div>
-                    <div id="apparel-item-price-part">
-                      <p>€{curElem.price}</p>
+                    <div id="name-price-part">
+                      <div id="apparel-item-title-part">
+                        <p>{curElem.name}</p>
+                      </div>
+                      <div id="apparel-item-price-part">
+                        <p>€{curElem.price}</p>
+                      </div>
                     </div>
                   </div>
                 </div>

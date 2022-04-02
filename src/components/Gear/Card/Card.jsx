@@ -40,7 +40,9 @@ function AllCard() {
         <div id="apparel-heading-part">
           <p class="apparel-heading-rohit">Apparel</p>
           <p id="see-all-btn">
-            <Link to={`/seeall/apparel`}><button> SEE ALL </button></Link>
+            <Link to={`/seeall/apparel`}>
+              <button> SEE ALL </button>
+            </Link>
           </p>
         </div>
         <div id="all-card-container">
@@ -53,11 +55,13 @@ function AllCard() {
                       <div id="apparel-item-img-part">
                         <img src={curElem.image} alt="" />
                       </div>
-                      <div id="apparel-item-title-part">
-                        <p>{curElem.name}</p>
-                      </div>
-                      <div id="apparel-item-price-part">
-                        <p>€{curElem.price}</p>
+                      <div id="name-price-part">
+                        <div id="apparel-item-title-part">
+                          <p>{curElem.name}</p>
+                        </div>
+                        <div id="apparel-item-price-part">
+                          <p>€{curElem.price}</p>
+                        </div>
                       </div>
                     </div>
                   </div>
@@ -83,11 +87,13 @@ function AllCard() {
                       <div id="apparel-item-img-part">
                         <img src={curElem.image} alt="" />
                       </div>
-                      <div id="apparel-item-title-part">
-                        <p>{curElem.name}</p>
-                      </div>
-                      <div id="apparel-item-price-part">
-                        <p>€{curElem.price}</p>
+                      <div id="name-price-part">
+                        <div id="apparel-item-title-part">
+                          <p>{curElem.name}</p>
+                        </div>
+                        <div id="apparel-item-price-part">
+                          <p>€{curElem.price}</p>
+                        </div>
                       </div>
                     </div>
                   </div>
@@ -103,7 +109,9 @@ function AllCard() {
         <div id="apparel-heading-part">
           <p class="apparel-heading-rohit">Posters</p>
           <p id="see-all-btn">
-            <Link to={`/seeall/posters`}><button> SEE ALL </button></Link>
+            <Link to={`/seeall/posters`}>
+              <button> SEE ALL </button>
+            </Link>
           </p>
         </div>
         <div id="all-card-container">
@@ -116,11 +124,13 @@ function AllCard() {
                       <div id="apparel-item-img-part">
                         <img src={curElem.image} alt="" />
                       </div>
-                      <div id="apparel-item-title-part">
-                        <p>{curElem.name}</p>
-                      </div>
-                      <div id="apparel-item-price-part">
-                        <p>€{curElem.price}</p>
+                      <div id="name-price-part">
+                        <div id="apparel-item-title-part">
+                          <p>{curElem.name}</p>
+                        </div>
+                        <div id="apparel-item-price-part">
+                          <p>€{curElem.price}</p>
+                        </div>
                       </div>
                     </div>
                   </div>
@@ -136,7 +146,9 @@ function AllCard() {
         <div id="apparel-heading-part">
           <p class="apparel-heading-rohit">Collectibles</p>
           <p id="see-all-btn">
-          <Link to={`/seeall/collectibles`}><button> SEE ALL </button></Link>
+            <Link to={`/seeall/collectibles`}>
+              <button> SEE ALL </button>
+            </Link>
           </p>
         </div>
         <div id="all-card-container">
@@ -149,11 +161,13 @@ function AllCard() {
                       <div id="apparel-item-img-part">
                         <img src={curElem.image} alt="" />
                       </div>
-                      <div id="apparel-item-title-part">
-                        <p>{curElem.name}</p>
-                      </div>
-                      <div id="apparel-item-price-part">
-                        <p>€{curElem.price}</p>
+                      <div id="name-price-part">
+                        <div id="apparel-item-title-part">
+                          <p>{curElem.name}</p>
+                        </div>
+                        <div id="apparel-item-price-part">
+                          <p>€{curElem.price}</p>
+                        </div>
                       </div>
                     </div>
                   </div>
