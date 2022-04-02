@@ -1,14 +1,14 @@
 import Grid from "@mui/material/Grid";
 import styled from "styled-components";
 import Button from "@mui/material/Button";
-import { Link } from "react-router-dom";
+
 
 const HeroImg = styled.div`
   width: 100%;
-  height: 220px;
-  background-image: url(https://images.ctfassets.net/wn7ipiv9ue5v/5a5HhOXOSEIVV0uaIpvPiU/ec89fc996c28a02aef0228680858197d/R_Store_GoldBars_1344x500.jpg);
+  height: 500px;
+  background-image:${(props)=>`url(${props.img})`};
   background-size: cover;
-  background-position: center;
+  background-position: center-top;
   background-repeat: no-repeat;
   position: relative;
 
@@ -18,21 +18,38 @@ const HeroImg = styled.div`
 `;
 
 const ColorButton = styled(Button)(({ theme }) => ({
-  backgroundColor: "transparent",
-  border: "1px solid white",
+  backgroundColor: "red",
+  color: "white",
   height: "50px",
-  width: "150px",
+  width: "auto",
   fontWeight: "bold",
   "&:hover": {
-    backgroundColor: "transparent",
+    backgroundColor: "red",
   },
   "@media (max-width: 400px)": {
     width: "100%",
     height: "50px",
   },
 }));
+const ColorButton2 = styled(Button)(({ theme }) => ({
+  backgroundColor: "white",
+  color: "black",
+  height: "50px",
+  width: "auto",
+  fontWeight: "bold",
+  marginLeft: "10px",
+  "&:hover": {
+    backgroundColor: "white",
+  },
+  "@media (max-width: 400px)": {
+    width: "100%",
+    height: "50px",
+    marginLeft: "0px",
+    marginTop: "10px",
+  },
+}));
 
-export const ShopNow2 = () => {
+export const GamesHeader = ({img, logo, name}) => {
   return (
     <Grid container spacing={0}>
       <Grid
@@ -50,16 +67,12 @@ export const ShopNow2 = () => {
           style={{
             backgroundColor: "#000000",
             display: "flex",
+            justifyContent: "center",
             alignItems: "center",
+            padding: "40px",
           }}
         >
-          <img
-            src={
-              "https://images.ctfassets.net/wn7ipiv9ue5v/53eLAEbas7t5je0nCBdAJk/4ccff0c85816cb6b0c079c235e298799/RDO_Logo_RGB.png"
-            }
-            alt="GTA"
-            width={"150px"}
-          />
+          <img src={logo} alt={name} width={"150px"} />
         </div>
         <div>
           <h1
@@ -69,15 +82,20 @@ export const ShopNow2 = () => {
               marginBottom: "20px",
             }}
           >
-            Buy Gold Bars for PC
+            {name}
           </h1>
-          <Link to={"buy-red-dead-online-gold-bars"}>
-            <ColorButton variant="contained">BUY NOW</ColorButton>
-          </Link>
+          <p style={{ marginBottom: "20px" }}>
+            <img
+              src="https://i.ibb.co/Rjwb872/select-Platform.png"
+              alt="selectPlatform"
+            />
+          </p>
+          <ColorButton variant="contained">BUY NOW</ColorButton>
+          <ColorButton2 variant="contained">ADD TO CART</ColorButton2>
         </div>
       </Grid>
       <Grid item md={6} sm={12} xs={12} order={{ md: 2, sm: 1, xs: 1 }}>
-        <HeroImg />
+        <HeroImg img={img} />
       </Grid>
     </Grid>
   );

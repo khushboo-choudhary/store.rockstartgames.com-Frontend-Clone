@@ -4,6 +4,7 @@ import "react-multi-carousel/lib/styles.css";
 import { MyCard } from "../MiniCompo/Card";
 import { useEffect, useState } from "react";
 import axios from "axios";
+import { Link } from "react-router-dom";
 
 const NewArrivalDiv = styled.div`
   width: 85%;
@@ -42,12 +43,12 @@ const HomeGames = () => {
           autoPlaySpeed={99999999999999999}
           centerMode={false}
           className=""
-          containerClass="container-with-dots"
-          dotListClass=""
+          containerclassName="container-with-dots"
+          dotListclassName=""
           draggable
           focusOnSelect={false}
           infinite
-          itemClass=""
+          itemclassName=""
           keyBoardControl
           minimumTouchDrag={80}
           renderButtonGroupOutside={false}
@@ -79,18 +80,20 @@ const HomeGames = () => {
             },
           }}
           showDots={false}
-          sliderClass=""
+          sliderclassName=""
           slidesToSlide={1}
           swipeable
         >
           {products.map((product) => {
             return (
-              <MyCard
+              <Link to={`/games/${product._id}`}>
+                <MyCard
                 key={product._id}
                 img={product.heroimg}
                 title={product.name}
                 price={"€" + product.price}
               />
+              </Link>
             );
           })}
         </Carousel>

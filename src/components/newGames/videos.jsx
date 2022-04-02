@@ -1,10 +1,9 @@
 import styled from "styled-components";
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
-import { MyCard } from "../MiniCompo/Card";
-import { useEffect, useState } from "react";
-import axios from "axios";
-import { Link } from "react-router-dom";
+// import { MyCard } from "../MiniCompo/Card";
+// import { useEffect, useState } from "react";
+// import axios from "axios";
 
 const NewArrivalDiv = styled.div`
   width: 85%;
@@ -14,28 +13,15 @@ const NewArrivalDiv = styled.div`
   margin-bottom: 80px;
 `;
 
-const GrandTheftAuto = () => {
-  const [products, setProducts] = useState([]);
-
-  useEffect(() => {
-    axios
-      .get("https://obscure-citadel-15133.herokuapp.com/coll/grand/gear")
-      .then((res) => {
-        console.log(res.data.collection);
-        setProducts(res.data.collection);
-      })
-      .catch((err) => {
-        console.log(err.message);
-      });
-  }, []);
-
+const Videos = ({vid}) => {
+  
   return (
     <div>
       <NewArrivalDiv>
         <h1
           style={{ fontSize: "32px", fontWeight: "bold", marginBottom: "30px" }}
         >
-          Grand Theft Auto Collection
+          Videos
         </h1>
         <Carousel
           additionalTransfrom={0}
@@ -84,22 +70,31 @@ const GrandTheftAuto = () => {
           slidesToSlide={1}
           swipeable
         >
-          {products.map((product) => {
-            return (
-              <Link to={`/collection/${product._id}`}>
-                <MyCard
-                  key={product._id}
-                  img={product.image}
-                  title={product.name}
-                  price={"€" + product.price}
-                />
-              </Link>
-            );
-          })}
+          <EmbeddedVideo vid={vid[0]} />
+          {/* {vid.map((el) => {
+            return <EmbeddedVideo vid={el} />;
+          })} */}
         </Carousel>
       </NewArrivalDiv>
     </div>
   );
 };
 
-export { GrandTheftAuto };
+
+const EmbeddedVideo = ({vid}) => {
+
+    return (
+      <iframe
+        frameborder="0"
+        scrolling="no"
+        marginheight="0"
+        marginwidth="0"
+        width="534"
+        height="300"
+        type="text/html"
+        src={vid}
+      >
+      </iframe>
+    );
+}
+export { Videos };

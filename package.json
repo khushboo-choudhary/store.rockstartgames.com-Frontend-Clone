@@ -20,10 +20,11 @@
     "react-slick": "^0.28.1",
     "slick-carousel": "^1.8.1",
     "styled-components": "^5.3.5",
+    "uuid": "^8.3.2",
     "web-vitals": "^2.1.4"
   },
   "scripts": {
-    "kport":"fuser -k 3000/tcp",
+    "kport": "fuser -k 3000/tcp",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",

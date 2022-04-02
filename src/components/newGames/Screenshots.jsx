@@ -2,9 +2,7 @@ import styled from "styled-components";
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 import { MyCard } from "../MiniCompo/Card";
-import { useEffect, useState } from "react";
-import axios from "axios";
-import { Link } from "react-router-dom";
+import { v4 as uuidv4 } from "uuid";
 
 const NewArrivalDiv = styled.div`
   width: 85%;
@@ -14,28 +12,14 @@ const NewArrivalDiv = styled.div`
   margin-bottom: 80px;
 `;
 
-const GrandTheftAuto = () => {
-  const [products, setProducts] = useState([]);
-
-  useEffect(() => {
-    axios
-      .get("https://obscure-citadel-15133.herokuapp.com/coll/grand/gear")
-      .then((res) => {
-        console.log(res.data.collection);
-        setProducts(res.data.collection);
-      })
-      .catch((err) => {
-        console.log(err.message);
-      });
-  }, []);
-
+const Screenshots = ({ ss }) => {
   return (
     <div>
       <NewArrivalDiv>
         <h1
           style={{ fontSize: "32px", fontWeight: "bold", marginBottom: "30px" }}
         >
-          Grand Theft Auto Collection
+          Screenshots
         </h1>
         <Carousel
           additionalTransfrom={0}
@@ -67,7 +51,7 @@ const GrandTheftAuto = () => {
                 max: 464,
                 min: 0,
               },
-              items: 2,
+              items: 1,
               partialVisibilityGutter: 30,
             },
             tablet: {
@@ -75,7 +59,7 @@ const GrandTheftAuto = () => {
                 max: 1024,
                 min: 464,
               },
-              items: 4,
+              items: 3,
               partialVisibilityGutter: 30,
             },
           }}
@@ -84,22 +68,28 @@ const GrandTheftAuto = () => {
           slidesToSlide={1}
           swipeable
         >
-          {products.map((product) => {
-            return (
-              <Link to={`/collection/${product._id}`}>
-                <MyCard
-                  key={product._id}
-                  img={product.image}
-                  title={product.name}
-                  price={"€" + product.price}
-                />
-              </Link>
-            );
-          })}
+            {ss.map((ss) => {
+                return (
+                    <MyCard
+                    key={uuidv4()}
+                    img={ss}
+                    height={"125px"}
+                    />
+                );
+            })}
         </Carousel>
       </NewArrivalDiv>
     </div>
   );
 };
 
-export { GrandTheftAuto };
+// const EmbeddedVideo = ({ vid }) => {
+//   return (
+//     <iframe
+//       width="420"
+//       height="315"
+//       src="https://www.youtube.com/embed/eI4an8aSsgw"
+//     ></iframe>
+//   );
+// };
+export { Screenshots };

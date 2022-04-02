@@ -7,7 +7,7 @@ const Product = () => {
   const { id } = useParams();
   const [product, setproduct] = useState([]);
   const [apparelData, setapparelData] = useState([]);
-
+  let storeCart=JSON.parse(localStorage.getItem("store_cart"))||[];
   useEffect(() => {
     axios
       .get(`https://obscure-citadel-15133.herokuapp.com/gear/${id}`)
@@ -23,6 +23,10 @@ const Product = () => {
 
   return (
     <>
+<<<<<<< HEAD
+=======
+
+>>>>>>> b34f91f8f2f097669f14b4a787cd364c326ec2c5
       <div id="product-part">
         <div id="product-left-part">
           <div id="main-img-part">
@@ -63,12 +67,33 @@ const Product = () => {
             <span>XXXL</span>
           </div>
           <div id="buy-add-btn">
+<<<<<<< HEAD
             <div id="buy-btn">
               <button>Buy Now</button>
             </div>
             <div id="add-btn">
               <button>Add to cart</button>
             </div>
+=======
+            <div id="buy-btn">Buy Now</div>
+            <div id="add-btn"><button onClick={() => {
+                  let status = false;
+                  storeCart.map((el)=>{
+                    if(el._id==product._id){
+                      status = true
+                    }
+                  })
+                  if(status){
+                    alert("Product is Already in cart")
+                    return;
+                  }else{
+                    product.qty = 1;
+                    storeCart.push(product);
+                    localStorage.setItem("store_cart",JSON.stringify(storeCart));
+                    alert("Product is Added in cart successfully")
+                  }                  
+                }} >Add to cart</button></div>
+>>>>>>> b34f91f8f2f097669f14b4a787cd364c326ec2c5
           </div>
         </div>
       </div>
@@ -76,7 +101,12 @@ const Product = () => {
       {/* Related Products */}
       <div id="apparel-items-part">
         <div id="apparel-heading-part">
+<<<<<<< HEAD
           <p class="apparel-heading-rohit">Realted Products</p>
+=======
+          <p className="apparel-heading-rohit">Realted Products</p>
+          <p>SEE ALL</p>
+>>>>>>> b34f91f8f2f097669f14b4a787cd364c326ec2c5
         </div>
         <div id="all-card-container">
           {apparelData.map((curElem) => {
