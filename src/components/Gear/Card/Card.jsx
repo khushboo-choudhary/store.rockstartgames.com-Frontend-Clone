@@ -38,9 +38,11 @@ function AllCard() {
       {/* Apparel Part */}
       <div id="apparel-items-part">
         <div id="apparel-heading-part">
-          <p class="apparel-heading-rohit">Apparel</p>
+          <p className="apparel-heading-rohit">Apparel</p>
           <p id="see-all-btn">
-            <Link to={`/seeall/apparel`}><button> SEE ALL </button></Link>
+            <Link to={`/seeall/apparel`}>
+              <button> SEE ALL </button>
+            </Link>
           </p>
         </div>
         <div id="all-card-container">
@@ -71,7 +73,7 @@ function AllCard() {
       {/* Caps Part */}
       <div id="apparel-items-part">
         <div id="apparel-heading-part">
-          <p class="apparel-heading-rohit">Caps</p>
+          <p className="apparel-heading-rohit">Caps</p>
         </div>
         <div id="all-card-container">
           {capsData.map((curElem) => {
@@ -101,9 +103,11 @@ function AllCard() {
       {/* Posters Part */}
       <div id="apparel-items-part">
         <div id="apparel-heading-part">
-          <p class="apparel-heading-rohit">Posters</p>
+          <p className="apparel-heading-rohit">Posters</p>
           <p id="see-all-btn">
-            <Link to={`/seeall/posters`}><button> SEE ALL </button></Link>
+            <Link to={`/seeall/posters`}>
+              <button> SEE ALL </button>
+            </Link>
           </p>
         </div>
         <div id="all-card-container">
@@ -134,9 +138,11 @@ function AllCard() {
       {/* Collectibles Part */}
       <div id="apparel-items-part">
         <div id="apparel-heading-part">
-          <p class="apparel-heading-rohit">Collectibles</p>
+          <p className="apparel-heading-rohit">Collectibles</p>
           <p id="see-all-btn">
-          <Link to={`/seeall/collectibles`}><button> SEE ALL </button></Link>
+            <Link to={`/seeall/collectibles`}>
+              <button> SEE ALL </button>
+            </Link>
           </p>
         </div>
         <div id="all-card-container">

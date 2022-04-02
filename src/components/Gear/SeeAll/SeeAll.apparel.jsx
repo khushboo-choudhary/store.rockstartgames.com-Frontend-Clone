@@ -15,15 +15,11 @@ const SeeAllApparel = () => {
 
   return (
     <>
-      <div id="header-part">
-       
-      </div>
+      <div id="header-part"></div>
       {/* All Products */}
-      <div id="apparel-items-part"  style={{ "margin-top": "5em" }}>
+      <div id="apparel-items-part" style={{ "margin-top": "5em" }}>
         <div id="apparel-heading-part">
-          <p class="apparel-heading-rohit">
-            All Products
-          </p>
+          <p className="apparel-heading-rohit">All Products</p>
           <p>SEE ALL</p>
         </div>
         <div id="all-card-container" style={{ "margin-top": "2em" }}>
@@ -35,7 +31,10 @@ const SeeAllApparel = () => {
                     <div id="apparel-item-img-part">
                       <img src={curElem.image} alt="" />
                     </div>
-                    <div id="apparel-item-title-part" style={{ "margin-bottom": "5em" }}>
+                    <div
+                      id="apparel-item-title-part"
+                      style={{ "margin-bottom": "5em" }}
+                    >
                       <p>{curElem.name}</p>
                     </div>
                   </div>

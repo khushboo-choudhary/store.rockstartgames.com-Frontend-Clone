@@ -7,7 +7,9 @@ const SeeAllCollect = () => {
 
   useEffect(() => {
     axios
-      .get("https://obscure-citadel-15133.herokuapp.com/gear/collectibles/?size=18")
+      .get(
+        "https://obscure-citadel-15133.herokuapp.com/gear/collectibles/?size=18"
+      )
       .then((res) => {
         setapparelData(res.data.gear);
         console.log(res.data.gear);
@@ -16,15 +18,11 @@ const SeeAllCollect = () => {
 
   return (
     <>
-      <div id="header-part">
-     
-      </div>
+      <div id="header-part"></div>
       {/* All Products */}
-      <div id="apparel-items-part"  style={{ "margin-top": "5em" }}>
+      <div id="apparel-items-part" style={{ "margin-top": "5em" }}>
         <div id="apparel-heading-part">
-          <p class="apparel-heading-rohit">
-            All Products
-          </p>
+          <p className="apparel-heading-rohit">All Products</p>
           <p>SEE ALL</p>
         </div>
         <div id="all-card-container" style={{ "margin-top": "2em" }}>
@@ -36,7 +34,10 @@ const SeeAllCollect = () => {
                     <div id="apparel-item-img-part">
                       <img src={curElem.image} alt="" />
                     </div>
-                    <div id="apparel-item-title-part" style={{ "margin-bottom": "5em" }}>
+                    <div
+                      id="apparel-item-title-part"
+                      style={{ "margin-bottom": "5em" }}
+                    >
                       <p>{curElem.name}</p>
                     </div>
                   </div>

@@ -4,7 +4,7 @@ import "react-multi-carousel/lib/styles.css";
 import { MyCard } from "../MiniCompo/Card";
 import { useEffect, useState } from "react";
 import axios from "axios";
-import { Link } from "react-router-dom";
+import { v4 as uuidv4 } from "uuid";
 
 const NewArrivalDiv = styled.div`
   width: 85%;
@@ -14,28 +14,14 @@ const NewArrivalDiv = styled.div`
   margin-bottom: 80px;
 `;
 
-const HomeGames = () => {
-  const [products, setProducts] = useState([]);
-
-  useEffect(() => {
-    axios
-      .get("https://obscure-citadel-15133.herokuapp.com/games")
-      .then((res) => {
-        // console.log(res.data.games);
-        setProducts(res.data.games);
-      })
-      .catch((err) => {
-        console.log(err.message);
-      });
-  }, []);
-
+const Screenshots = ({ ss }) => {
   return (
     <div>
       <NewArrivalDiv>
         <h1
           style={{ fontSize: "32px", fontWeight: "bold", marginBottom: "30px" }}
         >
-          Games
+          Screenshots
         </h1>
         <Carousel
           additionalTransfrom={0}
@@ -59,7 +45,7 @@ const HomeGames = () => {
                 max: 3000,
                 min: 1024,
               },
-              items: 4,
+              items: 5,
               partialVisibilityGutter: 40,
             },
             mobile: {
@@ -84,22 +70,28 @@ const HomeGames = () => {
           slidesToSlide={1}
           swipeable
         >
-          {products.map((product) => {
-            return (
-              <Link to={`/games/${product._id}`}>
-                <MyCard
-                key={product._id}
-                img={product.heroimg}
-                title={product.name}
-                price={"€" + product.price}
-              />
-              </Link>
-            );
-          })}
+            {ss.map((ss) => {
+                return (
+                    <MyCard
+                    key={uuidv4()}
+                    img={ss}
+                    height={"125px"}
+                    />
+                );
+            })}
         </Carousel>
       </NewArrivalDiv>
     </div>
   );
 };
 
-export { HomeGames };
+const EmbeddedVideo = ({ vid }) => {
+  return (
+    <iframe
+      width="420"
+      height="315"
+      src="https://www.youtube.com/embed/eI4an8aSsgw"
+    ></iframe>
+  );
+};
+export { Screenshots };
