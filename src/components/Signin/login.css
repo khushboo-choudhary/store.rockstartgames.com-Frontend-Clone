@@ -2,6 +2,10 @@
     background-image: url('https://s.rsg.sc/auth/images/bg-repeat.png');
     height: 100%;
     width: 100%;
+    color: #000000
+}
+.myInput{
+    color: #000000;
 }
 #fitC{
     width: fit-content;

@@ -1,9 +1,13 @@
 import axios from 'axios'
 import { useState } from "react";
 import "./login.css";
+import {Link} from 'react-router-dom'
 
 const Sigin = (props) => {
-  const [formData, setForm] = useState({});
+  const [formData, setForm] = useState({
+    email: "",
+    password: "",
+  });
 
   const onChangeForm = (e) => {
     const { id, value } = e.target;
@@ -37,7 +41,8 @@ const Sigin = (props) => {
                 type="text"
                 placeholder="Email"
                 onChange={onChangeForm}
-                className="py-3 md:w-96 rounded px-2 m-2 border-[0.5px] border-gray-400 focus:border-1 focus: border-gray-400"
+                value={formData.email}
+                className="py-3 md:w-96 rounded px-2 m-2 border-[0.5px] border-gray-400 focus:border-1 focus: border-gray-400 myInput"
                 required
               />
               <br />
@@ -46,6 +51,7 @@ const Sigin = (props) => {
                 type="text"
                 placeholder="Password"
                 onChange={onChangeForm}
+                value={formData.password}
                 className="py-3 md:w-96 rounded px-2 m-2 border-[0.5px] border-gray-400 focus:border-1 focus: border-gray-400"
                 required
               />
@@ -96,9 +102,9 @@ const Sigin = (props) => {
 
           <p className="p-2 text-white content-center justify-center">
             Not a member?{" "}
-            <a className="text-[#f99e36] hover:underline" href="/">
+            <Link className="text-[#f99e36] hover:underline" to="/register">
               Create a new account
-            </a>
+            </Link>
           </p>
         <p className="p-2 text-white text-[13px] mt-8">© 2022 ROCKSTAR GAMES | PRIVACY POLICY | TERMS OF SERVICE</p>
         </div>

@@ -16,7 +16,7 @@ const Create = (props) => {
     function postData(url) {
       axios.post(url, formData).then(console.log("posted"));
     }
-    postData("http://localhost:PORT/");
+    postData("https://obscure-citadel-15133.herokuapp.com/register/");
   };
 
   return (

@@ -46,6 +46,11 @@
 #main_grand>div>div>div:hover{
     animation: bounce 1s linear;
 }
+.myOwnCard:hover{
+    animation: bounce 1s linear;
+    cursor: pointer;
+}
+
 @keyframes bounce{
     50%{
         transform: translateY(-10px);

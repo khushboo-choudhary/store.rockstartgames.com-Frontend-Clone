@@ -20,6 +20,10 @@ import Offer from "../components/User/Offer"
 import Member from "../components/User/Member"
 import Signin from "../components/Signin/Signin"
 import Cart from '../components/Cart/Cart'
+import Create from "../components/Signin/Create"
+
+
+
 
 const AllRoutes = () => {
   return (
@@ -44,6 +48,7 @@ const AllRoutes = () => {
         <Route path='/account' element={<Account/>}/>
         <Route path='/member' element={<Member/>}/>
         <Route path='/signin' element={<Signin/>}/>
+        <Route path='/register' element={<Create/>}/>
         
     </Routes>
   )
