@@ -4,10 +4,12 @@ import CardContent from "@mui/material/CardContent";
 import CardMedia from "@mui/material/CardMedia";
 import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
+import "../../styles/Grand.collection.css";
 
 const MyCard = ({ img, title, price}) => {
   return (
     <Card
+    className="myOwnCard"
       sx={{ maxWidth: 345 }}
       style={{
         margin: "10px",

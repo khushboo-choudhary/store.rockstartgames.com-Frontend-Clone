@@ -9,6 +9,7 @@ import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import MenuIcon from '@mui/icons-material/Menu';
 import CollectionMenu from "./CollectionMenu";
 import { Link } from "react-router-dom";
+import "./Navbar.css";
 const Navbar = (props) => {
   const [GameMenuToggle, setGameToggle] = useState("hidden");
   const [InputMobileToggle, setInputToggle] = useState({input:"hidden",allother:""});
@@ -66,7 +67,7 @@ const Navbar = (props) => {
   return (
     <>
     {/* <input type="text" placeholder="Search"/> */}
-      <div className="flex sticky top-0 right-0 left-0 z-40 items-center my-0 w-full text-white bg-black md:justify-between">
+      <div className="flex sticky top-0 right-0 left-0 z-40 items-center my-0 w-full text-white bg-black md:justify-between" id="navBar">
       <div className="flex justify-between items-center w-full md:hidden">
             <div className={`flex justify-between items-center p-2 ${InputMobileToggle.allother}`}>
                   <div className="block mr-2 ml-2 md:hidden">
