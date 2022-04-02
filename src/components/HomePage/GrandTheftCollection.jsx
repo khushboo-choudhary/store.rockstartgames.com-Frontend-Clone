@@ -21,7 +21,6 @@ const GrandTheftAuto = () => {
     axios
       .get("https://obscure-citadel-15133.herokuapp.com/coll/grand/gear")
       .then((res) => {
-        console.log(res.data.collection);
         setProducts(res.data.collection);
       })
       .catch((err) => {

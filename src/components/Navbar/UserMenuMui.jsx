@@ -9,13 +9,20 @@ import MenuList from '@mui/material/MenuList';
 import Stack from '@mui/material/Stack';
 import {Link} from 'react-router-dom'
 
-export default function MenuListComposition() {
+export default function MenuListComposition({nickName,img}) {
+
   const [open, setOpen] = React.useState(false);
   const anchorRef = React.useRef(null);
 
   const handleToggle = () => {
     setOpen((prevOpen) => !prevOpen);
   };
+
+  const singOut=()=>{
+
+    localStorage.setItem("userData",JSON.stringify({"profileImage":"https://a.rsg.sc/n/shreyas1000","nickName":"none"}));
+    window.location.reload(false);
+  }
 
   const handleClose = (event) => {
     if (anchorRef.current && anchorRef.current.contains(event.target)) {
@@ -58,8 +65,8 @@ export default function MenuListComposition() {
                    <button
             className="flex items-center font-bold cursor-pointer"
             // onClick={() => onClickUserMenu()}
-          ><img className='w-8 h-8 rounded-full' src='https://images.ctfassets.net/wn7ipiv9ue5v/4ajpWv2L0zlK6pObfLPOcL/d6d3875cb5a5bfc074c6a92cf6dce0c2/rockstar_logo.png?w=104&h=&fm=webp&q=' alt=''/>
-            <p className="font-bold cursor-pointer text-white">{"Shodkk"}</p>
+          ><img className='w-8 h-8 rounded-full' src={img} alt=''/>
+            <p className="font-bold cursor-pointer text-white">{nickName}</p>
             <img
               className="ml-1 w-3 h-3"
               src="https://i.ibb.co/ZzXv85c/pngwing-com.png"
@@ -95,7 +102,7 @@ export default function MenuListComposition() {
                     <MenuItem onClick={handleClose}><Link className=" w-full hover:bg-[#4F484B] p-1 rounded bg-[#161616]  text-white" to="/account">My account</Link></MenuItem>
                     <MenuItem onClick={handleClose}><Link className="w-full hover:bg-[#4F484B] p-1 rounded bg-[#161616] text-white" to="/offers">My Offers</Link></MenuItem>
                     <MenuItem onClick={handleClose}><Link className="w-full hover:bg-[#4F484B] p-1 rounded bg-[#161616] text-white" to="/member">Rockstar Social Club </Link></MenuItem>
-                    <MenuItem onClick={handleClose}><Link className="w-full hover:bg-[#4F484B] p-1 rounded bg-[#161616] text-white" to="/">Sign Out</Link></MenuItem>
+                    <MenuItem onClick={handleClose}><p className="w-full hover:bg-[#4F484B] p-1 rounded bg-[#161616] text-white" onClick={(e)=>(singOut())}>Sign Out</p></MenuItem>
                   </MenuList>
                 </ClickAwayListener>
               </Paper>
