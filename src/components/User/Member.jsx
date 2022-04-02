@@ -63,7 +63,7 @@ return(
 <p className="ml-4 my-4 text-3xl text-gray-800 font-semibold">Recent Activity </p>
 
 <div className="w-1/4 h-20 text-black bg-white ml-4 rounded my-2">
-    <input value="DEvault" type="text" name="" id="" placeholder="Whats up?"/>
+    <input value="Default" type="text" name="" id="" placeholder="Whats up?"/>
     <div className='flex justify-between items-center'>
     
     <p className="p-2">Post a message to your wall</p>

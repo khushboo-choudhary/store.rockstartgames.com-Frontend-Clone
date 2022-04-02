@@ -1,6 +1,7 @@
 import axios from 'axios'
 import { useState } from "react";
 import "./login.css";
+import {Link} from 'react-router-dom'
 
 const Sigin = (props) => {
   const [formData, setForm] = useState({
@@ -101,9 +102,9 @@ const Sigin = (props) => {
 
           <p className="p-2 text-white content-center justify-center">
             Not a member?{" "}
-            <a className="text-[#f99e36] hover:underline" href="/">
+            <Link className="text-[#f99e36] hover:underline" to="/register">
               Create a new account
-            </a>
+            </Link>
           </p>
         <p className="p-2 text-white text-[13px] mt-8">© 2022 ROCKSTAR GAMES | PRIVACY POLICY | TERMS OF SERVICE</p>
         </div>
