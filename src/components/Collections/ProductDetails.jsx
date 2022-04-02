@@ -7,7 +7,7 @@ const ProductDetails = () => {
   const {id} = useParams();
   const [product, setproduct] = useState([]);
   const [apparelData, setapparelData] = useState([]);
-
+  let storeCart=JSON.parse(localStorage.getItem("store_cart"))||[];
 
   useEffect(() => {
     axios
@@ -70,7 +70,11 @@ const ProductDetails = () => {
               </div>
               <div id="buy-add-btn">
                 <div id="buy-btn">Buy Now</div>
-                <div id="add-btn">Add to cart</div>
+                <div id="add-btn"><button onClick={() => {
+                  storeCart.push(product);
+                  localStorage.setItem("store_cart",JSON.stringify(storeCart));
+                  console.log(product)
+                }} >Add to cart</button></div>
               </div>
             </div>
           </div>

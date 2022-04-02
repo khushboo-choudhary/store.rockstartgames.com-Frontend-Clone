@@ -1,0 +1,11 @@
+#line{
+    width: 100%;
+    height: 1px;
+    background-color: gray;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+#total_price{
+ text-align: right;
+ margin-right: 10%;
+}
