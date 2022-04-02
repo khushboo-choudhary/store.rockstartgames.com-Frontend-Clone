@@ -65,7 +65,7 @@ const Navbar = (props) => {
 
   return (
     <>
-    <input type="text" placeholder="Search"/>
+    {/* <input type="text" placeholder="Search"/> */}
       <div className="flex sticky top-0 right-0 left-0 z-40 items-center my-0 w-full text-white bg-black md:justify-between">
       <div className="flex justify-between items-center w-full md:hidden">
             <div className={`flex justify-between items-center p-2 ${InputMobileToggle.allother}`}>
