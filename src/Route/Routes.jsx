@@ -4,7 +4,6 @@ import Grand from '../components/Collections/Grand.Collection'
 import {Home} from "../components/HomePage/Home"
 import GoldBar from '../components/Games/GoldBar.Games'
 import SharkCards from '../components/Games/SharkCards.Games'
-import RedDead from '../components/Games/Red.Games'
 import Red from '../components/Collections/Red.Collection'
 import Rock from '../components/Collections/Rock.Collection'
 import AllCard from '../components/Gear/Card/Card'

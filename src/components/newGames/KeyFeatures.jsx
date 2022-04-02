@@ -1,6 +1,6 @@
 import Grid from "@mui/material/Grid";
 import styled from "styled-components";
-import Button from "@mui/material/Button";
+
 
 const HeroImg = styled.div`
   width: 100%;
@@ -16,26 +16,26 @@ const HeroImg = styled.div`
   }
 `;
 
-const ColorButton = styled(Button)(({ theme }) => ({
-  backgroundColor: "transparent",
-  border: "1px solid white",
-  height: "50px",
-  width: "150px",
-  fontWeight: "bold",
-  "&:hover": {
-    backgroundColor: "transparent",
-  },
-  "@media (max-width: 400px)": {
-    width: "100%",
-    height: "50px",
-  },
-}));
+// const ColorButton = styled(Button)(({ theme }) => ({
+//   backgroundColor: "transparent",
+//   border: "1px solid white",
+//   height: "50px",
+//   width: "150px",
+//   fontWeight: "bold",
+//   "&:hover": {
+//     backgroundColor: "transparent",
+//   },
+//   "@media (max-width: 400px)": {
+//     width: "100%",
+//     height: "50px",
+//   },
+// }));
 
 export const KeyFeatures = ({ keyfeaImg, keyfeaDesc, keyfeaTitle, ind }) => {
 
-    const grid1md = ind%2 == 0 ? 1 : 2;
-    const grid2md = ind%2 == 0 ? 2 : 1;
-    const bg = ind%2 == 0 ? "black" : "transparent";
+    const grid1md = ind%2 === 0 ? 1 : 2;
+    const grid2md = ind%2 === 0 ? 2 : 1;
+    const bg = ind%2 === 0 ? "black" : "transparent";
   return (
     <Grid container spacing={0} style={{backgroundColor:bg}}>
       <Grid

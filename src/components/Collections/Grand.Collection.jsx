@@ -35,7 +35,7 @@ const Grand = () => {
         <h1>Games</h1>
         <div>{games.map((el) => {
             return <div key={el._id}>
-              <Link to={`/gamesDetails/${el._id}`}>
+              <Link to={`/games/${el._id}`}>
                <img id="hero"  className='rounded-t-xl' src={el.heroimg} alt="" />
                <p className='text-gray-400 ml-2 py-2'>{el.name}</p>
                <p className='font-bold ml-2 py-1'>€{el.price}</p>

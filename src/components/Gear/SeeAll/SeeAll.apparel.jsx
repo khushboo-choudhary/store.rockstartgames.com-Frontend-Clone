@@ -16,7 +16,12 @@ const SeeAllApparel = () => {
   return (
     <>
       
+<<<<<<< HEAD
+      {/* All Products */}
+      <div id="apparel-items-part"  style={{ "margin-top": "5em" }}>
+=======
       <div id="apparel-items-part" style={{ "margin-top": "5em" }}>
+>>>>>>> b34f91f8f2f097669f14b4a787cd364c326ec2c5
         <div id="apparel-heading-part">
           <p className="apparel-heading-rohit">All Products</p>
           <p>SEE ALL</p>

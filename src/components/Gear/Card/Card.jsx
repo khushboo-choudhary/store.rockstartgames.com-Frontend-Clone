@@ -55,11 +55,13 @@ function AllCard() {
                       <div id="apparel-item-img-part">
                         <img src={curElem.image} alt="" />
                       </div>
-                      <div id="apparel-item-title-part">
-                        <p>{curElem.name}</p>
-                      </div>
-                      <div id="apparel-item-price-part">
-                        <p>€{curElem.price}</p>
+                      <div id="name-price-part">
+                        <div id="apparel-item-title-part">
+                          <p>{curElem.name}</p>
+                        </div>
+                        <div id="apparel-item-price-part">
+                          <p>€{curElem.price}</p>
+                        </div>
                       </div>
                     </div>
                   </div>
@@ -85,11 +87,13 @@ function AllCard() {
                       <div id="apparel-item-img-part">
                         <img src={curElem.image} alt="" />
                       </div>
-                      <div id="apparel-item-title-part">
-                        <p>{curElem.name}</p>
-                      </div>
-                      <div id="apparel-item-price-part">
-                        <p>€{curElem.price}</p>
+                      <div id="name-price-part">
+                        <div id="apparel-item-title-part">
+                          <p>{curElem.name}</p>
+                        </div>
+                        <div id="apparel-item-price-part">
+                          <p>€{curElem.price}</p>
+                        </div>
                       </div>
                     </div>
                   </div>
@@ -120,11 +124,13 @@ function AllCard() {
                       <div id="apparel-item-img-part">
                         <img src={curElem.image} alt="" />
                       </div>
-                      <div id="apparel-item-title-part">
-                        <p>{curElem.name}</p>
-                      </div>
-                      <div id="apparel-item-price-part">
-                        <p>€{curElem.price}</p>
+                      <div id="name-price-part">
+                        <div id="apparel-item-title-part">
+                          <p>{curElem.name}</p>
+                        </div>
+                        <div id="apparel-item-price-part">
+                          <p>€{curElem.price}</p>
+                        </div>
                       </div>
                     </div>
                   </div>
@@ -155,11 +161,13 @@ function AllCard() {
                       <div id="apparel-item-img-part">
                         <img src={curElem.image} alt="" />
                       </div>
-                      <div id="apparel-item-title-part">
-                        <p>{curElem.name}</p>
-                      </div>
-                      <div id="apparel-item-price-part">
-                        <p>€{curElem.price}</p>
+                      <div id="name-price-part">
+                        <div id="apparel-item-title-part">
+                          <p>{curElem.name}</p>
+                        </div>
+                        <div id="apparel-item-price-part">
+                          <p>€{curElem.price}</p>
+                        </div>
                       </div>
                     </div>
                   </div>
