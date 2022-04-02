@@ -13,6 +13,7 @@ const GoldBar = () => {
         >
           <div
             style={{
+              marginLeft: "70px",
               display: "block",
               inset: "0px",
               background:
@@ -26,7 +27,7 @@ const GoldBar = () => {
               class="src"
             />
           </div> */}
-            <h1 className="m-3">Gold Bars</h1>
+            <h1 className="m-3 font-bold text-3xl">Gold Bars</h1>
             <p style={{ maxWidth: "340px" }} className="m-3">
               The frontier is a lawless place where nothing can be taken for
               granted... except for the trading power of cold hard bullion. With
@@ -38,20 +39,18 @@ const GoldBar = () => {
             </p>
           </div>
         </div>
-        <div>
-          <h1 className="m-3">Buy Gold Bars for PC</h1>
+        <div style={{margin: "70px"}}>
+          <h1 className="m-3 font-bold text-3xl">Buy Gold Bars for PC</h1>
           <p className="m-3">
             With Gold Bars you can quickly unlock all manner of goods in Red
             Dead Online; from custom modifications to your weapons to horse kits
             to unique items for your camp.
           </p>
           <div
-            className="flex rounded-xl mx-2"
+            className="flex rounded-xl mx-2 flex-col md:flex-row"
             style={{
-              height: "324px",
+              height: "auto",
               display: "flex",
-              flexWrap: "wrap",
-              overflow: "hidden",
             }}
           >
             <div className="rounded-xl pb-8 mx-2 bg-black backgroundBlock">

@@ -13,6 +13,7 @@ const SharkCards = () => {
         >
           <div
             style={{
+              marginLeft: "70px",
               display: "block",
               inset: "0px",
               background:
@@ -26,7 +27,7 @@ const SharkCards = () => {
               class="src"
             />
           </div> */}
-            <h1 className="m-3">Shark Cards</h1>
+            <h1 className="m-3 font-bold text-3xl">Shark Cards</h1>
             <p style={{ maxWidth: "340px" }} className="m-3">
               Cash is king in this town. Solve your money problem and help get
               what you want across Los Santos and Blaine County with the
@@ -36,20 +37,20 @@ const SharkCards = () => {
             </p>
           </div>
         </div>
-        <div>
-          <h1 className="m-3">Buy Shark Cash Cards for PC</h1>
+        <div style={{ margin: "70px" }}>
+          <h1 className="m-3 font-bold text-3xl">
+            Buy Shark Cash Cards for PC
+          </h1>
           <p className="m-3">
             Cash is king in this town. Solve your money problem and help get
             what you want across Los Santos and Blaine County with the
             occasional purchase of cash packs for Grand Theft Auto Online.
           </p>
           <div
-            className="flex rounded-xl mx-2"
+            className="flex rounded-xl mx-2 flex-col md:flex-row"
             style={{
-              height: "324px",
+              height: "auto",
               display: "flex",
-              flexWrap: "wrap",
-              overflow: "hidden",
             }}
           >
             <div className="rounded-xl pb-8 mx-2 bg-black backgroundBlock">
