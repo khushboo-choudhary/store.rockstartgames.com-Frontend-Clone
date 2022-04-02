@@ -1,6 +1,7 @@
 import Grid from "@mui/material/Grid";
 import styled from "styled-components";
 import Button from "@mui/material/Button";
+import {Link} from "react-router-dom";
 
 
 const HeroImg = styled.div`
@@ -67,16 +68,24 @@ export const HomeHeader = ()=>{
             />
           </div>
           <div>
-            <h1 style={{ fontSize: "20px", fontWeight: "bold", marginBottom:"20px"}}>
+            <h1
+              style={{
+                fontSize: "20px",
+                fontWeight: "bold",
+                marginBottom: "20px",
+              }}
+            >
               GTAV and GTA Online for PS5 and Xbox Series X|S
             </h1>
-            <p style={{marginBottom:"20px"}}>
+            <p style={{ marginBottom: "20px" }}>
               Experience blockbuster hits Grand Theft Auto V and GTA Online —
               now upgraded for a new generation with stunning visuals, faster
               loading, 3D audio and more, plus exclusive content for GTA Online
               players.
             </p>
-            <ColorButton variant="contained">BUY NOW</ColorButton>
+            <Link to={"/games/62432d8bfa3b17edc75a9fdf"}>
+              <ColorButton variant="contained">BUY NOW</ColorButton>
+            </Link>
           </div>
         </Grid>
         <Grid item md={6} sm={12} xs={12} order={{ md: 2, sm: 1, xs: 1 }}>

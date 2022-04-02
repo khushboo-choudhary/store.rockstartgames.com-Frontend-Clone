@@ -4,6 +4,7 @@ import "react-multi-carousel/lib/styles.css";
 import { MyCard } from "../MiniCompo/Card";
 import { useEffect, useState } from "react";
 import axios from "axios";
+import {Link} from 'react-router-dom'
 
 const NewArrivalDiv = styled.div`
   width: 85%;
@@ -85,12 +86,13 @@ const NewArrivals = () => {
         >
           {products.map((product) => {
             return (
-              <MyCard
-                key={product._id}
-                img={product.image}
-                title={product.name}
-                price={"€" + product.price}
-              />
+              <Link to={`/collection/${product._id}`} key={product._id}>
+                <MyCard
+                  img={product.image}
+                  title={product.name}
+                  price={"€" + product.price}
+                />
+              </Link>
             );
           })}
         </Carousel>

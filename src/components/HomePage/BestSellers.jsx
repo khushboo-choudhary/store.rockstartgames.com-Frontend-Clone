@@ -4,6 +4,7 @@ import "react-multi-carousel/lib/styles.css";
 import { MyCard } from "../MiniCompo/Card";
 import { useEffect, useState } from "react";
 import axios from "axios";
+import { Link } from "react-router-dom";
 
 const NewArrivalDiv = styled.div`
   width: 85%;
@@ -12,6 +13,8 @@ const NewArrivalDiv = styled.div`
   margin-top: 80px;
   margin-bottom: 80px;
 `;
+
+
 
 const BestSellers = () => {
   const [products, setProducts] = useState([]);
@@ -85,12 +88,14 @@ const BestSellers = () => {
         >
           {products.map((product) => {
             return (
-              <MyCard
-                key={product._id}
-                img={product.image}
-                title={product.name}
-                price={"€" + product.price}
-              />
+              <Link to={`/gear/${product._id}`}>
+                <MyCard
+                  key={product._id}
+                  img={product.image}
+                  title={product.name}
+                  price={"€" + product.price}
+                />
+              </Link>
             );
           })}
         </Carousel>

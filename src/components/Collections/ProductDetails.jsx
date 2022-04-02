@@ -26,8 +26,6 @@ const ProductDetails = () => {
 
   return (
     <>
-    <div id="header-part">
-    </div>
 
           <div id="product-part">
             <div id="product-left-part">
@@ -84,6 +82,7 @@ const ProductDetails = () => {
                     product.qty = 1;
                     storeCart.push(product);
                     localStorage.setItem("store_cart",JSON.stringify(storeCart));
+                    alert("Product is Added in cart successfully")
                   }                  
                   
                   console.log(product)

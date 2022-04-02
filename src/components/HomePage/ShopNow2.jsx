@@ -1,6 +1,7 @@
 import Grid from "@mui/material/Grid";
 import styled from "styled-components";
 import Button from "@mui/material/Button";
+import { Link } from "react-router-dom";
 
 const HeroImg = styled.div`
   width: 100%;
@@ -70,7 +71,9 @@ export const ShopNow2 = () => {
           >
             Buy Gold Bars for PC
           </h1>
-          <ColorButton variant="contained">BUY NOW</ColorButton>
+          <Link to={"buy-red-dead-online-gold-bars"}>
+            <ColorButton variant="contained">BUY NOW</ColorButton>
+          </Link>
         </div>
       </Grid>
       <Grid item md={6} sm={12} xs={12} order={{ md: 2, sm: 1, xs: 1 }}>

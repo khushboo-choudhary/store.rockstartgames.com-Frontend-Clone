@@ -29,31 +29,33 @@ import SingleGame from '../components/newGames/SingleGame'
 const AllRoutes = () => {
   return (
     <Routes>
-        <Route path='/' element={<Home/>}/>
-        <Route path='/grand-theft-auto-collection' element={<Grand/>}/>
-        <Route path='/red-dead-redemption-collection' element={<Red/>}/>
-        <Route path='/rockstar-collection' element={<Rock/>}/>
-        <Route path='/collection/:id' element={<ProductDetails/>} />
-        {/* <Route path='/games/goldbar' element={<GoldBar/>}/>
+      <Route path="/" element={<Home />} />
+      <Route path="/grand-theft-auto-collection" element={<Grand />} />
+      <Route path="/red-dead-redemption-collection" element={<Red />} />
+      <Route path="/rockstar-collection" element={<Rock />} />
+      <Route path="/collection/:id" element={<ProductDetails />} />
+      {/* <Route path='/games/goldbar' element={<GoldBar/>}/>
         <Route path='/games/sharkcards' element={<SharkCards/>}/>
         <Route path='/games/reddead' element={<RedDead/>}/> */}
-        <Route path="/games/:id" element={<SingleGame/>}/>
-        <Route path='/gear' element={<AllCard/>}/>
-        <Route path='/gear/:id' element={<Product/>} />
-        <Route path='/seeall/apparel' element={<SeeAllApparel/>}/>
-        <Route path='/seeall/posters' element={<SeeAllPoster/>}/>
-        <Route path='/seeall/collectibles' element={<SeeAllCollect/>}/>
-        <Route path='/cart' element={<Cart/>}/>
+      {/* games route */}
+      <Route path="/games/:id" element={<SingleGame />} />
+      <Route path="/buy-red-dead-online-gold-bars" element={<GoldBar />} />
+      <Route path="/buy-gta-v-shark-cash-cards" element={<SharkCards />} />
+      <Route path="/gear" element={<AllCard />} />
+      <Route path="/gear/:id" element={<Product />} />
+      <Route path="/seeall/apparel" element={<SeeAllApparel />} />
+      <Route path="/seeall/posters" element={<SeeAllPoster />} />
+      <Route path="/seeall/collectibles" element={<SeeAllCollect />} />
+      <Route path="/cart" element={<Cart />} />
 
-         {/* Added by Shantanu */}
-         <Route path='/offers' element={<Offer/>}/>
-        <Route path='/account' element={<Account/>}/>
-        <Route path='/member' element={<Member/>}/>
-        <Route path='/signin' element={<Signin/>}/>
-        <Route path='/register' element={<Create/>}/>
-        
+      {/* Added by Shantanu */}
+      <Route path="/offers" element={<Offer />} />
+      <Route path="/account" element={<Account />} />
+      <Route path="/member" element={<Member />} />
+      <Route path="/signin" element={<Signin />} />
+      <Route path="/register" element={<Create />} />
     </Routes>
-  )
+  );
 }
 
 export default AllRoutes

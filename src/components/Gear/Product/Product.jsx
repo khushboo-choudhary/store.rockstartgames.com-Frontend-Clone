@@ -23,7 +23,6 @@ const Product = () => {
 
   return (
     <>
-      <div id="header-part"></div>
 
       <div id="product-part">
         <div id="product-left-part">
