@@ -19,20 +19,15 @@ const Navbar = (props) => {
   const [GameMobileMenuToggle, setGameMobileToggle] = useState("hidden");
   const [UserMenuToggle, setUserToggle] = useState("hidden");
   const [CollectionMenuToggle, setCollectionToggle] = useState("hidden");
-  const loginuser = props.user;
+  const [loginData,setLoginData] = useState({})
   const [AccountDropDown, setAccountDropDown] = useState("hidden");
 
   useEffect(() => {
-    if (loginuser !== "none") {
-      // console.log("User Login Successfully");
       setAccountDropDown("block");
-    }
-    // else {
-    //   // console.log("User Not Login");
-    // }
+     const {nickName,profileImage}=JSON.parse(localStorage.getItem("userData"))
+    setLoginData({nickName,profileImage})
   }, []);
 
-  console.log(loginuser, "Loginuser is this");
 
   const onClickGameMenu = () => {
     console.log("object");
@@ -161,7 +156,7 @@ const Navbar = (props) => {
           <Link to="signin" className="mx-6 font-bold cursor-pointer">
             Sign in
           </Link>
-          <MenuListComposition />
+          <MenuListComposition nickName={loginData.nickName} img={loginData.profileImage} />
           {/* User Detail Start After Login  */}
         </div>
       </div>
