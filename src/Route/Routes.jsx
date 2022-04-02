@@ -19,6 +19,7 @@ import Account from "../components/User/Account"
 import Offer from "../components/User/Offer"
 import Member from "../components/User/Member"
 import Signin from "../components/Signin/Signin"
+import Cart from '../components/Cart/Cart'
 import Create from "../components/Signin/Create"
 import SingleGame from '../components/newGames/SingleGame'
 
@@ -42,6 +43,7 @@ const AllRoutes = () => {
         <Route path='/seeall/apparel' element={<SeeAllApparel/>}/>
         <Route path='/seeall/posters' element={<SeeAllPoster/>}/>
         <Route path='/seeall/collectibles' element={<SeeAllCollect/>}/>
+        <Route path='/cart' element={<Cart/>}/>
 
          {/* Added by Shantanu */}
          <Route path='/offers' element={<Offer/>}/>
