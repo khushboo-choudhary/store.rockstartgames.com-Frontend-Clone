@@ -1,6 +1,7 @@
 import React,{useState,useEffect} from 'react'
 import './Cart.css';
 import LocalShippingRoundedIcon from '@mui/icons-material/LocalShippingRounded';
+import { Link } from 'react-router-dom';
 
 
 const Cart = () => {
@@ -112,9 +113,9 @@ const Cart = () => {
               Add €5.01 to this order to qualify for FREE standard shipping.
             </p>
           </div>
-          <button className=" my-1 bg-yellow-500 text-black font-semibold px-4 py-3 hover:bg-yellow-400 rounded mt-2">
+          <Link to="/address"><button className=" my-1 bg-yellow-500 text-black font-semibold px-4 py-3 hover:bg-yellow-400 rounded mt-2">
             PROCEED TO CHECKOUT
-          </button>
+          </button></Link>
           <p className="text-sm mt-2 my-1">
             Taxes and shipping will be calculated in the checkout window.
           </p>
