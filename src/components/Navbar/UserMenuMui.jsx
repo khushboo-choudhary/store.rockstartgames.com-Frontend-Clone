@@ -58,8 +58,8 @@ export default function MenuListComposition() {
                    <button
             className="flex items-center font-bold cursor-pointer"
             // onClick={() => onClickUserMenu()}
-          >
-            <p className="font-bold cursor-pointer">{"Shodkk"}</p>
+          ><img className='w-8 h-8 rounded-full' src='https://images.ctfassets.net/wn7ipiv9ue5v/4ajpWv2L0zlK6pObfLPOcL/d6d3875cb5a5bfc074c6a92cf6dce0c2/rockstar_logo.png?w=104&h=&fm=webp&q=' alt=''/>
+            <p className="font-bold cursor-pointer text-white">{"Shodkk"}</p>
             <img
               className="ml-1 w-3 h-3"
               src="https://i.ibb.co/ZzXv85c/pngwing-com.png"
@@ -90,10 +90,12 @@ export default function MenuListComposition() {
                     id="composition-menu"
                     aria-labelledby="composition-button"
                     onKeyDown={handleListKeyDown}
+                    className="bg-[#161616] text-white"
                   >
-                    <MenuItem onClick={handleClose}><Link to="/">Profile</Link></MenuItem>
-                    <MenuItem onClick={handleClose}><Link to="/">My account</Link></MenuItem>
-                    <MenuItem onClick={handleClose}><Link to="/">Logout</Link></MenuItem>
+                    <MenuItem onClick={handleClose}><Link className=" w-full hover:bg-[#4F484B] p-1 rounded bg-[#161616]  text-white" to="/account">My account</Link></MenuItem>
+                    <MenuItem onClick={handleClose}><Link className="w-full hover:bg-[#4F484B] p-1 rounded bg-[#161616] text-white" to="/offers">My Offers</Link></MenuItem>
+                    <MenuItem onClick={handleClose}><Link className="w-full hover:bg-[#4F484B] p-1 rounded bg-[#161616] text-white" to="/member">Rockstar Social Club </Link></MenuItem>
+                    <MenuItem onClick={handleClose}><Link className="w-full hover:bg-[#4F484B] p-1 rounded bg-[#161616] text-white" to="/">Sign Out</Link></MenuItem>
                   </MenuList>
                 </ClickAwayListener>
               </Paper>

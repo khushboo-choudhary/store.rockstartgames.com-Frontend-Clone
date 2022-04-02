@@ -11,6 +11,7 @@ import CollectionMenu from "./CollectionMenu";
 import { Link } from "react-router-dom";
 const Navbar = (props) => {
   const [GameMenuToggle, setGameToggle] = useState("hidden");
+  const [InputMobileToggle, setInputToggle] = useState({input:"hidden",allother:""});
   const [GameMobileMenuToggle, setGameMobileToggle] = useState("hidden");
   const [UserMenuToggle, setUserToggle] = useState("hidden");
   const [CollectionMenuToggle, setCollectionToggle] = useState("hidden");
@@ -59,14 +60,15 @@ const Navbar = (props) => {
   };
 
   const onClickSearchBar = ()=>{
-    
+    setInputToggle({input:"block",allother:"hidden"})
   }
 
   return (
     <>
+    <input type="text" placeholder="Search"/>
       <div className="flex sticky top-0 right-0 left-0 z-40 items-center my-0 w-full text-white bg-black md:justify-between">
       <div className="flex justify-between items-center w-full md:hidden">
-            <div className='flex justify-between items-center p-2'>
+            <div className={`flex justify-between items-center p-2 ${InputMobileToggle.allother}`}>
                   <div className="block mr-2 ml-2 md:hidden">
                       <button
                           className="flex items-center font-bold cursor-pointer"
@@ -80,7 +82,7 @@ const Navbar = (props) => {
                         alt=""
                       />
             </div>
-            <div className='flex justify-between item-centerw-8 md:hidden'>
+            <div className={`flex justify-between item-centerw-8 md:hidden ${InputMobileToggle.allother}`}>
                   
                   <button onClick={() => onClickSearchBar()}>
                   <SearchIcon/>
@@ -142,20 +144,9 @@ const Navbar = (props) => {
             />
           </div>
 
-          <p className="mx-6 font-bold cursor-pointer">Sign in</p>
+          <Link to="signin" className="mx-6 font-bold cursor-pointer">Sign in</Link>
           <MenuListComposition/>
           {/* User Detail Start After Login  */}
-          <button
-            className="flex items-center font-bold cursor-pointer"
-            onClick={() => onClickUserMenu()}
-          >
-            <p className="font-bold cursor-pointer">{"Shodkk"}</p>
-            <img
-              className="ml-1 w-3 h-3"
-              src="https://i.ibb.co/ZzXv85c/pngwing-com.png"
-              alt="pngwing-com"
-            />
-          </button>
         </div>
       </div>
       <div class={`relative ${GameMenuToggle}`}>
@@ -166,9 +157,6 @@ const Navbar = (props) => {
       </div>
       <div class={`relative ${CollectionMenuToggle}`}>
         <CollectionMenu></CollectionMenu>
-      </div>
-      <div class={`relative ml-[600px] ${UserMenuToggle}`}>
-        <UserMenu></UserMenu>
       </div>
     </>
   );

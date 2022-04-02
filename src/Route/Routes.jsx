@@ -14,6 +14,11 @@ import SeeAllApparel from '../components/Gear/SeeAll/SeeAll.apparel'
 import SeeAllPoster from '../components/Gear/SeeAll/SeeAll.posters'
 import SeeAllCollect from '../components/Gear/SeeAll/SeeAll.collect'
 
+// Added by Shantanu
+import Account from "../components/User/Account"
+import Offer from "../components/User/Offer"
+import Member from "../components/User/Member"
+import Signin from "../components/Signin/Signin"
 
 const AllRoutes = () => {
   return (
@@ -31,6 +36,12 @@ const AllRoutes = () => {
         <Route path='/seeall/apparel' element={<SeeAllApparel/>}/>
         <Route path='/seeall/posters' element={<SeeAllPoster/>}/>
         <Route path='/seeall/collectibles' element={<SeeAllCollect/>}/>
+
+         {/* Added by Shantanu */}
+         <Route path='/offers' element={<Offer/>}/>
+        <Route path='/account' element={<Account/>}/>
+        <Route path='/member' element={<Member/>}/>
+        <Route path='/signin' element={<Signin/>}/>
         
     </Routes>
   )
