@@ -1,7 +1,7 @@
 import Grid from "@mui/material/Grid";
 import styled from "styled-components";
 import Button from "@mui/material/Button";
-import { ContactSupportOutlined } from "@mui/icons-material";
+
 
 const HeroImg = styled.div`
   width: 100%;

@@ -2,8 +2,6 @@ import styled from "styled-components";
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 import { MyCard } from "../MiniCompo/Card";
-import { useEffect, useState } from "react";
-import axios from "axios";
 import { v4 as uuidv4 } from "uuid";
 
 const NewArrivalDiv = styled.div`
@@ -85,13 +83,13 @@ const Screenshots = ({ ss }) => {
   );
 };
 
-const EmbeddedVideo = ({ vid }) => {
-  return (
-    <iframe
-      width="420"
-      height="315"
-      src="https://www.youtube.com/embed/eI4an8aSsgw"
-    ></iframe>
-  );
-};
+// const EmbeddedVideo = ({ vid }) => {
+//   return (
+//     <iframe
+//       width="420"
+//       height="315"
+//       src="https://www.youtube.com/embed/eI4an8aSsgw"
+//     ></iframe>
+//   );
+// };
 export { Screenshots };
