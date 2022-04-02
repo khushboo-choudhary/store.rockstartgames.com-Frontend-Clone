@@ -17,9 +17,23 @@ const Sigin = (props) => {
   const formSubmit = (e) => {
     e.preventDefault();
     function postData(url) {
-      axios.post(url, formData).then(console.log("posted"));
+      axios.post(url, formData).then(
+        (response) => {
+          console.log(response);
+          localStorage.setItem("token", JSON.stringify(response.data.token));
+          const { nickName, profileImage } = response.data;
+          localStorage.setItem(
+            "userData",
+            JSON.stringify({ profileImage, nickName })
+          );
+          window.location.reload(false);
+        },
+        (error) => {
+          console.log(error);
+        }
+      );
     }
-    postData("http://localhost:PORT/");
+    postData("https://obscure-citadel-15133.herokuapp.com/login");
   };
 
   return (

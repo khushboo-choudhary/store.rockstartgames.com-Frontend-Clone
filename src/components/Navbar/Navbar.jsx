@@ -16,23 +16,43 @@ const Navbar = (props) => {
     input: "hidden",
     allother: "",
   });
+  const [loginOrNot,setLoginOrNot] = useState({signIn:"hidden",signOut:"block"})
   const [GameMobileMenuToggle, setGameMobileToggle] = useState("hidden");
   const [UserMenuToggle, setUserToggle] = useState("hidden");
   const [CollectionMenuToggle, setCollectionToggle] = useState("hidden");
-  const loginuser = props.user;
+  const [loginData,setLoginData] = useState({})
   const [AccountDropDown, setAccountDropDown] = useState("hidden");
 
+  const donedonadone =
+    JSON.parse(localStorage.getItem("userData")) ||
+    localStorage.setItem(
+      "userData",
+      JSON.stringify({
+        profileImage: "https://a.rsg.sc/n/shreyas1000",
+        nickName: "none",
+      })
+    );
+
+
   useEffect(() => {
-    if (loginuser !== "none") {
-      // console.log("User Login Successfully");
       setAccountDropDown("block");
-    }
-    // else {
-    //   // console.log("User Not Login");
+
+    const {nickName,profileImage}=JSON.parse(localStorage.getItem("userData")) || localStorage.setItem("userData",JSON.stringify({"profileImage":"https://a.rsg.sc/n/shreyas1000","nickName":"none"}));
+    // const nickName = "fsdfsd"
+    // profileImage = ""
+    // }catch{
+    // const nickName="";
+    // const profileImage = "https://images.ctfassets.net/wn7ipiv9ue5v/4ajpWv2L0zlK6pObfLPOcL/d6d3875cb5a5bfc074c6a92cf6dce0c2/rockstar_logo.png?w=104&h=&fm=webp&q=";
     // }
+
+    //  const {nickName,profileImage}=JSON.parse(localStorage.getItem("userData"))
+    //  console.log(nickName,"NickName is there")
+     if(nickName!=="none") {setLoginOrNot({signIn:"block",signOut:"hidden"})}
+    //  console.log(loginOrNot.)
+    setLoginData({nickName,profileImage})
   }, []);
 
-  console.log(loginuser, "Loginuser is this");
+  // setCollectionToggle("hidden");
 
   const onClickGameMenu = () => {
     console.log("object");
@@ -65,11 +85,12 @@ const Navbar = (props) => {
 
   const onClickSearchBar = () => {
     setInputToggle({ input: "block", allother: "hidden" });
+
   };
 
   return (
     <>
-      {/* <input type="text" placeholder="Search"/> */}
+      <input type="text" placeholder="Search" className={`${InputMobileToggle.input}`}/>
       <div
         className="flex sticky top-0 right-0 left-0 z-40 items-center my-0 w-full text-white bg-black md:justify-between"
         id="navBar"
@@ -86,11 +107,11 @@ const Navbar = (props) => {
                 <MenuIcon />
               </button>
             </div>
-            <img
+            <Link to="/"><img
               className="w-12 h-12"
               src="https://images.ctfassets.net/wn7ipiv9ue5v/4ajpWv2L0zlK6pObfLPOcL/d6d3875cb5a5bfc074c6a92cf6dce0c2/rockstar_logo.png?w=104&h=&fm=webp&q="
               alt=""
-            />
+            /></Link>
           </div>
           <div
             className={`flex justify-between item-centerw-8 md:hidden ${InputMobileToggle.allother}`}
@@ -103,11 +124,11 @@ const Navbar = (props) => {
         </div>
 
         <div className="justify-between items-center p-2 md:mx-24 md:p-4 md:flex">
-          <img
+        <Link to="/"><img
             className="hidden w-12 h-12 md:block"
             src="https://images.ctfassets.net/wn7ipiv9ue5v/4ajpWv2L0zlK6pObfLPOcL/d6d3875cb5a5bfc074c6a92cf6dce0c2/rockstar_logo.png?w=104&h=&fm=webp&q="
             alt=""
-          />
+          /></Link>
           <div className="hidden items-center mx-6 md:flex">
             <button
               className="flex items-center font-bold cursor-pointer"
@@ -158,10 +179,14 @@ const Navbar = (props) => {
             />
           </div>
 
+          <div className={`${loginOrNot.signOut}`}>
           <Link to="signin" className="mx-6 font-bold cursor-pointer">
             Sign in
           </Link>
-          <MenuListComposition />
+          </div>
+          <div className={`${loginOrNot.signIn}`}>
+          <MenuListComposition nickName={loginData.nickName} img={loginData.profileImage} />
+          </div>
           {/* User Detail Start After Login  */}
         </div>
       </div>
