@@ -2,6 +2,7 @@ import Grid from "@mui/material/Grid";
 import styled from "styled-components";
 import Button from "@mui/material/Button";
 import { ContactSupportOutlined } from "@mui/icons-material";
+import doPayment from "../../utilities/payment";
 
 const HeroImg = styled.div`
   width: 100%;
@@ -49,7 +50,14 @@ const ColorButton2 = styled(Button)(({ theme }) => ({
   },
 }));
 
-export const GamesHeader = ({img, logo, name}) => {
+export const GamesHeader = ({img, logo, name, amount}) => {
+
+  const buyNow = () =>{
+    let disc = "payment for" +" "+ name;
+    amount = amount * 84;
+    doPayment(amount, disc);
+  }
+
   return (
     <Grid container spacing={0}>
       <Grid
@@ -90,8 +98,7 @@ export const GamesHeader = ({img, logo, name}) => {
               alt="selectPlatform"
             />
           </p>
-          <ColorButton variant="contained">BUY NOW</ColorButton>
-          <ColorButton2 variant="contained">ADD TO CART</ColorButton2>
+          <ColorButton variant="contained" onClick={()=>{buyNow()}}>BUY NOW</ColorButton>
         </div>
       </Grid>
       <Grid item md={6} sm={12} xs={12} order={{ md: 2, sm: 1, xs: 1 }}>

@@ -32,7 +32,7 @@ const SingleGame = () => {
 
   return (
     <div>
-      <GamesHeader img={data.heroimg} logo={data.logo} name={data.name} />
+      <GamesHeader img={data.heroimg} logo={data.logo} name={data.name} amount={data.price}/>
       <GamesDetails
         desc={data.gamesDetails}
         logo={data.logo}
