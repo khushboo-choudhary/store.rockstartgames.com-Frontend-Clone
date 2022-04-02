@@ -1,8 +1,32 @@
-import React from 'react'
+import React,{useState,useEffect} from 'react'
 import './Cart.css';
 import LocalShippingRoundedIcon from '@mui/icons-material/LocalShippingRounded';
+import { TramOutlined } from '@mui/icons-material';
 
 const Cart = () => {
+    let storeCart=JSON.parse(localStorage.getItem("store_cart"))||[];
+    // let newstoreCart=[...new Map(storeCart.map((item) => [item["_id"], item])).values()];
+    const [totalPrd,setTotalprd] = useState("");
+    // const [render, setRender] = useState(true)
+    const itemCount = (price,e) =>{
+        let cart=JSON.parse(localStorage.getItem("store_cart"))||[];
+        
+       setTotalprd((+totalPrd)+price*e.target.value);
+    }
+    const removeItem = (ind) => {
+        console.log(storeCart)
+        storeCart.splice(ind,1)
+        localStorage.setItem("store_cart",JSON.stringify(storeCart));
+        setTotalprd()
+    }
+    useEffect(() => {
+        let totalPrice=0;
+        storeCart.map((e) => {
+            totalPrice+=e.price;   
+           })
+           totalPrice=totalPrice.toFixed(2);
+           setTotalprd((totalPrice));
+    },[])
   return (
     <>
     
@@ -14,28 +38,36 @@ const Cart = () => {
 
     <div id="line"></div>
 
-    <div id="prd" className="flex gap-4">
+     {storeCart.map((el,ind) => (
+         <>
+          <div id="prd" className="flex gap-4" key={el._id}>
         <div>
-           <img className="w-[150px]" src="https://images.ctfassets.net/wn7ipiv9ue5v/24LXugBTxqmxRqxEOBZyro/171a46ed028097c9f101d115907742e5/RDR2_Zippo_Front_01.jpg?w=768&h=&fm=webp&q=" alt="img" />
+           <img className="w-[150px]" src={el.image} alt="img" />
         </div>
         <div>
-            <h2 className="text-2xl font-semibold my-1">Red Dead Tee</h2>
+            <h2 className="text-2xl font-semibold my-1">{el.name}</h2>
             <p className="text-gray-400 my-1">Men's,XL</p>
-            <select name="" id="select" className="text-gray-400 my-1 p-3 rounded pr-8 text-white bg-black focus:bg-black hover:bg-gray-500 outline-none">
+            <select name="" id="select" onChange={(e) => {
+                itemCount(el.price,e)
+            }} className="text-gray-400 my-1 p-3 rounded pr-8 text-white bg-black focus:bg-black hover:bg-gray-500 outline-none">
                 <option value="1">Qty:1</option>
                 <option value="2">Qty:2</option>
                 <option value="3">Qty:3</option>
                 <option value="4">Qty:4</option>
             </select><br></br>
-            <button className="underline text-gray-400 my-1">Remove</button>
+            <button className="underline text-gray-400 my-1" onClick={() => {
+                removeItem(ind);
+            }}>Remove</button>
         </div>
         <div>
-            <h2 className="text-2xl font-semibold my-1">$19.99</h2>
+            <h2 className="text-2xl font-semibold my-1">€{el.price}</h2>
         </div>
     </div>
-    <div id="line"></div>
+    <div key={el._id} id="line"></div>
+         </>
+     ))}
 
-      <p id="total_price" className="text-gray-300">Subtotal(2 items): <span className="text-xl font-bold">€64.98</span></p>
+      <p id="total_price" className="text-gray-300">Subtotal({storeCart.length} items): <span className="text-xl font-bold">€ {totalPrd}</span></p>
     </div>
 
      <div className="bg-black text-gray-300 md:mt-10 md:mb-10 md:mr-10 p-4  md:w-[400px] md:w-[30%] m-6">
@@ -43,12 +75,12 @@ const Cart = () => {
      <div id="line"></div>
      <div className="flex justify-between my-1">
         <div>Total for Items</div>
-        <div>€64.98</div>
+        <div>€ {totalPrd}</div>
      </div>
      <div id="line"></div>
      <div className="flex justify-between my-1">
-        <div className="font-bold text-2xl">Subtotal<span className=" font-normal text-lg">(2 items)</span></div>
-        <div className="font-bold text-2xl">€64.98</div>
+        <div className="font-bold text-2xl">Subtotal<span className=" font-normal text-lg">({storeCart.length} items)</span></div>
+        <div className="font-bold text-2xl">€ {totalPrd}</div>
      </div>
      <div id="line"></div>
       <div className="flex gap-2 my-1">

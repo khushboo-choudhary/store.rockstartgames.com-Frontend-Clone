@@ -8,7 +8,7 @@ const ProductDetails = () => {
   const [product, setproduct] = useState([]);
   const [apparelData, setapparelData] = useState([]);
   let storeCart=JSON.parse(localStorage.getItem("store_cart"))||[];
-
+  // console.log(storeCart)
   useEffect(() => {
     axios
       .get(`https://obscure-citadel-15133.herokuapp.com/coll/${id}`)
@@ -71,8 +71,21 @@ const ProductDetails = () => {
               <div id="buy-add-btn">
                 <div id="buy-btn">Buy Now</div>
                 <div id="add-btn"><button onClick={() => {
-                  storeCart.push(product);
-                  localStorage.setItem("store_cart",JSON.stringify(storeCart));
+                  let status = false;
+                  storeCart.map((el)=>{
+                    if(el._id==product._id){
+                      status = true
+                    }
+                  })
+                  if(status){
+                    alert("Product is Already in cart")
+                    return;
+                  }else{
+                    product.qty = 1;
+                    storeCart.push(product);
+                    localStorage.setItem("store_cart",JSON.stringify(storeCart));
+                  }                  
+                  
                   console.log(product)
                 }} >Add to cart</button></div>
               </div>
