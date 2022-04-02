@@ -67,7 +67,23 @@ const Product = () => {
               <button>Buy Now</button>
             </div>
             <div id="add-btn">
-              <button>Add to cart</button>
+            <button onClick={() => {
+                  let status = false;
+                  storeCart.map((el)=>{
+                    if(el._id==product._id){
+                      status = true
+                    }
+                  })
+                  if(status){
+                    alert("Product is Already in cart")
+                    return;
+                  }else{
+                    product.qty = 1;
+                    storeCart.push(product);
+                    localStorage.setItem("store_cart",JSON.stringify(storeCart));
+                    alert("Product is Added in cart successfully")
+                  }                  
+                }} >Add to cart</button>
             </div>
           </div>
         </div>
