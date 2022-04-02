@@ -21,7 +21,6 @@ const RedDeadEss = () => {
     axios
       .get("https://obscure-citadel-15133.herokuapp.com/coll/red/apparel")
       .then((res) => {
-        console.log(res.data.collection);
         setProducts(res.data.collection);
       })
       .catch((err) => {
