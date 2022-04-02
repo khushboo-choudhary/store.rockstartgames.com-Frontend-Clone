@@ -82,7 +82,7 @@ input:checked ~ label:after{
 }
 
 /*hide the inputs*/
-input{display:none}
+/* input{display:none} */
 
 /*show the second levele menu of the selected voice*/
 input:checked ~ ul.submenu{

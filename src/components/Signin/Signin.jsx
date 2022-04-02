@@ -3,7 +3,10 @@ import { useState } from "react";
 import "./login.css";
 
 const Sigin = (props) => {
-  const [formData, setForm] = useState({});
+  const [formData, setForm] = useState({
+    email: "",
+    password: "",
+  });
 
   const onChangeForm = (e) => {
     const { id, value } = e.target;
@@ -37,7 +40,8 @@ const Sigin = (props) => {
                 type="text"
                 placeholder="Email"
                 onChange={onChangeForm}
-                className="py-3 md:w-96 rounded px-2 m-2 border-[0.5px] border-gray-400 focus:border-1 focus: border-gray-400"
+                value={formData.email}
+                className="py-3 md:w-96 rounded px-2 m-2 border-[0.5px] border-gray-400 focus:border-1 focus: border-gray-400 myInput"
                 required
               />
               <br />
@@ -46,6 +50,7 @@ const Sigin = (props) => {
                 type="text"
                 placeholder="Password"
                 onChange={onChangeForm}
+                value={formData.password}
                 className="py-3 md:w-96 rounded px-2 m-2 border-[0.5px] border-gray-400 focus:border-1 focus: border-gray-400"
                 required
               />
