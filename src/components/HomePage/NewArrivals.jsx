@@ -1,4 +1,4 @@
-import styled from "styled-components"
+import styled from "styled-components";
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 import { MyCard } from "../MiniCompo/Card";
@@ -6,25 +6,27 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 
 const NewArrivalDiv = styled.div`
-    width: 85%;
-    /* border: 1px solid white; */
-    margin: auto;
-    margin-top: 80px;
-    margin-bottom: 80px;
-`
+  width: 85%;
+  /* border: 1px solid white; */
+  margin: auto;
+  margin-top: 80px;
+  margin-bottom: 80px;
+`;
 
 const NewArrivals = () => {
+  const [products, setProducts] = useState([]);
 
-    const [products, setProducts] = useState([]);
-
-    useEffect(()=>{
-        axios.get("https://obscure-citadel-15133.herokuapp.com/coll/red/gear").then((res)=>{
-            // console.log(res.data.collection)
-            setProducts(res.data.collection);
-        }).catch((err)=>{
-            console.log(err.message)
-        });
-    }, [])
+  useEffect(() => {
+    axios
+      .get("https://obscure-citadel-15133.herokuapp.com/coll/red/gear")
+      .then((res) => {
+        // console.log(res.data.collection)
+        setProducts(res.data.collection);
+      })
+      .catch((err) => {
+        console.log(err.message);
+      });
+  }, []);
 
   return (
     <div>
@@ -40,12 +42,12 @@ const NewArrivals = () => {
           autoPlaySpeed={99999999999999999}
           centerMode={false}
           className=""
-          containerClass="container-with-dots"
-          dotListClass=""
+          containerclassName="container-with-dots"
+          dotListclassName=""
           draggable
           focusOnSelect={false}
           infinite
-          itemClass=""
+          itemclassName=""
           keyBoardControl
           minimumTouchDrag={80}
           renderButtonGroupOutside={false}
@@ -77,7 +79,7 @@ const NewArrivals = () => {
             },
           }}
           showDots={false}
-          sliderClass=""
+          sliderclassName=""
           slidesToSlide={1}
           swipeable
         >
@@ -87,7 +89,7 @@ const NewArrivals = () => {
                 key={product._id}
                 img={product.image}
                 title={product.name}
-                price={"€"+product.price}
+                price={"€" + product.price}
               />
             );
           })}

@@ -21,6 +21,7 @@ import Member from "../components/User/Member"
 import Signin from "../components/Signin/Signin"
 import Cart from '../components/Cart/Cart'
 import Create from "../components/Signin/Create"
+import SingleGame from '../components/newGames/SingleGame'
 
 
 
@@ -33,9 +34,10 @@ const AllRoutes = () => {
         <Route path='/red-dead-redemption-collection' element={<Red/>}/>
         <Route path='/rockstar-collection' element={<Rock/>}/>
         <Route path='/collection/:id' element={<ProductDetails/>} />
-        <Route path='/games/goldbar' element={<GoldBar/>}/>
+        {/* <Route path='/games/goldbar' element={<GoldBar/>}/>
         <Route path='/games/sharkcards' element={<SharkCards/>}/>
-        <Route path='/games/reddead' element={<RedDead/>}/>
+        <Route path='/games/reddead' element={<RedDead/>}/> */}
+        <Route path="/games/:id" element={<SingleGame/>}/>
         <Route path='/gear' element={<AllCard/>}/>
         <Route path='/gear/:id' element={<Product/>} />
         <Route path='/seeall/apparel' element={<SeeAllApparel/>}/>

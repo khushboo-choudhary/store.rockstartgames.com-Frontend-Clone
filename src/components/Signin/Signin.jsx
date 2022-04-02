@@ -1,7 +1,7 @@
-import axios from 'axios'
+import axios from "axios";
 import { useState } from "react";
 import "./login.css";
-import {Link} from 'react-router-dom'
+import { Link } from "react-router-dom";
 
 const Sigin = (props) => {
   const [formData, setForm] = useState({
@@ -16,17 +16,26 @@ const Sigin = (props) => {
   };
   const formSubmit = (e) => {
     e.preventDefault();
-    function postData(url){
-    axios.post(url,formData).then(console.log('posted'))
+    function postData(url) {
+      axios.post(url, formData).then(console.log("posted"));
     }
-    postData('http://localhost:PORT/')
+    postData("http://localhost:PORT/");
   };
 
   return (
     <>
       <div className=" h-full pb-16" id="bgimg">
-        <div className="snap-x object-contain lg:ml-96 md:ml-52 rounded lg:w-1/3 justify-center item-center pt-8" id="fitC">
-          <div class="flex justify-center item-center"><img className='w-72 h-24 pb-8 snap-center' src='https://s.rsg.sc/auth/images/sc_logo_20180910.svg' alt=''/></div>
+        <div
+          className="snap-x object-contain lg:ml-96 md:ml-52 rounded lg:w-1/3 justify-center item-center pt-8"
+          id="fitC"
+        >
+          <div className="flex justify-center item-center">
+            <img
+              className="w-72 h-24 pb-8 snap-center"
+              src="https://s.rsg.sc/auth/images/sc_logo_20180910.svg"
+              alt=""
+            />
+          </div>
           <div className="justify-center item-center">
             <form
               onSubmit={formSubmit}
@@ -62,26 +71,24 @@ const Sigin = (props) => {
               />
               <label>Keep me signed in</label>
               <br />
-              <div className='flex justify-between items-center'>
-              
-              
-              <label className="underline w-76">
-                <a className="underline w-76" href="/">
-                  Forgot your password?
-                </a>
-              </label>
-              <input
-                type="submit"
-                value="Signin"
-                className="px-3 py-1 m-1 font-semibold hover:bg-[#F7931E] text-black bg-[#f99e36]"
-              />
+              <div className="flex justify-between items-center">
+                <label className="underline w-76">
+                  <a className="underline w-76" href="/">
+                    Forgot your password?
+                  </a>
+                </label>
+                <input
+                  type="submit"
+                  value="Signin"
+                  className="px-3 py-1 m-1 font-semibold hover:bg-[#F7931E] text-black bg-[#f99e36]"
+                />
               </div>
             </form>
           </div>
 
           <div className="flex justify-between items-center bg-white py-6 mt-12">
             <p className="pl-4 text-[18px] text-gray-600">Sign in using</p>
-            <div class="social-icons">
+            <div className="social-icons">
               <a href="#" className="p-2">
                 <i className="md:text-3xl text-yellow-500 fab fa-playstation"></i>
               </a>
@@ -106,9 +113,10 @@ const Sigin = (props) => {
               Create a new account
             </Link>
           </p>
-        <p className="p-2 text-white text-[13px] mt-8">© 2022 ROCKSTAR GAMES | PRIVACY POLICY | TERMS OF SERVICE</p>
+          <p className="p-2 text-white text-[13px] mt-8">
+            © 2022 ROCKSTAR GAMES | PRIVACY POLICY | TERMS OF SERVICE
+          </p>
         </div>
-
       </div>
     </>
   );

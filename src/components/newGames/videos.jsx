@@ -4,7 +4,6 @@ import "react-multi-carousel/lib/styles.css";
 import { MyCard } from "../MiniCompo/Card";
 import { useEffect, useState } from "react";
 import axios from "axios";
-import { Link } from "react-router-dom";
 
 const NewArrivalDiv = styled.div`
   width: 85%;
@@ -14,28 +13,15 @@ const NewArrivalDiv = styled.div`
   margin-bottom: 80px;
 `;
 
-const HomeGames = () => {
-  const [products, setProducts] = useState([]);
-
-  useEffect(() => {
-    axios
-      .get("https://obscure-citadel-15133.herokuapp.com/games")
-      .then((res) => {
-        // console.log(res.data.games);
-        setProducts(res.data.games);
-      })
-      .catch((err) => {
-        console.log(err.message);
-      });
-  }, []);
-
+const Videos = ({vid}) => {
+  
   return (
     <div>
       <NewArrivalDiv>
         <h1
           style={{ fontSize: "32px", fontWeight: "bold", marginBottom: "30px" }}
         >
-          Games
+          Videos
         </h1>
         <Carousel
           additionalTransfrom={0}
@@ -59,7 +45,7 @@ const HomeGames = () => {
                 max: 3000,
                 min: 1024,
               },
-              items: 4,
+              items: 5,
               partialVisibilityGutter: 40,
             },
             mobile: {
@@ -67,7 +53,7 @@ const HomeGames = () => {
                 max: 464,
                 min: 0,
               },
-              items: 1,
+              items: 2,
               partialVisibilityGutter: 30,
             },
             tablet: {
@@ -75,7 +61,7 @@ const HomeGames = () => {
                 max: 1024,
                 min: 464,
               },
-              items: 3,
+              items: 4,
               partialVisibilityGutter: 30,
             },
           }}
@@ -84,22 +70,31 @@ const HomeGames = () => {
           slidesToSlide={1}
           swipeable
         >
-          {products.map((product) => {
-            return (
-              <Link to={`/games/${product._id}`}>
-                <MyCard
-                key={product._id}
-                img={product.heroimg}
-                title={product.name}
-                price={"€" + product.price}
-              />
-              </Link>
-            );
-          })}
+          <EmbeddedVideo vid={vid[0]} />
+          {/* {vid.map((el) => {
+            return <EmbeddedVideo vid={el} />;
+          })} */}
         </Carousel>
       </NewArrivalDiv>
     </div>
   );
 };
 
-export { HomeGames };
+
+const EmbeddedVideo = ({vid}) => {
+
+    return (
+      <iframe
+        frameborder="0"
+        scrolling="no"
+        marginheight="0"
+        marginwidth="0"
+        width="534"
+        height="300"
+        type="text/html"
+        src={vid}
+      >
+      </iframe>
+    );
+}
+export { Videos };

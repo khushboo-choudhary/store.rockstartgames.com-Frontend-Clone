@@ -6,7 +6,7 @@ import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
 import "../../styles/Grand.collection.css";
 
-const MyCard = ({ img, title, price}) => {
+const MyCard = ({ img, title, price, height}) => {
   return (
     <Card
     className="myOwnCard"
@@ -15,10 +15,11 @@ const MyCard = ({ img, title, price}) => {
         margin: "10px",
         backgroundColor: "#000000",
         color: "white",
-        height: "93%",
+        height: height?height:"93%",
+        borderRadius: "10px",
       }}
     >
-      <CardMedia component="img" alt="green iguana" height="140" image={img} />
+      <CardMedia component="img" alt="green iguana" height="150" image={img} />
       <CardContent>
         <Typography variant="body2" style={{ marginBottom: "10px" }}>
           {title}

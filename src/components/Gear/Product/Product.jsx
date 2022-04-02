@@ -74,7 +74,7 @@ const Product = () => {
       {/* Related Products */}
       <div id="apparel-items-part">
         <div id="apparel-heading-part">
-          <p class="apparel-heading-rohit">Realted Products</p>
+          <p className="apparel-heading-rohit">Realted Products</p>
           <p>SEE ALL</p>
         </div>
         <div id="all-card-container">
