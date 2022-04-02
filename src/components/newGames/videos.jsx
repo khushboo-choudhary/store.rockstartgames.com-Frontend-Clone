@@ -1,9 +1,9 @@
 import styled from "styled-components";
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
-import { MyCard } from "../MiniCompo/Card";
-import { useEffect, useState } from "react";
-import axios from "axios";
+// import { MyCard } from "../MiniCompo/Card";
+// import { useEffect, useState } from "react";
+// import axios from "axios";
 
 const NewArrivalDiv = styled.div`
   width: 85%;

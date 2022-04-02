@@ -84,8 +84,6 @@ const ProductDetails = () => {
                     localStorage.setItem("store_cart",JSON.stringify(storeCart));
                     alert("Product is Added in cart successfully")
                   }                  
-                  
-                  console.log(product)
                 }} >Add to cart</button></div>
               </div>
             </div>
@@ -102,7 +100,7 @@ const ProductDetails = () => {
             <div id="all-card-container">
               {apparelData.map((curElem) => {
                 return (
-                  <div>
+                  <div key={curElem._id}>
                     <div id="apparel-items-content">
                       <div id="apparel-item-card">
                         <div id="apparel-item-img-part">

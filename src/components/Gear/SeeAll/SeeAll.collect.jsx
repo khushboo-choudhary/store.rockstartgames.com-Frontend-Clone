@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { Link} from "react-router-dom";
 import axios from "axios";
 
 const SeeAllCollect = () => {
@@ -18,8 +18,7 @@ const SeeAllCollect = () => {
 
   return (
     <>
-      <div id="header-part"></div>
-      {/* All Products */}
+     
       <div id="apparel-items-part" style={{ "margin-top": "5em" }}>
         <div id="apparel-heading-part">
           <p className="apparel-heading-rohit">All Products</p>
@@ -28,7 +27,8 @@ const SeeAllCollect = () => {
         <div id="all-card-container" style={{ "margin-top": "2em" }}>
           {apparelData.map((curElem) => {
             return (
-              <div>
+             <Link to={`/gear/${curElem._id}`}>
+                <div key={curElem._id}>
                 <div id="apparel-items-content">
                   <div id="apparel-item-card">
                     <div id="apparel-item-img-part">
@@ -39,10 +39,13 @@ const SeeAllCollect = () => {
                       style={{ "margin-bottom": "5em" }}
                     >
                       <p>{curElem.name}</p>
+                      <p>€ {curElem.price}</p>
                     </div>
+                
                   </div>
                 </div>
               </div>
+             </Link>
             );
           })}
         </div>
