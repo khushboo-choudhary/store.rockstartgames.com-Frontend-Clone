@@ -19,8 +19,8 @@ export default function MenuListComposition({nickName,img}) {
   };
 
   const singOut=()=>{
-    
-    localStorage.setItem("userData",JSON.stringify({"profileImage":"https://a.rsg.sc/n/shreyas1000","nickName":""}));
+
+    localStorage.setItem("userData",JSON.stringify({"profileImage":"https://a.rsg.sc/n/shreyas1000","nickName":"none"}));
     window.location.reload(false);
   }
 

@@ -16,6 +16,7 @@ const Navbar = (props) => {
     input: "hidden",
     allother: "",
   });
+  const [loginOrNot,setLoginOrNot] = useState({signIn:"hidden",signOut:"block"})
   const [GameMobileMenuToggle, setGameMobileToggle] = useState("hidden");
   const [UserMenuToggle, setUserToggle] = useState("hidden");
   const [CollectionMenuToggle, setCollectionToggle] = useState("hidden");
@@ -25,9 +26,13 @@ const Navbar = (props) => {
   useEffect(() => {
       setAccountDropDown("block");
      const {nickName,profileImage}=JSON.parse(localStorage.getItem("userData"))
+     console.log(nickName,"NickName is there")
+     if(nickName!=="none") {setLoginOrNot({signIn:"block",signOut:"hidden"})}
+    //  console.log(loginOrNot.)
     setLoginData({nickName,profileImage})
   }, []);
 
+  // setCollectionToggle("hidden");
 
   const onClickGameMenu = () => {
     console.log("object");
@@ -60,11 +65,12 @@ const Navbar = (props) => {
 
   const onClickSearchBar = () => {
     setInputToggle({ input: "block", allother: "hidden" });
+
   };
 
   return (
     <>
-      {/* <input type="text" placeholder="Search"/> */}
+      <input type="text" placeholder="Search" className={`${InputMobileToggle.input}`}/>
       <div
         className="flex sticky top-0 right-0 left-0 z-40 items-center my-0 w-full text-white bg-black md:justify-between"
         id="navBar"
@@ -153,10 +159,14 @@ const Navbar = (props) => {
             />
           </div>
 
+          <div className={`${loginOrNot.signOut}`}>
           <Link to="signin" className="mx-6 font-bold cursor-pointer">
             Sign in
           </Link>
+          </div>
+          <div className={`${loginOrNot.signIn}`}>
           <MenuListComposition nickName={loginData.nickName} img={loginData.profileImage} />
+          </div>
           {/* User Detail Start After Login  */}
         </div>
       </div>
