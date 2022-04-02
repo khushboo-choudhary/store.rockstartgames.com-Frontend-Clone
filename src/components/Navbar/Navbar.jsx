@@ -23,6 +23,17 @@ const Navbar = (props) => {
   const [loginData,setLoginData] = useState({})
   const [AccountDropDown, setAccountDropDown] = useState("hidden");
 
+  const donedonadone =
+    JSON.parse(localStorage.getItem("userData")) ||
+    localStorage.setItem(
+      "userData",
+      JSON.stringify({
+        profileImage: "https://a.rsg.sc/n/shreyas1000",
+        nickName: "none",
+      })
+    );
+
+
   useEffect(() => {
       setAccountDropDown("block");
 
