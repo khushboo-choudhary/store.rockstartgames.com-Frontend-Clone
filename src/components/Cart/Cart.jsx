@@ -6,6 +6,7 @@ import { Link } from 'react-router-dom';
 
 const Cart = () => {
     let storeCart=JSON.parse(localStorage.getItem("store_cart"))||[];
+    let totalPrice=JSON.parse(localStorage.getItem("total_cart_price"))||"";
     // let newstoreCart=[...new Map(storeCart.map((item) => [item["_id"], item])).values()];
     const [totalPrd,setTotalprd] = useState([]);
     const [render, setRender] = useState(true)
@@ -113,7 +114,10 @@ const Cart = () => {
               Add €5.01 to this order to qualify for FREE standard shipping.
             </p>
           </div>
-          <Link to="/address"><button className=" my-1 bg-yellow-500 text-black font-semibold px-4 py-3 hover:bg-yellow-400 rounded mt-2">
+          <Link to="/address"><button className=" my-1 bg-yellow-500 text-black font-semibold px-4 py-3 hover:bg-yellow-400 rounded mt-2" onClick={() => {
+            totalPrice=totalPrd
+            localStorage.setItem("total_cart_price",JSON.stringify(totalPrice));
+          }}>
             PROCEED TO CHECKOUT
           </button></Link>
           <p className="text-sm mt-2 my-1">
