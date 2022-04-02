@@ -86,11 +86,11 @@ const Navbar = (props) => {
                 <MenuIcon />
               </button>
             </div>
-            <img
+            <Link to="/"><img
               className="w-12 h-12"
               src="https://images.ctfassets.net/wn7ipiv9ue5v/4ajpWv2L0zlK6pObfLPOcL/d6d3875cb5a5bfc074c6a92cf6dce0c2/rockstar_logo.png?w=104&h=&fm=webp&q="
               alt=""
-            />
+            /></Link>
           </div>
           <div
             className={`flex justify-between item-centerw-8 md:hidden ${InputMobileToggle.allother}`}
@@ -103,11 +103,11 @@ const Navbar = (props) => {
         </div>
 
         <div className="justify-between items-center p-2 md:mx-24 md:p-4 md:flex">
-          <img
+        <Link to="/"><img
             className="hidden w-12 h-12 md:block"
             src="https://images.ctfassets.net/wn7ipiv9ue5v/4ajpWv2L0zlK6pObfLPOcL/d6d3875cb5a5bfc074c6a92cf6dce0c2/rockstar_logo.png?w=104&h=&fm=webp&q="
             alt=""
-          />
+          /></Link>
           <div className="hidden items-center mx-6 md:flex">
             <button
               className="flex items-center font-bold cursor-pointer"
