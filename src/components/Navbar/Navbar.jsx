@@ -6,6 +6,7 @@ import MenuListComposition from "./UserMenuMui";
 import UserMenu from "./UserMenu";
 import SearchIcon from "@mui/icons-material/Search";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
+import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 import MenuIcon from "@mui/icons-material/Menu";
 import CollectionMenu from "./CollectionMenu";
 import { Link } from "react-router-dom";
@@ -92,7 +93,10 @@ const Navbar = (props) => {
 
   return (
     <>
+      <div className={`${InputMobileToggle.input} pt-1`}>
+      <ArrowBackIcon/>
       <input type="text" placeholder="Search" className={`${InputMobileToggle.input}`}/>
+      </div>
       <div
         className="flex sticky top-0 right-0 left-0 z-40 items-center my-0 w-full text-white bg-black md:justify-between"
         id="navBar"
@@ -121,7 +125,7 @@ const Navbar = (props) => {
             <button onClick={() => onClickSearchBar()}>
               <SearchIcon />
             </button>
-            <ShoppingCartIcon className="w-8" />
+            <Link to="/cart"><ShoppingCartIcon className="w-8" /></Link>
           </div>
         </div>
 
@@ -180,7 +184,7 @@ const Navbar = (props) => {
               placeholder="Search"
             />
           </div>
-
+          <Link to="/cart"><ShoppingCartIcon className="w-8" /></Link>
           <div className={`${loginOrNot.signOut}`}>
           <Link to="signin" className="mx-6 font-bold cursor-pointer">
             Sign in
