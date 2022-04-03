@@ -4,7 +4,7 @@ const GoldBar = () => {
     return (
         <>
             <div id="mainGold">
-                <div
+                <div 
                     style={{
                         backgroundImage:
                             "url(https://images.ctfassets.net/wn7ipiv9ue5v/5a5HhOXOSEIVV0uaIpvPiU/ec89fc996c28a02aef0228680858197d/R_Store_GoldBars_1344x500.jpg?w=2048&h=&fm=webp&q=)",
