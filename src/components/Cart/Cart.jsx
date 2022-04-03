@@ -2,9 +2,11 @@ import React,{useState,useEffect} from 'react'
 import './Cart.css';
 import LocalShippingRoundedIcon from '@mui/icons-material/LocalShippingRounded';
 import { Link } from 'react-router-dom';
+import { useNavigate } from "react-router-dom";
 
 
 const Cart = () => {
+    const navigate = useNavigate();
     let storeCart=JSON.parse(localStorage.getItem("store_cart"))||[];
     let totalPrice=JSON.parse(localStorage.getItem("total_cart_price"))||"";
     // let newstoreCart=[...new Map(storeCart.map((item) => [item["_id"], item])).values()];
@@ -19,6 +21,19 @@ const Cart = () => {
        setTotalprd((sum).toFixed(2));
     }
 
+    const { nickName, profileImage } =
+      JSON.parse(localStorage.getItem("userData")) ||
+      localStorage.setItem(
+        "userData",
+        JSON.stringify({
+          profileImage: "https://a.rsg.sc/n/shreyas1000",
+          nickName: "none",
+        })
+      );
+
+    if (nickName == "none") {
+      navigate("/signin");
+    }
 
 
     const removeItem = (ind) => {

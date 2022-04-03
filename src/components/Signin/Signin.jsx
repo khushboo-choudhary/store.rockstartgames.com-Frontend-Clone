@@ -2,18 +2,46 @@ import axios from "axios";
 import { useState } from "react";
 import "./login.css";
 import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 const Sigin = (props) => {
   const [formData, setForm] = useState({
     email: "",
     password: "",
   });
-
+  const navigate = useNavigate();
   const onChangeForm = (e) => {
     const { id, value } = e.target;
     setForm({ ...formData, [id]: value });
     console.log(formData);
   };
+
+  const oAuth = ()=>{
+    window.location.href =
+      "https://obscure-citadel-15133.herokuapp.com/auth/google";
+    // axios
+    //   .get("https://obscure-citadel-15133.herokuapp.com/auth/google")
+    //   .then((res) => {
+    //     console.log(res);
+    //     // localStorage.setItem("token", JSON.stringify(res.data.token));
+    //     // const { nickName, profileImage } = res.data;
+    //     // localStorage.setItem(
+    //     //   "userData",
+    //     //   JSON.stringify({ profileImage, nickName })
+    //     // );
+    //     // alert("You Have LoggedIn Successfully");
+    //     // // navigate("/");
+    //     // window.location.href = "/";
+    //   })
+    //   .catch((err) => {
+    //     console.log(err);
+    //     alert("Something Went Wrong");
+    //     console.log(err);
+    //   })
+  }
+
+
+
   const formSubmit = (e) => {
     e.preventDefault();
     function postData(url) {
@@ -26,12 +54,14 @@ const Sigin = (props) => {
             "userData",
             JSON.stringify({ profileImage, nickName })
           );
-          window.location.reload(false);
-        },
-        (error) => {
-          console.log(error);
+          alert("You Have LoggedIn Successfully")
+            // navigate("/");
+            window.location.href = "/";
         }
-      );
+      ).catch((err)=>{
+        alert("Something Went Wrong / Check Your Credentials")
+        console.log(err)
+      });
     }
     postData("https://obscure-citadel-15133.herokuapp.com/login");
   };
@@ -87,9 +117,7 @@ const Sigin = (props) => {
               <br />
               <div className="flex justify-between items-center">
                 <label className="underline w-76">
-                  <p className="underline w-76">
-                    Forgot your password?
-                  </p>
+                  <p className="underline w-76">Forgot your password?</p>
                 </label>
                 <input
                   type="submit"
@@ -103,21 +131,22 @@ const Sigin = (props) => {
           <div className="flex justify-between items-center bg-white py-6 mt-12">
             <p className="pl-4 text-[18px] text-gray-600">Sign in using</p>
             <div className="social-icons">
-              <a href="#" className="p-2">
+              {/* <a href="#" className="p-2">
                 <i className="md:text-3xl text-yellow-500 fab fa-playstation"></i>
-              </a>
-              <a href="#" className="p-2">
+              </a> */}
+              {/* <a href="#" className="p-2">
                 <i className="md:text-3xl text-yellow-500 fab fa-xbox"></i>
-              </a>
-              <a href="#" className="p-2">
+              </a> */}
+              {/* <a href="#" className="p-2">
                 <i className="md:text-3xl text-yellow-500 fab fa-facebook"></i>
-              </a>
-              <a href="#" className="p-2">
+              </a> */}
+              <button className="p-2 mr-4" onClick={()=>{oAuth()}}>
                 <i className="md:text-3xl text-yellow-500 fab fa-google"></i>
-              </a>
-              <a href="#" className="p-2">
+              </button>
+
+              {/* <a href="#" className="p-2">
                 <i className="md:text-3xl text-yellow-500 fab fa-twitter"></i>
-              </a>
+              </a> */}
             </div>
           </div>
 

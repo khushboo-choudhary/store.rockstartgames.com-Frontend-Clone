@@ -2,6 +2,8 @@ import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import axios from "axios";
 import "./Product.css";
+import doPayment from "../../../utilities/payment";
+import { useNavigate } from "react-router-dom";
 
 const Product = () => {
   const { id } = useParams();
@@ -20,6 +22,28 @@ const Product = () => {
         setapparelData(res.data.gear);
       });
   }, []);
+
+  const navigate = useNavigate();
+
+   const buyNow = () => {
+     const { nickName, profileImage } =
+       JSON.parse(localStorage.getItem("userData")) ||
+       localStorage.setItem(
+         "userData",
+         JSON.stringify({
+           profileImage: "https://a.rsg.sc/n/shreyas1000",
+           nickName: "none",
+         })
+       );
+
+     if (nickName == "none") {
+       navigate("/signin");
+     } else {
+       let disc = "payment for" + " " + product.name;
+       let amount = product.price * 84;
+       doPayment(amount, disc);
+     }
+   };
 
   return (
     <>
@@ -64,7 +88,7 @@ const Product = () => {
           </div>
           <div id="buy-add-btn">
             <div id="buy-btn">
-              <button>Buy Now</button>
+              <button onClick={buyNow}>Buy Now</button>
             </div>
             <div id="add-btn">
             <button onClick={() => {

@@ -1,3 +1,4 @@
+import { useEffect } from "react"
 import { BestSellers } from "./BestSellers"
 import { HomeGames } from "./Games"
 import { GrandTheftAuto } from "./GrandTheftCollection"
@@ -9,7 +10,7 @@ import { ShopNow2 } from "./ShopNow2"
 
 
 export const Home = ()=>{
-
+    
 
     return (
         <>

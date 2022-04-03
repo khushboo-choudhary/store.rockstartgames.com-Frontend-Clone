@@ -1,9 +1,13 @@
 import axios from "axios";
 import { useState } from "react";
 import "./login.css";
+import { useNavigate } from "react-router-dom";
 import {Link} from 'react-router-dom'
+
+
 const Create = (props) => {
   const [formData, setForm] = useState({});
+    const navigate = useNavigate();
 
   const onChangeForm = (e) => {
       e.preventDefault()
@@ -13,8 +17,26 @@ const Create = (props) => {
   };
   const formSubmit = (e) => {
     e.preventDefault();
+    console.log("Inside FormSubmit")
     function postData(url) {
-      axios.post(url, formData).then(console.log("posted"));
+      axios
+        .post(url, formData)
+        .then((response) => {
+          localStorage.setItem("token", JSON.stringify(response.data.token));
+          const { nickName, profileImage } = response.data;
+          localStorage.setItem(
+            "userData",
+            JSON.stringify({ profileImage, nickName })
+          );
+          alert("Your Account Is Created Successfully");
+          // window.location.reload(false);
+          // navigate("/");
+          window.location.href = "/"
+        })
+        .catch((err) => {
+          alert("Something Went Wrong");
+          console.log(err);
+        });;
     }
     postData("https://obscure-citadel-15133.herokuapp.com/register");
   };

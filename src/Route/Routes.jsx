@@ -22,6 +22,7 @@ import Create from "../components/Signin/Create"
 import SingleGame from '../components/newGames/SingleGame'
 import Address from '../components/Address/Address'
 import { Page404 } from '../components/404'
+import { GoogleCallBack } from '../components/gooogleCallBack'
 
 
 
@@ -56,6 +57,8 @@ const AllRoutes = () => {
       <Route path="/signin" element={<Signin />} />
       <Route path="/register" element={<Create />} />
       <Route path="*" element={<Page404/>} />
+
+      <Route path="/google-oauth2success" element={<GoogleCallBack/>} />
     </Routes>
   );
 }
