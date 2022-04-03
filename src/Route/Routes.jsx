@@ -54,6 +54,7 @@ const AllRoutes = () => {
       <Route path="/account" element={<Account />} />
       <Route path="/member" element={<Member />} />
       <Route path="/signin" element={<Signin />} />
+      <Route path="/register" element={<Create />} />
       <Route path="*" element={<Page404/>} />
     </Routes>
   );
