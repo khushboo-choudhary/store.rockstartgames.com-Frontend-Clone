@@ -127,9 +127,12 @@ body {
   width: 100%;
   background-color: black;
 }
-#apparel-items-part #apparel-item-card:hover {
-  animation: bounce 0.5s linear;
-  cursor: pointer;
+#apparel-items-content{
+  background: black;
+  border-radius: 10px;
+}
+#apparel-items-content:hover{
+  animation: bounce 1s linear;
 }
 
 #apparel-item-img-part img {
@@ -141,9 +144,17 @@ body {
 #apparel-item-title-part {
   /* border: 1px solid white; */
   width: 100%;
+  padding-bottom: 10px;
+}
+#apparel-item-title-part>p:nth-child(2){
+  font-weight: lighter;
+  color: white;
 }
 #apparel-item-price-part {
   width: 100%;
+  background: black;
+  color: white;
+  font-weight: lighter;
 }
 #name-price-part {
   height: 8em;

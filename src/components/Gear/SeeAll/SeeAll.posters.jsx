@@ -20,7 +20,6 @@ const SeeAllPoster = () => {
       <div id="apparel-items-part"  style={{ "margin-top": "5em" }}>
         <div id="apparel-heading-part">
           <p className="apparel-heading-rohit">All Products</p>
-          <p>SEE ALL</p>
         </div>
         <div id="all-card-container" style={{ "margin-top": "2em" }}>
           {apparelData.map((curElem) => {

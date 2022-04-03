@@ -59,17 +59,29 @@ const Navbar = (props) => {
   const onClickGameMenu = () => {
     if (GameMenuToggle === "hidden") {
       setGameToggle("block");
+      setGameMobileToggle("hidden");
+
       setCollectionToggle("hidden");
-    } else setGameToggle("hidden");
+    } else {
+      setGameToggle("hidden");
+      setGameMobileToggle("hidden");
+  }
   };
   const hideall=()=>{
     setCollectionToggle("hidden");
     setGameToggle("hidden");
+    setGameMobileToggle("hidden");
   }
   const onClickGameMobileMenu = () => {
     if (GameMobileMenuToggle === "hidden") {
       setGameMobileToggle("block");
-    } else setGameMobileToggle("hidden");
+      setCollectionToggle("hidden");
+      setGameToggle("hidden");
+    } else {
+      setGameMobileToggle("hidden");
+    setCollectionToggle("hidden");
+    setGameToggle("hidden");
+  }
   };
   const onClickCollectionMenu = () => {
     // console.log("object Collection", CollectionMenuToggle);
@@ -92,6 +104,7 @@ const Navbar = (props) => {
   };
   const hideInputMobileView=()=>{
     setInputToggle({ input: "hidden", allother: "block" });
+    setGameMobileToggle("hidden");
   }
 
   return (
