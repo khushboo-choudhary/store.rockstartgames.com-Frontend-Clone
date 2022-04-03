@@ -65,17 +65,17 @@ const Sigin = (props) => {
                 placeholder="Email"
                 onChange={onChangeForm}
                 value={formData.email}
-                className="py-3 md:w-96 rounded px-2 m-2 border-[0.5px] border-gray-400 focus:border-1 focus: border-gray-400 myInput"
+                className="py-3 md:w-96 rounded px-2 m-2 border-[0.5px] border-gray-400 focus:border-1 focus: border-gray-400 myInput outline-none"
                 required
               />
               <br />
               <input
                 id="password"
-                type="text"
+                type="password"
                 placeholder="Password"
                 onChange={onChangeForm}
                 value={formData.password}
-                className="py-3 md:w-96 rounded px-2 m-2 border-[0.5px] border-gray-400 focus:border-1 focus: border-gray-400"
+                className="py-3 md:w-96 rounded px-2 m-2 border-[0.5px] border-gray-400 focus:border-1 focus: border-gray-400 outline-none"
                 required
               />
               <br />
