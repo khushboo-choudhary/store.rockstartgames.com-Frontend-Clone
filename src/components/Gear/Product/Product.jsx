@@ -4,6 +4,7 @@ import axios from "axios";
 import "./Product.css";
 import doPayment from "../../../utilities/payment";
 import { useNavigate } from "react-router-dom";
+import {Link} from 'react-router-dom';
 
 const Product = () => {
   const { id } = useParams();
@@ -17,9 +18,10 @@ const Product = () => {
         setproduct(res.data);
       });
     axios
-      .get("https://obscure-citadel-15133.herokuapp.com/gear/apparel")
+    .get("https://obscure-citadel-15133.herokuapp.com/coll")
       .then((res) => {
-        setapparelData(res.data.gear);
+        setapparelData(res.data.collection);
+       
       });
   }, []);
 
@@ -121,23 +123,25 @@ const Product = () => {
         <div id="all-card-container">
           {apparelData.map((curElem) => {
             return (
-              <div key={curElem._id}>
-                <div id="apparel-items-content">
-                  <div id="apparel-item-card">
-                    <div id="apparel-item-img-part">
-                      <img src={curElem.image} alt="" />
-                    </div>
-                    <div id="name-price-part">
-                      <div id="apparel-item-title-part">
-                        <p>{curElem.name}</p>
+             <Link to={`/collection/${curElem._id}`}>
+                    <div key={curElem._id}>
+                  <div id="apparel-items-content">
+                    <div id="apparel-item-card">
+                      <div id="apparel-item-img-part">
+                        <img src={curElem.image} alt="" />
                       </div>
-                      <div id="apparel-item-price-part">
-                        <p>€{curElem.price}</p>
+                      <div id="name-price-part">
+                        <div id="apparel-item-title-part">
+                          <p>{curElem.name}</p>
+                        </div>
+                        <div id="apparel-item-price-part">
+                          <p>€{curElem.price}</p>
+                        </div>
                       </div>
                     </div>
                   </div>
                 </div>
-              </div>
+              </Link>
             );
           })}
         </div>

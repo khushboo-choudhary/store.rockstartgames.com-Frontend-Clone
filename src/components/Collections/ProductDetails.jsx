@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import axios from "axios";
 import "../Gear/Product/Product.css";
 import doPayment from "../../utilities/payment";
@@ -19,11 +19,10 @@ const ProductDetails = () => {
        
       });
     axios
-      .get("https://obscure-citadel-15133.herokuapp.com/coll")
-      .then((res) => {
-        setapparelData(res.data.collection);
-       
-      });
+    .get("https://obscure-citadel-15133.herokuapp.com/gear?page=2")
+    .then((res) => {
+      setapparelData(res.data.gear);
+    });
   }, []);
 
   const navigate = useNavigate();
@@ -119,23 +118,30 @@ const ProductDetails = () => {
             <div id="apparel-items-part">
             <div id="apparel-heading-part">
               <p class="apparel-heading-rohit">Realted Products</p>
-              <p>SEE ALL</p>
             </div>
             <div id="all-card-container">
               {apparelData.map((curElem) => {
                 return (
-                  <div key={curElem._id}>
-                    <div id="apparel-items-content">
-                      <div id="apparel-item-card">
-                        <div id="apparel-item-img-part">
-                          <img src={curElem.image} alt="" />
-                        </div>
+                 <Link to={`/gear/${curElem._id}`}>
+                    <div key={curElem._id}>
+                  <div id="apparel-items-content">
+                    <div id="apparel-item-card">
+                      <div id="apparel-item-img-part">
+                        <img src={curElem.image} alt="" />
+                      </div>
+                      <div id="name-price-part">
                         <div id="apparel-item-title-part">
                           <p>{curElem.name}</p>
+                        </div>
+                        <div id="apparel-item-price-part">
+                          <p>€{curElem.price}</p>
                         </div>
                       </div>
                     </div>
                   </div>
+                </div>
+                 </Link>
+
                 );
               })}
             </div>

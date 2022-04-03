@@ -11,7 +11,7 @@ function AllCard() {
 
   useEffect(() => {
     axios
-      .get("https://obscure-citadel-15133.herokuapp.com/gear/apparel")
+      .get("https://obscure-citadel-15133.herokuapp.com/gear/apparel?page=2")
       .then((res) => {
         setapparelData(res.data.gear);
       });
