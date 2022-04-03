@@ -3,6 +3,7 @@
     color: white;
     font-family: "Helvetica Now Text", Arial;
     font-family: "Helvetica Now Display" - 700;
+    overflow-x: hidden;
 }
 #first_div{
     background: black;

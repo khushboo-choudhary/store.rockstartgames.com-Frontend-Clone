@@ -79,6 +79,41 @@ const GameMobileMenu = ({hideclass}) => {
             </Link>
           </li>
         </div>
+        <div className="py-2 font-semibold">
+          <li>
+            <Link onClick={hideclass} to="/collections">
+              Collection
+            </Link>
+          </li>
+        </div>
+        <div className="py-2 font-semibold">
+          <li>
+            <Link onClick={hideclass} to="/grand-theft-auto-collection">
+            Grand Theft Auto Collection
+            </Link>
+          </li>
+        </div>
+        <div className="py-2 font-semibold">
+          <li>
+            <Link onClick={hideclass} to="/red-dead-redemption-collection">
+            Red Dead Redemption Collection
+            </Link>
+          </li>
+        </div>
+        <div className="py-2 font-semibold">
+          <li>
+            <Link onClick={hideclass} to="/rockstar-collection">
+            Rockstar Games Collection
+            </Link>
+          </li>
+        </div>
+        <div className="py-2 font-semibold">
+          <li>
+            <Link onClick={hideclass} to="/gear">
+              Gear
+            </Link>
+          </li>
+        </div>
       </ul>
     </>
   );
