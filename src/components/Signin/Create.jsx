@@ -1,7 +1,7 @@
 import axios from "axios";
 import { useState } from "react";
 import "./login.css";
-
+import {Link} from 'react-router-dom'
 const Create = (props) => {
   const [formData, setForm] = useState({});
 
@@ -47,7 +47,7 @@ const Create = (props) => {
                 type="text"
                 placeholder="Email"
                 onChange={onChangeForm}
-                className="py-3 md:w-96 rounded px-2 m-2 border-[0.5px] border-gray-400 focus:border-1 focus: border-gray-400"
+                className="outline-blue-400 py-3 md:w-96 rounded px-2 m-2 border-[0.5px] border-gray-400 focus:border-1 focus: border-gray-400"
                 required
               />
               <br />
@@ -56,7 +56,7 @@ const Create = (props) => {
                 type="password"
                 placeholder="Password"
                 onChange={onChangeForm}
-                className="py-3 md:w-96 rounded px-2 m-2 border-[0.5px] border-gray-400 focus:border-1 focus: border-gray-400"
+                className=" outline-blue-400 py-3 md:w-96 rounded px-2 m-2 border-[0.5px] border-gray-400 focus:border-1 focus: border-gray-400"
                 required
               />
               <br />
@@ -305,7 +305,7 @@ const Create = (props) => {
               <div className='flex justify-between item-center'>
               <button
                 className="px-4 py-1 m-1 font-semibold hover:bg-[#F7931E] text-black bg-white rounded border border-black"
-              >Back</button>
+              ><Link to="/signin">Back</Link></button>
               <input
                 type="submit"
                 value="Next"
