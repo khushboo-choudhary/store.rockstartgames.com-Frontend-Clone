@@ -59,7 +59,7 @@ const Cart = () => {
                       );
                       itemCount();
                     }}
-                    className="text-gray-400 my-1 p-3 rounded pr-8 text-white bg-black focus:bg-black hover:bg-gray-500 outline-none"
+                    className="text-gray-400 my-1 p-3 rounded pr-8  bg-black focus:bg-black hover:bg-gray-500 outline-none"
                   >
                     <option value="1">Qty:1</option>
                     <option value="2">Qty:2</option>
@@ -90,7 +90,7 @@ const Cart = () => {
           </p>
         </div>
 
-        <div className="bg-black text-gray-300 md:mt-10 md:mb-10 md:mr-10 p-4  md:w-[400px] md:w-[30%] m-6">
+        <div className="bg-black text-gray-300 md:mt-10 md:mb-10 md:mr-10 p-4  md:w-[30%] m-6">
           <p className="my-1">ORDER SUMMARY</p>
           <div id="line"></div>
           <div className="flex justify-between my-1">

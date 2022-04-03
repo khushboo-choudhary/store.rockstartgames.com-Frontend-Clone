@@ -61,7 +61,7 @@ const Address = () => {
 
             <div className="flex my-2">
                 <input className="mr-[20px] bg-[#1a1a1a] w-[50%] py-1 outline-amber-500" type="text" />
-                <input className="bg-[#808080] w-[50%] py-1 outline-amber-500" type="text" />
+                <input className="bg-[#1a1a1a] w-[50%] py-1 outline-amber-500" type="text" />
             </div>
               <Link to="/payment"><div className="flex justify-end my-2"><button className=" bg-yellow-500 text-black font-semibold px-10 py-2 hover:bg-yellow-400 rounded mt-2">CONTINUE</button></div></Link>
          </form>

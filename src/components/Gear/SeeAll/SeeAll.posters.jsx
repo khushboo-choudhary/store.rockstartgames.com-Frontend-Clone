@@ -27,7 +27,7 @@ const SeeAllPoster = () => {
             return (
              <Link to={`/gear/${curElem._id}`}>
                 <div key={curElem._id}>
-                <div id="apparel-items-content">
+                <div id="apparel-items-content" >
                   <div id="apparel-item-card">
                     <div id="apparel-item-img-part">
                       <img src={curElem.image} alt="" />
