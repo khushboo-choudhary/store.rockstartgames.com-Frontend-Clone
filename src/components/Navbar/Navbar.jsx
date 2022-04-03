@@ -65,6 +65,7 @@ const Navbar = (props) => {
   const hideall=()=>{
     setCollectionToggle("hidden");
     setGameToggle("hidden");
+    setGameMobileToggle("hidden");
   }
   const onClickGameMobileMenu = () => {
     if (GameMobileMenuToggle === "hidden") {
@@ -92,6 +93,7 @@ const Navbar = (props) => {
   };
   const hideInputMobileView=()=>{
     setInputToggle({ input: "hidden", allother: "block" });
+    setGameMobileToggle("hidden");
   }
 
   return (

@@ -1,7 +1,10 @@
 import { Link } from "react-router-dom";
 import "./GameMenu.css";
+import {useState} from 'react';
 
 const GameMobileMenu = ({hideclass}) => {
+
+  const [hideList,sethideList ] = useState("block")
 
   return (
     <>
