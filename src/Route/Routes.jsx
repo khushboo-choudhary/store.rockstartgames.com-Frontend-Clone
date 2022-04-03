@@ -21,6 +21,7 @@ import Cart from '../components/Cart/Cart'
 import Create from "../components/Signin/Create"
 import SingleGame from '../components/newGames/SingleGame'
 import Address from '../components/Address/Address'
+import { Page404 } from '../components/404'
 
 
 
@@ -54,6 +55,7 @@ const AllRoutes = () => {
       <Route path="/member" element={<Member />} />
       <Route path="/signin" element={<Signin />} />
       <Route path="/register" element={<Create />} />
+      <Route path="*" element={<Page404/>} />
     </Routes>
   );
 }
