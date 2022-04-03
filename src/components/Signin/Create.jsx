@@ -95,7 +95,7 @@ const Create = (props) => {
                 className="py-3 md:w-96 rounded px-2 m-2 border-[0.5px] border-gray-400 focus:border-1 focus: border-gray-400 outline-none"
                 id="country"
                 onChange={onChangeForm}
-                value=""
+                value={formData.country}
                 name="country"
               >
                 <option value="AF">Afghanistan</option>
