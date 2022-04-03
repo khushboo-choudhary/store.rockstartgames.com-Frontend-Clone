@@ -20,7 +20,7 @@ const GameMobileMenu = ({hideclass}) => {
         </div>
         <div className="py-2 font-semibold">
           <li>
-            <Link onClick={hideclass} to="/game/buy-red-dead-redemption-2">
+            <Link onClick={hideclass} to="/games/62432887fa3b17edc75a9fdb">
               Red Dead Redemption 2
             </Link>
           </li>
@@ -34,7 +34,7 @@ const GameMobileMenu = ({hideclass}) => {
         </div>
         <div className="py-2 font-semibold">
           <li>
-            <Link onClick={hideclass} to="/game/buy-gta-v">Grand Theft Auto V</Link>
+            <Link onClick={hideclass} to="/games/62432bccfa3b17edc75a9fdd">Grand Theft Auto V</Link>
           </li>
         </div>
         <div className="py-2 font-semibold">
@@ -46,38 +46,38 @@ const GameMobileMenu = ({hideclass}) => {
         </div>
         <div className="py-2 font-semibold">
           <li>
-            <Link onClick={hideclass} to="/game/buy-grand-theft-auto-the-trilogy-the-definitive-edition">
+            <Link onClick={hideclass} to="/games/62432d8bfa3b17edc75a9fdf">
               Grand Theft Auto: The Trilogy – The Definitive Edition
             </Link>
           </li>
         </div>
         <div className="py-2 font-semibold">
           <li>
-            <Link onClick={hideclass} to="/game/buy-la-noire">L.A. Noire</Link>
+            <Link onClick={hideclass} to="/games/62433229fa3b17edc75a9fe5">L.A. Noire</Link>
           </li>
         </div>
         <div className="py-2 font-semibold">
           <li>
-            <Link onClick={hideclass} to="/game/buy-bully-scholarship-edition">
+            <Link onClick={hideclass} to="/games/62433342fa3b17edc75a9fe7">
               Bully: Scholarship Edition
             </Link>
           </li>
         </div>
         <div className="py-2 font-semibold">
           <li>
-            <Link onClick={hideclass} to="/game/buy-max-payne-3">Max Payne 3</Link>
+            <Link onClick={hideclass} to="/games/6243344afa3b17edc75a9fe9">Max Payne 3</Link>
           </li>
         </div>
         <div className="py-2 font-semibold">
           <li>
-            <Link onClick={hideclass} to="/game/buy-grand-theft-auto-iv">
+            <Link onClick={hideclass} to="/games/624330d3fa3b17edc75a9fe3">
               Grand Theft Auto IV: Complete Edition
             </Link>
           </li>
         </div>
         <div className="py-2 font-semibold">
           <li>
-            <Link onClick={hideclass} to="/game/buy-grand-theft-auto-the-trilogy">
+            <Link onClick={hideclass} to="/games/62432d8bfa3b17edc75a9fdf">
               Grand Theft Auto: The Trilogy
             </Link>
           </li>
