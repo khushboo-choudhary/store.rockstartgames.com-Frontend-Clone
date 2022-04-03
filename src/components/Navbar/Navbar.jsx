@@ -55,20 +55,22 @@ const Navbar = (props) => {
   // setCollectionToggle("hidden");
 
   const onClickGameMenu = () => {
-    console.log("object");
     if (GameMenuToggle === "hidden") {
       setGameToggle("block");
       setCollectionToggle("hidden");
     } else setGameToggle("hidden");
   };
+  const hideall=()=>{
+    setCollectionToggle("hidden");
+    setGameToggle("hidden");
+  }
   const onClickGameMobileMenu = () => {
-    console.log("object");
     if (GameMobileMenuToggle === "hidden") {
       setGameMobileToggle("block");
     } else setGameMobileToggle("hidden");
   };
   const onClickCollectionMenu = () => {
-    console.log("object Collection", CollectionMenuToggle);
+    // console.log("object Collection", CollectionMenuToggle);
     if (CollectionMenuToggle === "hidden") {
       setCollectionToggle("block");
       setGameToggle("hidden");
@@ -157,7 +159,7 @@ const Navbar = (props) => {
               />
             </button>
           </div>
-          <Link
+          <Link onClick={hideall}
             to="/gear"
             className="hidden mx-6 font-bold cursor-pointer md:block"
           >
@@ -191,13 +193,13 @@ const Navbar = (props) => {
         </div>
       </div>
       <div className={`relative ${GameMenuToggle}`}>
-        <GameMenu></GameMenu>
+        <GameMenu hideclass={hideall} ></GameMenu>
       </div>
       <div className={`relative ${GameMobileMenuToggle}`}>
-        <GameMobileMenu></GameMobileMenu>
+        <GameMobileMenu  hideclass={hideall} ></GameMobileMenu>
       </div>
       <div className={`relative ${CollectionMenuToggle}`}>
-        <CollectionMenu></CollectionMenu>
+        <CollectionMenu  hideclass={hideall} ></CollectionMenu>
       </div>
     </>
   );

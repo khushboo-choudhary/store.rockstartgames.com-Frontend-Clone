@@ -1,8 +1,7 @@
 import { Link } from "react-router-dom";
 import "./GameMenu.css";
 
-const GameMobileMenu = (props) => {
-  console.log("GameMobileMenu");
+const GameMobileMenu = ({hideclass}) => {
 
   return (
     <>
@@ -13,69 +12,69 @@ const GameMobileMenu = (props) => {
       >
         <div className="py-2 font-semibold">
           <li>
-            <Link to="">Games</Link>
+            <Link onClick={hideclass} to="">Games</Link>
           </li>
         </div>
         <div className="py-2 font-semibold">
           <li>
-            <Link to="/game/buy-red-dead-redemption-2">
+            <Link onClick={hideclass} to="/game/buy-red-dead-redemption-2">
               Red Dead Redemption 2
             </Link>
           </li>
         </div>
         <div className="py-2 font-semibold">
           <li>
-            <Link to="/buy-red-dead-online-gold-bars">
+            <Link onClick={hideclass} to="/buy-red-dead-online-gold-bars">
               Red Dead Online: Gold Bars
             </Link>
           </li>
         </div>
         <div className="py-2 font-semibold">
           <li>
-            <Link to="/game/buy-gta-v">Grand Theft Auto V</Link>
+            <Link onClick={hideclass} to="/game/buy-gta-v">Grand Theft Auto V</Link>
           </li>
         </div>
         <div className="py-2 font-semibold">
           <li>
-            <Link to="/buy-gta-v-shark-cash-cards">
+            <Link onClick={hideclass} to="/buy-gta-v-shark-cash-cards">
               Grand Theft Auto Online: Shark Cash Cards
             </Link>
           </li>
         </div>
         <div className="py-2 font-semibold">
           <li>
-            <Link to="/game/buy-grand-theft-auto-the-trilogy-the-definitive-edition">
+            <Link onClick={hideclass} to="/game/buy-grand-theft-auto-the-trilogy-the-definitive-edition">
               Grand Theft Auto: The Trilogy – The Definitive Edition
             </Link>
           </li>
         </div>
         <div className="py-2 font-semibold">
           <li>
-            <Link to="/game/buy-la-noire">L.A. Noire</Link>
+            <Link onClick={hideclass} to="/game/buy-la-noire">L.A. Noire</Link>
           </li>
         </div>
         <div className="py-2 font-semibold">
           <li>
-            <Link to="/game/buy-bully-scholarship-edition">
+            <Link onClick={hideclass} to="/game/buy-bully-scholarship-edition">
               Bully: Scholarship Edition
             </Link>
           </li>
         </div>
         <div className="py-2 font-semibold">
           <li>
-            <Link to="/game/buy-max-payne-3">Max Payne 3</Link>
+            <Link onClick={hideclass} to="/game/buy-max-payne-3">Max Payne 3</Link>
           </li>
         </div>
         <div className="py-2 font-semibold">
           <li>
-            <Link to="/game/buy-grand-theft-auto-iv">
+            <Link onClick={hideclass} to="/game/buy-grand-theft-auto-iv">
               Grand Theft Auto IV: Complete Edition
             </Link>
           </li>
         </div>
         <div className="py-2 font-semibold">
           <li>
-            <Link to="/game/buy-grand-theft-auto-the-trilogy">
+            <Link onClick={hideclass} to="/game/buy-grand-theft-auto-the-trilogy">
               Grand Theft Auto: The Trilogy
             </Link>
           </li>
