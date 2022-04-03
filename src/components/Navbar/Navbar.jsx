@@ -99,7 +99,7 @@ const Navbar = (props) => {
       <div onClick={hideInputMobileView} ><ArrowBackIcon/></div>
       <div className="flex items-center ml-2 rounded-full bg-[#161616]">
       <div className="pl-2"><SearchIcon/></div>
-      <input type="text" placeholder="Search" className={`${InputMobileToggle.input} w-full bg-[#161616] rounded-r-full pl-2 py-1`}/>
+      <input type="text" placeholder="Search" className={`${InputMobileToggle.input} w-full bg-[#161616] rounded-r-full pl-2 py-1 outline-none`}/>
       </div>
       </div>
       <div
