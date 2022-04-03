@@ -41,6 +41,7 @@ const Cart = () => {
         storeCart.splice(ind,1)
         localStorage.setItem("store_cart",JSON.stringify(storeCart));
         setRender(!render)
+        itemCount()
     }
     useEffect(() => {
         itemCount()
