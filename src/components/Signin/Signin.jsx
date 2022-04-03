@@ -40,7 +40,19 @@ const Sigin = (props) => {
     //   })
   }
 
+   const { nickName, profileImage } =
+     JSON.parse(localStorage.getItem("userData")) ||
+     localStorage.setItem(
+       "userData",
+       JSON.stringify({
+         profileImage: "https://a.rsg.sc/n/shreyas1000",
+         nickName: "none",
+       })
+     );
 
+   if (nickName != "none") {
+     navigate("/");
+   }
 
   const formSubmit = (e) => {
     e.preventDefault();
