@@ -23,6 +23,7 @@ import SingleGame from '../components/newGames/SingleGame'
 import Address from '../components/Address/Address'
 import { Page404 } from '../components/404'
 import { GoogleCallBack } from '../components/gooogleCallBack'
+import { PaymentSuccess } from '../components/paymentSuccess'
 
 
 
@@ -59,6 +60,7 @@ const AllRoutes = () => {
       <Route path="*" element={<Page404/>} />
 
       <Route path="/google-oauth2success" element={<GoogleCallBack/>} />
+      <Route path="/payment/successful" element={<PaymentSuccess/>} />
     </Routes>
   );
 }
