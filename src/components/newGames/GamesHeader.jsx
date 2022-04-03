@@ -3,11 +3,12 @@ import styled from "styled-components";
 import Button from "@mui/material/Button";
 import { ContactSupportOutlined } from "@mui/icons-material";
 import doPayment from "../../utilities/payment";
+import { useNavigate } from "react-router-dom";
 
 const HeroImg = styled.div`
   width: 100%;
   height: 500px;
-  background-image:${(props)=>`url(${props.img})`};
+  background-image: ${(props) => `url(${props.img})`};
   background-size: cover;
   background-position: center-top;
   background-repeat: no-repeat;
@@ -50,13 +51,28 @@ const ColorButton2 = styled(Button)(({ theme }) => ({
   },
 }));
 
-export const GamesHeader = ({img, logo, name, amount}) => {
+export const GamesHeader = ({ img, logo, name, amount }) => {
+  const navigate = useNavigate();
 
-  const buyNow = () =>{
-    let disc = "payment for" +" "+ name;
-    amount = amount * 84;
-    doPayment(amount, disc);
-  }
+  const buyNow = () => {
+    const { nickName, profileImage } =
+      JSON.parse(localStorage.getItem("userData")) ||
+      localStorage.setItem(
+        "userData",
+        JSON.stringify({
+          profileImage: "https://a.rsg.sc/n/shreyas1000",
+          nickName: "none",
+        })
+      );
+
+    if (nickName == "none") {
+      navigate("/signin");
+    } else {
+      let disc = "payment for" + " " + name;
+      amount = amount * 84;
+      doPayment(amount, disc);
+    }
+  };
 
   return (
     <Grid container spacing={0}>
@@ -98,7 +114,14 @@ export const GamesHeader = ({img, logo, name, amount}) => {
               alt="selectPlatform"
             />
           </p>
-          <ColorButton variant="contained" onClick={()=>{buyNow()}}>BUY NOW</ColorButton>
+          <ColorButton
+            variant="contained"
+            onClick={() => {
+              buyNow();
+            }}
+          >
+            BUY NOW
+          </ColorButton>
         </div>
       </Grid>
       <Grid item md={6} sm={12} xs={12} order={{ md: 2, sm: 1, xs: 1 }}>
