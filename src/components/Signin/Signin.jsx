@@ -65,7 +65,7 @@ const Sigin = (props) => {
                 placeholder="Email"
                 onChange={onChangeForm}
                 value={formData.email}
-                className="py-3 md:w-96 rounded px-2 m-2 border-[0.5px] border-gray-400 focus:border-1 focus: border-gray-400 myInput outline-none"
+                className="py-3 md:w-96 rounded px-2 m-2 border-[0.5px] border-gray-400 focus:border-1 focus: border-gray-400 myInput outline-blue-500"
                 required
               />
               <br />
@@ -75,7 +75,7 @@ const Sigin = (props) => {
                 placeholder="Password"
                 onChange={onChangeForm}
                 value={formData.password}
-                className="py-3 md:w-96 rounded px-2 m-2 border-[0.5px] border-gray-400 focus:border-1 focus: border-gray-400 outline-none"
+                className="py-3 md:w-96 rounded px-2 m-2 border-[0.5px] border-gray-400 focus:border-1 focus: border-gray-400 outline-blue-500"
                 required
               />
               <br />
@@ -87,9 +87,9 @@ const Sigin = (props) => {
               <br />
               <div className="flex justify-between items-center">
                 <label className="underline w-76">
-                  <a className="underline w-76" href="/">
+                  <p className="underline w-76">
                     Forgot your password?
-                  </a>
+                  </p>
                 </label>
                 <input
                   type="submit"

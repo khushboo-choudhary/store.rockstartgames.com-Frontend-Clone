@@ -125,7 +125,7 @@ const Navbar = (props) => {
             <button onClick={() => onClickSearchBar()}>
               <SearchIcon />
             </button>
-            <Link to="/cart"><ShoppingCartIcon className="w-8" /></Link>
+            <Link to="/cart" className="pl-2"><ShoppingCartIcon className="w-8" /></Link>
           </div>
         </div>
 
@@ -184,7 +184,7 @@ const Navbar = (props) => {
               placeholder="Search"
             />
           </div>
-          <Link to="/cart"><ShoppingCartIcon className="w-8" /></Link>
+          <Link to="/cart"><ShoppingCartIcon className="w-8 ml-[20px]" /></Link>
           <div className={`${loginOrNot.signOut}`}>
           <Link to="signin" className="mx-6 font-bold cursor-pointer">
             Sign in
