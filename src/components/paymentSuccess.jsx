@@ -7,7 +7,7 @@ export const PaymentSuccess = ()=>{
             window.location.href = "/";
         }, 4000)
     }, [])
-
+    localStorage.setItem("store_cart", JSON.stringify([]));
     return (
         <div style={{textAlign:"center"}}>
             <h1 style={{fontSize:"40px", fontWeight: "bold"}}>Your Order Has been Placed Successfully</h1>

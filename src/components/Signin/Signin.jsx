@@ -32,7 +32,7 @@ const Sigin = (props) => {
      );
 
    if (nickName != "none") {
-     navigate("/");
+     window.location.href = "/";
    }
 
   const formSubmit = (e) => {

@@ -20,7 +20,7 @@ const Address = () => {
         })
       );
 
-      localStorage.setItem("store_cart", JSON.stringify([]));
+      
     if (nickName == "none") {
       navigate("/signin");
     } else {
