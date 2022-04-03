@@ -8,7 +8,7 @@ import { useNavigate } from "react-router-dom";
 const Cart = () => {
     const navigate = useNavigate();
     let storeCart=JSON.parse(localStorage.getItem("store_cart"))||[];
-    let totalPrice=JSON.parse(localStorage.getItem("total_cart_price"))||"";
+    let totalPrice=JSON.parse(localStorage.getItem("total_cart_price"))||0;
     // let newstoreCart=[...new Map(storeCart.map((item) => [item["_id"], item])).values()];
     const [totalPrd,setTotalprd] = useState([]);
     const [render, setRender] = useState(true)

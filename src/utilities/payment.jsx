@@ -31,6 +31,7 @@ const doPayment = (amount, desc) => {
       if (data.success) {
         window.location.href = data.payment_request.longurl;
       } else {
+        console.log(data);
         alert("Payment Failed / Something went wrong");
       }
     })

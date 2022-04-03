@@ -19,25 +19,6 @@ const Sigin = (props) => {
   const oAuth = ()=>{
     window.location.href =
       "https://obscure-citadel-15133.herokuapp.com/auth/google";
-    // axios
-    //   .get("https://obscure-citadel-15133.herokuapp.com/auth/google")
-    //   .then((res) => {
-    //     console.log(res);
-    //     // localStorage.setItem("token", JSON.stringify(res.data.token));
-    //     // const { nickName, profileImage } = res.data;
-    //     // localStorage.setItem(
-    //     //   "userData",
-    //     //   JSON.stringify({ profileImage, nickName })
-    //     // );
-    //     // alert("You Have LoggedIn Successfully");
-    //     // // navigate("/");
-    //     // window.location.href = "/";
-    //   })
-    //   .catch((err) => {
-    //     console.log(err);
-    //     alert("Something Went Wrong");
-    //     console.log(err);
-    //   })
   }
 
    const { nickName, profileImage } =

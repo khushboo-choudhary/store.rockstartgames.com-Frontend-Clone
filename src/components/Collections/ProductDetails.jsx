@@ -43,6 +43,7 @@ const ProductDetails = () => {
     } else {
       let disc = "payment for" + " " + product.name;
       let amount = product.price * 84;
+      amount = amount.toFixed(2);
       doPayment(amount, disc);
     }
   };

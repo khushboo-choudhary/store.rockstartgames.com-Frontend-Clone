@@ -41,6 +41,11 @@ const Create = (props) => {
     postData("https://obscure-citadel-15133.herokuapp.com/register");
   };
 
+  const oAuth = () => {
+    window.location.href =
+      "https://obscure-citadel-15133.herokuapp.com/auth/google";
+  };
+
   return (
     <>
       <div className=" h-full pb-16" id="bgimg">
@@ -320,23 +325,59 @@ const Create = (props) => {
                 <option value="YE">Yemen</option>
                 <option value="ZM">Zambia</option>
               </select>
-              <div className='mt-1 flex justify-start item-center w-[230px] md:w-[300px] lg:w-[400px]'>
-              <input type="checkbox" id="notification" onChange={onChangeForm} /> <p className="ml-1 w-[250px] md:w-[300px] lg:w-[400px]">I would like to receive the early word on all Rockstar Games announcements, official launches, contests, special events and more.</p>
-              
+              <div className="mt-1 flex justify-start item-center w-[230px] md:w-[300px] lg:w-[400px]">
+                <input
+                  type="checkbox"
+                  id="notification"
+                  onChange={onChangeForm}
+                />{" "}
+                <p className="ml-1 w-[250px] md:w-[300px] lg:w-[400px]">
+                  I would like to receive the early word on all Rockstar Games
+                  announcements, official launches, contests, special events and
+                  more.
+                </p>
               </div>
-              <div className='flex justify-between item-center'>
-              <button
-                className="px-4 py-1 m-1 font-semibold hover:bg-[#F7931E] text-black bg-white rounded border border-black"
-              ><Link to="/signin">Back</Link></button>
-              <input
-                type="submit"
-                value="Next"
-                className="px-4 py-1 m-1 font-semibold hover:bg-[#F7931E] text-black bg-[#f99e36] rounded"
-              />
+              <div className="flex justify-between item-center">
+                <button className="px-4 py-1 m-1 font-semibold hover:bg-[#F7931E] text-black bg-white rounded border border-black">
+                  <Link to="/signin">Back</Link>
+                </button>
+                <input
+                  type="submit"
+                  value="Next"
+                  className="px-4 py-1 m-1 font-semibold hover:bg-[#F7931E] text-black bg-[#f99e36] rounded"
+                />
               </div>
             </form>
           </div>
-        <p className="p-2 text-white text-[13px] mt-8">© 2022 ROCKSTAR GAMES | PRIVACY POLICY | TERMS OF SERVICE</p>
+          <div className="flex justify-between items-center bg-white py-6 mt-12">
+            <p className="pl-4 text-[18px] text-gray-600">Sign in using</p>
+            <div className="social-icons">
+              {/* <a href="#" className="p-2">
+                <i className="md:text-3xl text-yellow-500 fab fa-playstation"></i>
+              </a> */}
+              {/* <a href="#" className="p-2">
+                <i className="md:text-3xl text-yellow-500 fab fa-xbox"></i>
+              </a> */}
+              {/* <a href="#" className="p-2">
+                <i className="md:text-3xl text-yellow-500 fab fa-facebook"></i>
+              </a> */}
+              <button
+                className="p-2 mr-4"
+                onClick={() => {
+                  oAuth();
+                }}
+              >
+                <i className="md:text-3xl text-yellow-500 fab fa-google"></i>
+              </button>
+
+              {/* <a href="#" className="p-2">
+                <i className="md:text-3xl text-yellow-500 fab fa-twitter"></i>
+              </a> */}
+            </div>
+          </div>
+          <p className="p-2 text-white text-[13px] mt-8">
+            © 2022 ROCKSTAR GAMES | PRIVACY POLICY | TERMS OF SERVICE
+          </p>
         </div>
       </div>
     </>
