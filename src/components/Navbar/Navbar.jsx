@@ -88,19 +88,26 @@ const Navbar = (props) => {
 
   const onClickSearchBar = () => {
     setInputToggle({ input: "block", allother: "hidden" });
-
   };
+  const hideInputMobileView=()=>{
+    setInputToggle({ input: "hidden", allother: "block" });
+  }
 
   return (
     <>
-      <div className={`${InputMobileToggle.input} pt-1`}>
-      <ArrowBackIcon/>
-      <input type="text" placeholder="Search" className={`${InputMobileToggle.input}`}/>
+    <div className={`${InputMobileToggle.input} pt-2 flex h-[48px] items-center bg-black pl-2`}>
+      <div onClick={hideInputMobileView} ><ArrowBackIcon/></div>
+      <div className="flex items-center ml-2 rounded-full bg-[#161616]">
+      <div className="pl-2"><SearchIcon/></div>
+      <input type="text" placeholder="Search" className={`${InputMobileToggle.input} w-full bg-[#161616] rounded-r-full pl-2 py-1`}/>
+      </div>
       </div>
       <div
         className="flex sticky top-0 right-0 left-0 z-40 items-center my-0 w-full text-white bg-black md:justify-between"
         id="navBar"
       >
+
+
         <div className="flex justify-between items-center w-full md:hidden">
           <div
             className={`flex justify-between items-center p-2 ${InputMobileToggle.allother}`}
