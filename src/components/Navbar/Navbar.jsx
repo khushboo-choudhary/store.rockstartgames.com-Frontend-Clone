@@ -5,6 +5,7 @@ import GameMobileMenu from "./GameMobileMenu";
 import MenuListComposition from "./UserMenuMui";
 import UserMenu from "./UserMenu";
 import SearchIcon from "@mui/icons-material/Search";
+import PersonRoundedIcon from "@mui/icons-material/PersonRounded";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 import MenuIcon from "@mui/icons-material/Menu";
@@ -133,6 +134,7 @@ const Navbar = (props) => {
               <SearchIcon />
             </button>
             <Link to="/cart" className="pl-2"><ShoppingCartIcon className="w-8" /></Link>
+            <Link to="/signin" className="pl-2"><PersonRoundedIcon className="w-8" /></Link>
           </div>
         </div>
 
