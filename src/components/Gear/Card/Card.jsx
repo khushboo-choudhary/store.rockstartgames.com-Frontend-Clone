@@ -11,15 +11,13 @@ function AllCard() {
 
   useEffect(() => {
     axios
-      .get("https://obscure-citadel-15133.herokuapp.com/gear/apparel?page=2")
+      .get("https://clear-pear-tuna.cyclic.app/gear/apparel?page=2")
       .then((res) => {
         setapparelData(res.data.gear);
       });
-    axios
-      .get("https://obscure-citadel-15133.herokuapp.com/gear/caps")
-      .then((res) => {
-        setcapsData(res.data.gear);
-      });
+    axios.get("https://clear-pear-tuna.cyclic.app/gear/caps").then((res) => {
+      setcapsData(res.data.gear);
+    });
     axios
       .get("https://obscure-citadel-15133.herokuapp.com/gear/posters")
       .then((res) => {
