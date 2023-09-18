@@ -19,7 +19,7 @@ const HomeGames = () => {
 
   useEffect(() => {
     axios
-      .get("https://obscure-citadel-15133.herokuapp.com/games")
+      .get("https://clear-pear-tuna.cyclic.app/games")
       .then((res) => {
         // console.log(res.data.games);
         setProducts(res.data.games);
@@ -88,11 +88,11 @@ const HomeGames = () => {
             return (
               <Link to={`/games/${product._id}`}>
                 <MyCard
-                key={product._id}
-                img={product.heroimg}
-                title={product.name}
-                price={"€" + product.price}
-              />
+                  key={product._id}
+                  img={product.heroimg}
+                  title={product.name}
+                  price={"€" + product.price}
+                />
               </Link>
             );
           })}

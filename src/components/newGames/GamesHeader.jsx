@@ -65,7 +65,7 @@ export const GamesHeader = ({ img, logo, name, amount }) => {
         })
       );
 
-    if (nickName == "none") {
+    if (nickName === "none") {
       navigate("/signin");
     } else {
       let disc = "payment for" + " " + name;

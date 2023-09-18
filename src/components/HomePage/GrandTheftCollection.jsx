@@ -19,7 +19,7 @@ const GrandTheftAuto = () => {
 
   useEffect(() => {
     axios
-      .get("https://obscure-citadel-15133.herokuapp.com/coll/grand/gear")
+      .get("https://clear-pear-tuna.cyclic.app/coll/grand/gear")
       .then((res) => {
         setProducts(res.data.collection);
       })

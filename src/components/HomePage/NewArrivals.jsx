@@ -4,7 +4,7 @@ import "react-multi-carousel/lib/styles.css";
 import { MyCard } from "../MiniCompo/Card";
 import { useEffect, useState } from "react";
 import axios from "axios";
-import {Link} from 'react-router-dom'
+import { Link } from "react-router-dom";
 
 const NewArrivalDiv = styled.div`
   width: 85%;
@@ -19,7 +19,7 @@ const NewArrivals = () => {
 
   useEffect(() => {
     axios
-      .get("https://obscure-citadel-15133.herokuapp.com/coll/red/gear")
+      .get("https://clear-pear-tuna.cyclic.app/coll/red/gear")
       .then((res) => {
         // console.log(res.data.collection)
         setProducts(res.data.collection);

@@ -2,22 +2,21 @@ import axios from "axios";
 import { useState } from "react";
 import "./login.css";
 import { useNavigate } from "react-router-dom";
-import {Link} from 'react-router-dom'
-
+import { Link } from "react-router-dom";
 
 const Create = (props) => {
   const [formData, setForm] = useState({});
-    const navigate = useNavigate();
+  const navigate = useNavigate();
 
   const onChangeForm = (e) => {
-      e.preventDefault()
+    e.preventDefault();
     const { id, value } = e.target;
     setForm({ ...formData, [id]: value });
     console.log(formData);
   };
   const formSubmit = (e) => {
     e.preventDefault();
-    console.log("Inside FormSubmit")
+    console.log("Inside FormSubmit");
     function postData(url) {
       axios
         .post(url, formData)
@@ -31,19 +30,18 @@ const Create = (props) => {
           alert("Your Account Is Created Successfully");
           // window.location.reload(false);
           // navigate("/");
-          window.location.href = "/"
+          window.location.href = "/";
         })
         .catch((err) => {
           alert("Something Went Wrong");
           console.log(err);
-        });;
+        });
     }
-    postData("https://obscure-citadel-15133.herokuapp.com/register");
+    postData("https://clear-pear-tuna.cyclic.app/register");
   };
 
   const oAuth = () => {
-    window.location.href =
-      "https://obscure-citadel-15133.herokuapp.com/auth/google";
+    window.location.href = "https://clear-pear-tuna.cyclic.app/auth/google";
   };
 
   return (

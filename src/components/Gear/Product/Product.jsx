@@ -4,49 +4,46 @@ import axios from "axios";
 import "./Product.css";
 import doPayment from "../../../utilities/payment";
 import { useNavigate } from "react-router-dom";
-import {Link} from 'react-router-dom';
+import { Link } from "react-router-dom";
 
 const Product = () => {
   const { id } = useParams();
   const [product, setproduct] = useState([]);
   const [apparelData, setapparelData] = useState([]);
-  let storeCart=JSON.parse(localStorage.getItem("store_cart"))||[];
+  let storeCart = JSON.parse(localStorage.getItem("store_cart")) || [];
   useEffect(() => {
-    axios
-      .get(`https://obscure-citadel-15133.herokuapp.com/gear/${id}`)
-      .then((res) => {
-        setproduct(res.data);
-      });
-    axios
-    .get("https://obscure-citadel-15133.herokuapp.com/coll")
-      .then((res) => {
-        setapparelData(res.data.collection);
-       
-      });
+    axios.get(`https://clear-pear-tuna.cyclic.app/gear/${id}`).then((res) => {
+      console.log("jkdhkjhgfyugwf", res.data);
+      setproduct(res.data);
+    });
+    axios.get("https://clear-pear-tuna.cyclic.app/coll").then((res) => {
+      console.log("jcbjksciuwgcuifwgfjbkjbui", res.data);
+      setapparelData(res.data.collection);
+    });
   }, []);
 
   const navigate = useNavigate();
 
-   const buyNow = () => {
-     const { nickName, profileImage } =
-       JSON.parse(localStorage.getItem("userData")) ||
-       localStorage.setItem(
-         "userData",
-         JSON.stringify({
-           profileImage: "https://a.rsg.sc/n/shreyas1000",
-           nickName: "none",
-         })
-       );
+  const buyNow = () => {
+    const { nickName, profileImage } =
+      JSON.parse(localStorage.getItem("userData")) ||
+      localStorage.setItem(
+        "userData",
+        JSON.stringify({
+          profileImage: "https://a.rsg.sc/n/shreyas1000",
+          nickName: "none",
+        })
+      );
 
-     if (nickName == "none") {
-       navigate("/signin");
-     } else {
-       let disc = "payment for" + " " + product.name;
-       let amount = product.price * 84;
-       amount = amount.toFixed(2);
-       doPayment(amount, disc);
-     }
-   };
+    if (nickName === "none") {
+      navigate("/signin");
+    } else {
+      let disc = "payment for" + " " + product.name;
+      let amount = product.price * 84;
+      amount = amount.toFixed(2);
+      doPayment(amount, disc);
+    }
+  };
 
   return (
     <>
@@ -56,9 +53,9 @@ const Product = () => {
             <img src={product.image} alt="" />
           </div>
           <div id="other-img-part">
-            {/* {product.allimages.map((el) => (
-                  <img src={el} alt="images" />
-                ))} */}
+            {product.allimages.map((el) => (
+              <img src={el} alt="images" />
+            ))}
           </div>
         </div>
         <div id="product-right-part">
@@ -94,23 +91,31 @@ const Product = () => {
               <button onClick={buyNow}>Buy Now</button>
             </div>
             <div id="add-btn">
-            <button onClick={() => {
+              <button
+                onClick={() => {
                   let status = false;
-                  storeCart.map((el)=>{
-                    if(el._id==product._id){
-                      status = true
+                  // eslint-disable-next-line array-callback-return
+                  storeCart.map((el) => {
+                    if (el._id === product._id) {
+                      status = true;
                     }
-                  })
-                  if(status){
-                    alert("Product is Already in cart")
+                  });
+                  if (status) {
+                    alert("Product is Already in cart");
                     return;
-                  }else{
+                  } else {
                     product.qty = 1;
                     storeCart.push(product);
-                    localStorage.setItem("store_cart",JSON.stringify(storeCart));
-                    alert("Product is Added in cart successfully")
-                  }                  
-                }} >Add to cart</button>
+                    localStorage.setItem(
+                      "store_cart",
+                      JSON.stringify(storeCart)
+                    );
+                    alert("Product is Added in cart successfully");
+                  }
+                }}
+              >
+                Add to cart
+              </button>
             </div>
           </div>
         </div>
@@ -124,8 +129,8 @@ const Product = () => {
         <div id="all-card-container">
           {apparelData.map((curElem) => {
             return (
-             <Link to={`/collection/${curElem._id}`}>
-                    <div key={curElem._id}>
+              <Link to={`/collection/${curElem._id}`}>
+                <div key={curElem._id}>
                   <div id="apparel-items-content">
                     <div id="apparel-item-card">
                       <div id="apparel-item-img-part">

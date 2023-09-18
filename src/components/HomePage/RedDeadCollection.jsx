@@ -19,7 +19,7 @@ const RedDeadEss = () => {
 
   useEffect(() => {
     axios
-      .get("https://obscure-citadel-15133.herokuapp.com/coll/red/apparel")
+      .get("https://clear-pear-tuna.cyclic.app/coll/red/apparel")
       .then((res) => {
         setProducts(res.data.collection);
       })

@@ -1,8 +1,7 @@
 import Grid from "@mui/material/Grid";
 import styled from "styled-components";
 import Button from "@mui/material/Button";
-import {Link} from "react-router-dom";
-
+import { Link } from "react-router-dom";
 
 const HeroImg = styled.div`
   width: 100%;
@@ -17,7 +16,6 @@ const HeroImg = styled.div`
     height: 200px;
   }
 `;
-
 
 const ColorButton = styled(Button)(({ theme }) => ({
   backgroundColor: "white",
@@ -34,63 +32,60 @@ const ColorButton = styled(Button)(({ theme }) => ({
   },
 }));
 
-export const HomeHeader = ()=>{
-
-
-    return (
-      <Grid container spacing={0}>
-        <Grid
-          item
-          md={6}
-          sm={12}
-          xs={12}
+export const HomeHeader = () => {
+  return (
+    <Grid container spacing={0}>
+      <Grid
+        item
+        md={6}
+        sm={12}
+        xs={12}
+        style={{
+          backgroundColor: "#000000",
+          padding: "30px",
+        }}
+        order={{ md: 1, sm: 2, xs: 2 }}
+      >
+        <div
           style={{
             backgroundColor: "#000000",
-            padding: "30px",
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+            padding: "40px",
           }}
-          order={{ md: 1, sm: 2, xs: 2 }}
         >
-          <div
+          <img
+            src={
+              "https://images.ctfassets.net/wn7ipiv9ue5v/4xtHbRSQjSnBeXFH8DKMXx/326c7e85add1ca0d1459bc29dcab25cd/GTAV_Logo.svg?w=512&h=&fm=webp&q="
+            }
+            alt="GTA"
+            width={"150px"}
+          />
+        </div>
+        <div>
+          <h1
             style={{
-              backgroundColor: "#000000",
-              display: "flex",
-              justifyContent: "center",
-              alignItems: "center",
-              padding: "40px",
+              fontSize: "20px",
+              fontWeight: "bold",
+              marginBottom: "20px",
             }}
           >
-            <img
-              src={
-                "https://images.ctfassets.net/wn7ipiv9ue5v/4xtHbRSQjSnBeXFH8DKMXx/326c7e85add1ca0d1459bc29dcab25cd/GTAV_Logo.svg?w=512&h=&fm=webp&q="
-              }
-              alt="GTA"
-              width={"150px"}
-            />
-          </div>
-          <div>
-            <h1
-              style={{
-                fontSize: "20px",
-                fontWeight: "bold",
-                marginBottom: "20px",
-              }}
-            >
-              GTAV and GTA Online for PS5 and Xbox Series X|S
-            </h1>
-            <p style={{ marginBottom: "20px" }}>
-              Experience blockbuster hits Grand Theft Auto V and GTA Online —
-              now upgraded for a new generation with stunning visuals, faster
-              loading, 3D audio and more, plus exclusive content for GTA Online
-              players.
-            </p>
-            <Link to={"/games/62432d8bfa3b17edc75a9fdf"}>
-              <ColorButton variant="contained">BUY NOW</ColorButton>
-            </Link>
-          </div>
-        </Grid>
-        <Grid item md={6} sm={12} xs={12} order={{ md: 2, sm: 1, xs: 1 }}>
-          <HeroImg />
-        </Grid>
+            GTAV and GTA Online for PS5 and Xbox Series X|S
+          </h1>
+          <p style={{ marginBottom: "20px" }}>
+            Experience blockbuster hits Grand Theft Auto V and GTA Online — now
+            upgraded for a new generation with stunning visuals, faster loading,
+            3D audio and more, plus exclusive content for GTA Online players.
+          </p>
+          <Link to={"/games/650805474ce634ca88526f0d"}>
+            <ColorButton variant="contained">BUY NOW</ColorButton>
+          </Link>
+        </div>
       </Grid>
-    );
-}
+      <Grid item md={6} sm={12} xs={12} order={{ md: 2, sm: 1, xs: 1 }}>
+        <HeroImg />
+      </Grid>
+    </Grid>
+  );
+};

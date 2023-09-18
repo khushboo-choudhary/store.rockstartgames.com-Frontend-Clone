@@ -6,26 +6,28 @@ import { GamesHeader } from "./GamesHeader";
 import axios from "axios";
 import { GamesDetails } from "./GameDetails";
 import { KeyFeatures } from "./KeyFeatures";
-import {v4 as uuidv4} from 'uuid';
+import { v4 as uuidv4 } from "uuid";
 import { Screenshots } from "./Screenshots";
 
 const SingleGame = () => {
-
   const [data, setData] = useState({});
-    const {id} = useParams();
+  const { id } = useParams();
 
-    useEffect(()=>{
-        axios.get(
-          `https://obscure-citadel-15133.herokuapp.com/games/${id}`
-        ).then((res)=>{
-          console.log(res.data);
-          setData(res.data)
-        });
-    }, [id])
+  useEffect(() => {
+    axios.get(`https://clear-pear-tuna.cyclic.app/games/${id}`).then((res) => {
+      console.log(res.data);
+      setData(res.data);
+    });
+  }, [id]);
 
   return (
     <div>
-      <GamesHeader img={data.heroimg} logo={data.logo} name={data.name} amount={data.price}/>
+      <GamesHeader
+        img={data.heroimg}
+        logo={data.logo}
+        name={data.name}
+        amount={data.price}
+      />
       <GamesDetails
         desc={data.gamesDetails}
         logo={data.logo}

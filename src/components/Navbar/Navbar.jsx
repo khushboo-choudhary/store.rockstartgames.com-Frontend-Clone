@@ -7,7 +7,7 @@ import UserMenu from "./UserMenu";
 import SearchIcon from "@mui/icons-material/Search";
 import PersonRoundedIcon from "@mui/icons-material/PersonRounded";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
-import ArrowBackIcon from '@mui/icons-material/ArrowBack';
+import ArrowBackIcon from "@mui/icons-material/ArrowBack";
 import MenuIcon from "@mui/icons-material/Menu";
 import CollectionMenu from "./CollectionMenu";
 import { Link } from "react-router-dom";
@@ -18,11 +18,14 @@ const Navbar = (props) => {
     input: "hidden",
     allother: "",
   });
-  const [loginOrNot,setLoginOrNot] = useState({signIn:"hidden",signOut:"block"})
+  const [loginOrNot, setLoginOrNot] = useState({
+    signIn: "hidden",
+    signOut: "block",
+  });
   const [GameMobileMenuToggle, setGameMobileToggle] = useState("hidden");
   const [UserMenuToggle, setUserToggle] = useState("hidden");
   const [CollectionMenuToggle, setCollectionToggle] = useState("hidden");
-  const [loginData,setLoginData] = useState({})
+  const [loginData, setLoginData] = useState({});
   const [AccountDropDown, setAccountDropDown] = useState("hidden");
 
   const donedonadone =
@@ -35,11 +38,18 @@ const Navbar = (props) => {
       })
     );
 
-
   useEffect(() => {
-      setAccountDropDown("block");
+    setAccountDropDown("block");
 
-    const {nickName,profileImage}=JSON.parse(localStorage.getItem("userData")) || localStorage.setItem("userData",JSON.stringify({"profileImage":"https://a.rsg.sc/n/shreyas1000","nickName":"none"}));
+    const { nickName, profileImage } =
+      JSON.parse(localStorage.getItem("userData")) ||
+      localStorage.setItem(
+        "userData",
+        JSON.stringify({
+          profileImage: "https://a.rsg.sc/n/shreyas1000",
+          nickName: "none",
+        })
+      );
     // const nickName = "fsdfsd"
     // profileImage = ""
     // }catch{
@@ -49,9 +59,11 @@ const Navbar = (props) => {
 
     //  const {nickName,profileImage}=JSON.parse(localStorage.getItem("userData"))
     //  console.log(nickName,"NickName is there")
-     if(nickName!=="none") {setLoginOrNot({signIn:"block",signOut:"hidden"})}
+    if (nickName !== "none") {
+      setLoginOrNot({ signIn: "block", signOut: "hidden" });
+    }
     //  console.log(loginOrNot.)
-    setLoginData({nickName,profileImage})
+    setLoginData({ nickName, profileImage });
   }, []);
 
   // setCollectionToggle("hidden");
@@ -65,13 +77,13 @@ const Navbar = (props) => {
     } else {
       setGameToggle("hidden");
       setGameMobileToggle("hidden");
-  }
+    }
   };
-  const hideall=()=>{
+  const hideall = () => {
     setCollectionToggle("hidden");
     setGameToggle("hidden");
     setGameMobileToggle("hidden");
-  }
+  };
   const onClickGameMobileMenu = () => {
     if (GameMobileMenuToggle === "hidden") {
       setGameMobileToggle("block");
@@ -79,9 +91,9 @@ const Navbar = (props) => {
       setGameToggle("hidden");
     } else {
       setGameMobileToggle("hidden");
-    setCollectionToggle("hidden");
-    setGameToggle("hidden");
-  }
+      setCollectionToggle("hidden");
+      setGameToggle("hidden");
+    }
   };
   const onClickCollectionMenu = () => {
     // console.log("object Collection", CollectionMenuToggle);
@@ -102,26 +114,34 @@ const Navbar = (props) => {
   const onClickSearchBar = () => {
     setInputToggle({ input: "block", allother: "hidden" });
   };
-  const hideInputMobileView=()=>{
+  const hideInputMobileView = () => {
     setInputToggle({ input: "hidden", allother: "block" });
     setGameMobileToggle("hidden");
-  }
+  };
 
   return (
     <>
-    <div className={`${InputMobileToggle.input} pt-2 flex h-[48px] items-center bg-black pl-2`}>
-      <div onClick={hideInputMobileView} ><ArrowBackIcon/></div>
-      <div className="flex items-center ml-2 rounded-full bg-[#161616]">
-      <div className="pl-2"><SearchIcon/></div>
-      <input type="text" placeholder="Search" className={`${InputMobileToggle.input} w-full bg-[#161616] rounded-r-full pl-2 py-1 outline-none`}/>
-      </div>
+      <div
+        className={`${InputMobileToggle.input} pt-2 flex h-[48px] items-center bg-black pl-2`}
+      >
+        <div onClick={hideInputMobileView}>
+          <ArrowBackIcon />
+        </div>
+        <div className="flex items-center ml-2 rounded-full bg-[#161616]">
+          <div className="pl-2">
+            <SearchIcon />
+          </div>
+          <input
+            type="text"
+            placeholder="Search"
+            className={`${InputMobileToggle.input} w-full bg-[#161616] rounded-r-full pl-2 py-1 outline-none`}
+          />
+        </div>
       </div>
       <div
         className="flex sticky top-0 right-0 left-0 z-40 items-center my-0 w-full text-white bg-black md:justify-between"
         id="navBar"
       >
-
-
         <div className="flex justify-between items-center w-full md:hidden">
           <div
             className={`flex justify-between items-center p-2 ${InputMobileToggle.allother}`}
@@ -134,11 +154,13 @@ const Navbar = (props) => {
                 <MenuIcon />
               </button>
             </div>
-            <Link to="/"><img
-              className="w-12 h-12"
-              src="https://images.ctfassets.net/wn7ipiv9ue5v/4ajpWv2L0zlK6pObfLPOcL/d6d3875cb5a5bfc074c6a92cf6dce0c2/rockstar_logo.png?w=104&h=&fm=webp&q="
-              alt=""
-            /></Link>
+            <Link to="/">
+              <img
+                className="w-12 h-12"
+                src="https://images.ctfassets.net/wn7ipiv9ue5v/4ajpWv2L0zlK6pObfLPOcL/d6d3875cb5a5bfc074c6a92cf6dce0c2/rockstar_logo.png?w=104&h=&fm=webp&q="
+                alt=""
+              />
+            </Link>
           </div>
           <div
             className={`flex justify-between item-centerw-8 md:hidden ${InputMobileToggle.allother}`}
@@ -146,17 +168,23 @@ const Navbar = (props) => {
             <button onClick={() => onClickSearchBar()}>
               <SearchIcon />
             </button>
-            <Link to="/cart" className="pl-2"><ShoppingCartIcon className="w-8" /></Link>
-            <Link to="/signin" className="pl-2"><PersonRoundedIcon className="w-8" /></Link>
+            <Link to="/cart" className="pl-2">
+              <ShoppingCartIcon className="w-8" />
+            </Link>
+            <Link to="/signin" className="pl-2">
+              <PersonRoundedIcon className="w-8" />
+            </Link>
           </div>
         </div>
 
         <div className="justify-between items-center p-2 md:mx-24 md:p-4 md:flex">
-        <Link to="/"><img
-            className="hidden w-12 h-12 md:block"
-            src="https://images.ctfassets.net/wn7ipiv9ue5v/4ajpWv2L0zlK6pObfLPOcL/d6d3875cb5a5bfc074c6a92cf6dce0c2/rockstar_logo.png?w=104&h=&fm=webp&q="
-            alt=""
-          /></Link>
+          <Link to="/">
+            <img
+              className="hidden w-12 h-12 md:block"
+              src="https://images.ctfassets.net/wn7ipiv9ue5v/4ajpWv2L0zlK6pObfLPOcL/d6d3875cb5a5bfc074c6a92cf6dce0c2/rockstar_logo.png?w=104&h=&fm=webp&q="
+              alt=""
+            />
+          </Link>
           <div className="hidden items-center mx-6 md:flex">
             <button
               className="flex items-center font-bold cursor-pointer"
@@ -185,7 +213,8 @@ const Navbar = (props) => {
               />
             </button>
           </div>
-          <Link onClick={hideall}
+          <Link
+            onClick={hideall}
             to="/gear"
             className="hidden mx-6 font-bold cursor-pointer md:block"
           >
@@ -197,7 +226,7 @@ const Navbar = (props) => {
           <div className="flex justify-center items-center pl-2 bg-[#161616] rounded-full border border-gray-600">
             <img
               className=" ml-2 w-6 h-6 bg-[#161616]"
-              src="https://svg-clipart.com/svg/white/ktmN7fh-search-icon-white-one-vector.svg"
+              src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ1NbFYtGT0Zz1HKkprpMM7m9AgE-pVN9_q7-PldN4&s"
               alt=""
             />
             <input
@@ -206,26 +235,31 @@ const Navbar = (props) => {
               placeholder="Search"
             />
           </div>
-          <Link to="/cart"><ShoppingCartIcon className="w-8 ml-[20px]" /></Link>
-          <div className={`${loginOrNot.signOut}`}>
-          <Link to="signin" className="mx-6 font-bold cursor-pointer">
-            Sign in
+          <Link to="/cart">
+            <ShoppingCartIcon className="w-8 ml-[20px]" />
           </Link>
+          <div className={`${loginOrNot.signOut}`}>
+            <Link to="signin" className="mx-6 font-bold cursor-pointer">
+              Sign in
+            </Link>
           </div>
           <div className={`${loginOrNot.signIn}`}>
-          <MenuListComposition nickName={loginData.nickName} img={loginData.profileImage} />
+            <MenuListComposition
+              nickName={loginData.nickName}
+              img={loginData.profileImage}
+            />
           </div>
           {/* User Detail Start After Login  */}
         </div>
       </div>
       <div className={`relative ${GameMenuToggle}`}>
-        <GameMenu hideclass={hideall} ></GameMenu>
+        <GameMenu hideclass={hideall}></GameMenu>
       </div>
       <div className={`relative ${GameMobileMenuToggle}`}>
-        <GameMobileMenu  hideclass={hideall} ></GameMobileMenu>
+        <GameMobileMenu hideclass={hideall}></GameMobileMenu>
       </div>
       <div className={`relative ${CollectionMenuToggle}`}>
-        <CollectionMenu  hideclass={hideall} ></CollectionMenu>
+        <CollectionMenu hideclass={hideall}></CollectionMenu>
       </div>
     </>
   );

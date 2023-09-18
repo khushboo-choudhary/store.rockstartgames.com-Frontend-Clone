@@ -16,30 +16,30 @@ const Sigin = (props) => {
     console.log(formData);
   };
 
-  const oAuth = ()=>{
-    window.location.href =
-      "https://obscure-citadel-15133.herokuapp.com/auth/google";
+  const oAuth = () => {
+    window.location.href = "https://clear-pear-tuna.cyclic.app/auth/google";
+  };
+
+  const { nickName, profileImage } =
+    JSON.parse(localStorage.getItem("userData")) ||
+    localStorage.setItem(
+      "userData",
+      JSON.stringify({
+        profileImage: "https://a.rsg.sc/n/shreyas1000",
+        nickName: "none",
+      })
+    );
+
+  if (nickName != "none") {
+    window.location.href = "/";
   }
-
-   const { nickName, profileImage } =
-     JSON.parse(localStorage.getItem("userData")) ||
-     localStorage.setItem(
-       "userData",
-       JSON.stringify({
-         profileImage: "https://a.rsg.sc/n/shreyas1000",
-         nickName: "none",
-       })
-     );
-
-   if (nickName != "none") {
-     window.location.href = "/";
-   }
 
   const formSubmit = (e) => {
     e.preventDefault();
     function postData(url) {
-      axios.post(url, formData).then(
-        (response) => {
+      axios
+        .post(url, formData)
+        .then((response) => {
           console.log(response);
           localStorage.setItem("token", JSON.stringify(response.data.token));
           const { nickName, profileImage } = response.data;
@@ -47,16 +47,16 @@ const Sigin = (props) => {
             "userData",
             JSON.stringify({ profileImage, nickName })
           );
-          alert("You Have LoggedIn Successfully")
-            // navigate("/");
-            window.location.href = "/";
-        }
-      ).catch((err)=>{
-        alert("Something Went Wrong / Check Your Credentials")
-        console.log(err)
-      });
+          alert("You Have LoggedIn Successfully");
+          // navigate("/");
+          window.location.href = "/";
+        })
+        .catch((err) => {
+          alert("Something Went Wrong / Check Your Credentials");
+          console.log(err);
+        });
     }
-    postData("https://obscure-citadel-15133.herokuapp.com/login");
+    postData("https://clear-pear-tuna.cyclic.app/login");
   };
 
   return (
@@ -133,7 +133,12 @@ const Sigin = (props) => {
               {/* <a href="#" className="p-2">
                 <i className="md:text-3xl text-yellow-500 fab fa-facebook"></i>
               </a> */}
-              <button className="p-2 mr-4" onClick={()=>{oAuth()}}>
+              <button
+                className="p-2 mr-4"
+                onClick={() => {
+                  oAuth();
+                }}
+              >
                 <i className="md:text-3xl text-yellow-500 fab fa-google"></i>
               </button>
 

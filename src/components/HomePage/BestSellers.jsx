@@ -14,14 +14,12 @@ const NewArrivalDiv = styled.div`
   margin-bottom: 80px;
 `;
 
-
-
 const BestSellers = () => {
   const [products, setProducts] = useState([]);
 
   useEffect(() => {
     axios
-      .get("https://obscure-citadel-15133.herokuapp.com/gear/collectibles")
+      .get("https://clear-pear-tuna.cyclic.app/gear/collectibles")
       .then((res) => {
         // console.log(res.data.gear)
         setProducts(res.data.gear);
