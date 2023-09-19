@@ -51,9 +51,10 @@ const ProductDetails = () => {
             <img src={product.image} alt="" />
           </div>
           <div id="other-img-part">
-            {/* {product.allimages.map((el) => (
-              <img src={el} alt="images" />
-            ))} */}
+            {product.allimages &&
+              product.allimages.map((el) => (
+                <img src={el} alt="images" key={el} />
+              ))}
           </div>
         </div>
         <div id="product-right-part">
