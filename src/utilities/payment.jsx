@@ -21,10 +21,7 @@ const doPayment = (amount, desc) => {
     body: JSON.stringify(paymentData),
   };
 
-  fetch(
-    "https://obscure-citadel-15133.herokuapp.com/payment/pay",
-    paymentOptions
-  )
+  fetch("https://clear-pear-tuna.cyclic.app/payment/pay", paymentOptions)
     .then((response) => response.json())
     .then((data) => {
       console.log(data);
