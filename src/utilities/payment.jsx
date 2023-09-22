@@ -1,5 +1,3 @@
-import { ConnectingAirportsOutlined } from "@mui/icons-material";
-
 const doPayment = (amount, desc) => {
   const paymentData = {
     amount,
@@ -13,8 +11,6 @@ const doPayment = (amount, desc) => {
     return;
   }
 
-  console.log("dijwhdui2gdiug1fuig1fibkjhf87gt", paymentData);
-  console.log("jbjsbcuyxjbxbiuibcdbcjdbcih fuihiuhdiuh3yeb iueihoi 1", token);
   const paymentOptions = {
     method: "POST",
     headers: {
@@ -23,16 +19,17 @@ const doPayment = (amount, desc) => {
     },
     body: JSON.stringify(paymentData),
   };
-  console.log("bcjsabcgcggd uigdbcbqcgqciubbsq", paymentOptions);
+
   fetch("https://clear-pear-tuna.cyclic.app/payment/pay", paymentOptions)
     .then((response) => response.json())
     .then((data) => {
-      console.log("=============================", data);
       if (data.success) {
         window.location.href = data.payment_request.longurl;
       } else {
         console.log(data);
-        alert("Payment Failed / Something went wrong");
+        alert(
+          `("Payment Failed / Something went wrong") || ${data.message.amount[0]}`
+        );
       }
     })
     .catch((error) => console.log(error));
